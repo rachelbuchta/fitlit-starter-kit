@@ -165,5 +165,6 @@ h4 {
 .weekly-water,
 .average-sleep-hours,
 .average-sleep-quality {
+  border: 4px solid black;
   background-color: #324A5E;
 }
