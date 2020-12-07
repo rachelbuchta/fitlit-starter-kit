@@ -1,0 +1,169 @@
+* {
+  font-family: 'Hind Siliguri', sans-serif;
+  margin: 0;
+  border-radius: 4px;
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  border: 2px solid #AC9F57;
+  background-color: #70A3A1;
+  align-self: center;
+  align-items: center;
+  height: 7%;
+  width: 95%;
+}
+
+.user-info-card {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  height: 10%;
+  align-self: center;
+  align-items: center;
+  border: 2px solid #AC9F57;
+  background-color: #8BB87E;
+}
+
+.user-step-goal-box,
+.all-users-step-goal-box {
+  display: flex;
+  justify-content: center;
+  padding: 0% 2% 0% 2%;
+  height: 85%;
+  align-items: center;
+  flex-direction: column;
+  background-color: #446063;
+}
+
+.activity-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: space-evenly;
+  width: 85%;
+  background-color: #C8E0F3;
+  border: 2px solid #AC9F57;
+}
+
+img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.daily-activities {
+  display: flex;
+  margin: 3%;
+  justify-content: space-around;
+}
+
+.activity-card {
+  display: flex;
+  margin: 3%;
+  height: 90%;
+  width: 65%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #E19181;
+}
+
+/* .weekly-activities {
+  display: grid;
+  grid-template-columns: repeat(8, 20%);
+  grid-template-rows: repeat(4, 20%);
+  /* grid-column: 1 / 9;
+  grid-row: 1 / 5; */
+/* } */
+
+.sleep-hydration-box {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  padding: 10%;
+  width: 95%;
+  justify-content: space-around;
+  height: 20%;
+}
+
+.water-wrapper,
+.sleep-wrapper {
+  display: flex;
+  justify-content: space-around;
+  height: 80%;
+  width: 90%;
+
+
+}
+
+.water-box,
+.sleep-box {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+
+  background-color: #9ECAC8;
+  border: 2px solid #AC9F57;
+}
+
+.daily-water
+.weekly-water {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 30%;
+}
+
+.average-sleep-hours,
+.average-sleep-quality,
+ {
+  display: flex;
+  flex-direction: column;
+  /* height: 20%; */
+}
+
+p {
+  align-self: center;
+}
+
+.daily-sleep {
+  display: flex;
+  justify-content: space-around;
+}
+
+h4 {
+  align-self: center;
+}
+
+/* .sleep-box {
+  display: flex;
+  width: 40%;
+  background-color: #85A0B7;
+  border: 2px solid #AC9F57;
+} */
+
+.sleep-hours,
+.weekly-sleep,
+.sleep-quality,
+.daily-water,
+.weekly-water,
+.average-sleep-hours,
+.average-sleep-quality {
+  background-color: #324A5E;
+}
