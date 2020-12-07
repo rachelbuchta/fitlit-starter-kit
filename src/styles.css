@@ -124,15 +124,27 @@ img {
 .daily-water
 .weekly-water {
   display: flex;
-  flex-direction: column;
-
+  justify-content: center;
   align-items: center;
   height: 90%;
-  width: 20%;
+  width: 30%;
+}
+
+.average-sleep-hours,
+.average-sleep-quality,
+ {
+  display: flex;
+  flex-direction: column;
+  /* height: 20%; */
+}
+
+p {
+  align-self: center;
 }
 
 .daily-sleep {
   display: flex;
+  justify-content: space-around;
 }
 
 h4 {
@@ -150,6 +162,8 @@ h4 {
 .weekly-sleep,
 .sleep-quality,
 .daily-water,
-.weekly-water {
+.weekly-water,
+.average-sleep-hours,
+.average-sleep-quality {
   background-color: #324A5E;
 }
