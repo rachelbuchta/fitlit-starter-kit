@@ -1,100 +1,102 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Activity Tracker</title>
 </head>
-
 <body>
-    <h1>Hello Friend!</h1>
+  <main>
+    <section class='greeting'>
+      <h1>Hello Friend!</h1>
+    </section>
     <article class='user-info-card'>
-        <section class='user-step-goal-box'>
-            <h2>Your Daily Step Goal</h2>
-            <p class='user-step-goal'>10,000</p>
-        </section>
-        <section class='all-users-step-goal-box'>
-            <h2>Others Daily Step Goal</h2>
-            <p class='all-users-step-goal'>10,000</p>
-        </section>
+      <section class='user-step-goal-box'>
+        <h2>Your Daily Step Goal</h2>
+        <p class='user-step-goal'>10,000</p>
+      </section>
+      <section class='all-users-step-goal-box'>
+        <h2>Others Daily Step Goal</h2>
+        <p class='all-users-step-goal'>10,000</p>
+      </section>
     </article>
     <article class='activity-box'>
-        <img src='../images/running.png' alt='Running Legs'></img>
-        <section class='daily-activities'>
-            <div class='activity-card' id='step-card'>
-                <h3>Number of Steps</h3>
-                <p class='step-counter'>10,000 steps</p>
-                <p class='step-comparison'>That is X more steps than the average! </p>
-            </div>
-            <div class='activity-card' id='minutes-card'>
-                <h3>Minutes Active</h3>
-                <p class='minute-counter'>45 mins</p>
-                <p class='minute-comparison'>That is X more minutes than the average! </p>
-            </div>
-            <div class='activity-card' id='miles-card'>
-                <h3>Miles Walked</h3>
-                <p class='mile-counter'>10 mi.</p>
-                <p class='mile-comparison'>That is X more miles than the average! </p>
-            </div>
+      <img src='../images/running.png' alt='Running Legs'></img>
+      <section class='daily-activities'>
+        <div class='activity-card' id='step-card'>
+          <h3>Number of Steps</h3>
+          <p class='step-counter'>10,000 steps</p>
+          <p class='step-comparison'>That is X more steps than the average! </p>
+        </div>
+        <div class='activity-card' id='minutes-card'>
+          <h3>Minutes Active</h3>
+          <p class='minute-counter'>45 mins</p>
+          <p class='minute-comparison'>That is X more minutes than the average! </p>
+        </div>
+        <div class='activity-card' id='miles-card'>
+          <h3>Miles Walked</h3>
+          <p class='mile-counter'>10 mi.</p>
+          <p class='mile-comparison'>That is X more miles than the average! </p>
+        </div>
         </section>
         <section class='weekly-activities'>
-            <h3>Your Week</h3>
-            <p>Grid</p>
+          <h3>Your Week</h3>
+          <p>Grid</p>
         </section>
     </article>
     <article class='sleep-hydration-box'>
-        <section class='water-box'>
-            <img src='../images/running.svg'>
-            <div class='water-wrapper'>
-              <div class='daily-water'>
-                  <h4>Yesterday's Fill</h4>
-                  <p class='daily-water-intake'>3 oz.</p>
-              </div>
-              <div class='weekly-water'>
-                  <h4>Weekly Intakes</h4>
-                  <p class='weekly-water-intake'>Grid</p>
-              </div>
+      <section class='water-box'>
+        <img src='../images/running.svg'>
+        <div class='water-wrapper'>
+        <div class='daily-water'>
+          <h4>Today's Fill</h4>
+          <p class='water-ounces'>3 oz.</p>
+        </div>
+        <div class='weekly-water'>
+          <h4 class='water-grid'>Weekly Intakes</h4>
+          <p class='weekly-water-intake'>Grid</p>
+        </div>
+        </div>
+      </section>
+      <section class='sleep-box'>
+        <img src='../images/sleeping.svg'>
+        <div class='sleep-wrapper'>
+          <div class='daily-sleep'>
+            <div class='sleep-hours-heading'>
+              <h4 class='sleep-hours'>Hours</h4>
+              <h4 class='sleep-quality'>Quality</h4>
             </div>
-        </section>
-        <section class='sleep-box'>
-            <img src='../images/sleeping.svg'>
-            <div class='sleep-wrapper'>
-              <div class='daily-sleep'>
-                  <div class='sleep-hours'>
-                      <h4>Hours</h4>
-                      <p class='sleep-hour-count'>7</p>
-                  </div>
-                  <div class='sleep-quality'>
-                      <h4>Quality</h4>
-                      <p class='sleep-quality-count'>4.5</p>
-                  </div>
-                </div>
-              <div class='average-daily-sleep'>
-                  <div class='average-sleep-hours'>
-                      <h4>Average Hours</h4>
-                      <p class='average-sleep-hour-count'>7</p>
-                  </div>
-                  <div class='average-sleep-quality'>
-                      <h4>Average Quality</h4>
-                      <p class='average-sleep-quality-count'>4.5</p>
-                  </div>
-              </div>
-            </div>
-          
-            <div class='weekly-sleep'>
-                <h4>Weekly Stats</h4>
-                <p class='weekly-sleep'>Grid</p>
-            </div>
-        </section>
-    </article>
+            <div class='user-sleep-values'>
+              <p class='sleep-hour-count'>7</p>
+          <!-- </div>
+          <div class='sleep-quality'> -->
 
+              <p class='sleep-quality-count'>4.5</p>
+
+            </div>
+         <div class='average-daily-sleep'>
+              <div class='average-sleep-hours'>
+            <h4>Average Hours</h4>
+            <p class='average-sleep-hour-count'>7</p>
+          </div>
+          <div class='average-sleep-quality'>
+            <h4>Average Quality</h4>
+            <p class='average-sleep-quality-count'>4.5</p>
+          </div>
+        </div>
+        </div>
+        <div class='weekly-sleep'>
+          <h4>Weekly Stats</h4>
+          <p class='weekly-sleep'>Grid</p>
+        </div>
+      </section>
+    </article>
+  </main>
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/hydration.js"></script>
     <script type="text/javascript" src="../data/sleep.js"></script>
     <script type="text/javascript" src="../data/activity.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>
 </body>
-
 </html>

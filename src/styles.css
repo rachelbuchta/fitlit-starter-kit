@@ -1,7 +1,7 @@
 * {
   font-family: 'Hind Siliguri', sans-serif;
   margin: 0;
-  border-radius: 4px;
+  border-radius: .5em;
   color: white;
 }
 
@@ -9,29 +9,45 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-h1 {
+main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  /* margin-top: 1%; */
+
+}
+
+/* User Greeting */
+
+.greeting {
+  display: flex;
+  justify-content: space-around;
   border: 2px solid #AC9F57;
   background-color: #70A3A1;
   align-self: center;
   align-items: center;
-  height: 7%;
+  height: 100%;
   width: 95%;
+  margin-top: -8%;
+  font-size: 3em;
 }
+
+
+/* User Info Card */
 
 .user-info-card {
   display: flex;
   justify-content: space-around;
-  width: 90%;
-  height: 10%;
+  width: 85%;
+  height: 7em;
   align-self: center;
   align-items: center;
   border: 2px solid #AC9F57;
   background-color: #8BB87E;
+  margin-top: 1%;
 }
 
 .user-step-goal-box,
@@ -45,26 +61,32 @@ h1 {
   background-color: #446063;
 }
 
+/* Activity Section */
+
 .activity-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
   justify-content: space-evenly;
-  width: 85%;
+  width: 75%;
+  height: 100%;
   background-color: #C8E0F3;
   border: 2px solid #AC9F57;
+  margin-top: 2%;
 }
 
 img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: -1%
 }
 
 .daily-activities {
   display: flex;
   margin: 3%;
+  margin-top: 1%;
   justify-content: space-around;
 }
 
@@ -88,14 +110,18 @@ img {
   grid-row: 1 / 5; */
 /* } */
 
+/* Water and Sleep Display */
+
 .sleep-hydration-box {
   display: flex;
   align-items: center;
   align-self: center;
-  padding: 10%;
+  padding: 2%;
   width: 95%;
   justify-content: space-around;
-  height: 20%;
+  height: 30%;
+  margin-top: 1%;
+  margin-bottom: -5%;
 }
 
 .water-wrapper,
@@ -103,9 +129,8 @@ img {
   display: flex;
   justify-content: space-around;
   height: 80%;
-  width: 90%;
-
-
+  width: 100%;
+  border: 4px solid black;
 }
 
 .water-box,
@@ -115,26 +140,51 @@ img {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 40%;
-
+  width: 45%;
   background-color: #9ECAC8;
   border: 2px solid #AC9F57;
 }
 
-.daily-water
+.daily-water,
 .weekly-water {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
   height: 90%;
-  width: 30%;
+  width: 45%;
+}
+
+/* Water Display */
+
+.daily-water {
+  display: flex;
+  justify-content: space-around;
+}
+
+.weekly-water {
+  justify-content: space-around;
+}
+
+.weekly-water-intake {
+  margin-bottom: 10%;
+}
+
+.water-grid {
+  display: grid;
+  margin-top: -5%;
+}
+
+.water-ounces {
+  font-size: 2.4em;
+  margin-bottom: 10%;
 }
 
 .average-sleep-hours,
 .average-sleep-quality,
  {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /* height: 20%; */
 }
 
@@ -142,9 +192,10 @@ p {
   align-self: center;
 }
 
-.daily-sleep {
+.sleep-hours-heading {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 h4 {
@@ -158,7 +209,7 @@ h4 {
   border: 2px solid #AC9F57;
 } */
 
-.sleep-hours,
+.sleep-hours-heading,
 .weekly-sleep,
 .sleep-quality,
 .daily-water,
