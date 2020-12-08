@@ -14,8 +14,6 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    /* margin-top: 1%; */
 }
 
 
@@ -29,10 +27,10 @@ main {
     background-color: #70A3A1;
     align-self: center;
     align-items: center;
-    height: 15vh;
+    height: 8vh;
     width: 95%;
-    /* margin-top: -3%; */
     font-size: 3em;
+    margin-top: -7%;
 }
 
 
@@ -77,21 +75,12 @@ main {
     border-radius: .5em;
     background-color: #C8E0F3;
     border: 2px solid #AC9F57;
-    margin-top: .5%;
+    margin: .5%;
+    padding: 1.3%;
 }
-
-
-/* img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: -1%
-} */
 
 .daily-activities {
     display: flex;
-    /* margin: 3%;
-  margin-top: 1%; */
     border-radius: .5em;
     justify-content: space-around;
     margin-bottom: 1.5%;
@@ -130,7 +119,7 @@ h3 {
     text-align: center;
     grid-template-columns: repeat(8, 20%);
     grid-template-rows: repeat(4, 20%);
-    width: 50%;
+    width: 75%;
     height: 100%;
     grid-column: 1 / 9;
     grid-row: 1 / 4;
@@ -139,7 +128,6 @@ h3 {
 
 .box {
     border: .2em solid #AC9F57;
-    /* border-bottom: .2em solid #AC9F57; */
 }
 
 
@@ -163,7 +151,6 @@ h3 {
     justify-content: space-around;
     height: 80%;
     width: 100%;
-    /* border: 4px solid black; */
 }
 
 .water-box,
@@ -177,6 +164,8 @@ h3 {
     width: 45%;
     background-color: #9ECAC8;
     border: 2px solid #AC9F57;
+    margin-top: 1%;
+    padding-bottom: 1%;
 }
 
 .daily-water,
@@ -208,7 +197,6 @@ h3 {
 
 .water-ounces {
     font-size: 2.4em;
-    /* margin-bottom: 10%; */
 }
 
 .average-sleep-hours,
@@ -220,50 +208,27 @@ h3 {
     height: 45%;
 }
 
-
-/* .sleep-box {
-  display: flex;
-  width: 40%;
-  background-color: #85A0B7;
-  border: 2px solid #AC9F57;
-} */
+.sleep-box {
+    display: flex;
+    background-color: #85A0B7;
+    border: 2px solid #AC9F57;
+}
 
 .sleep-hours-heading,
 .user-sleep-values,
 .weekly-sleep,
-
-/* .sleep-quality, */
-
 .daily-water,
 .weekly-water,
 .average-sleep-hours,
 .average-sleep-quality {
-    /* border: 4px solid black; */
     background-color: #324A5E;
 }
-
-
-/* .daily-sleep,
-.average-daily-sleep {
-    display: flex;
-    justify-content: space-around;
-    height: 45%;
-    width: 45%;
-    background-color: #324A5E;
-}
-
-.sleep-hours-heading,
-.user-sleep-values {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
 
 .daily-sleep,
 .average-daily-sleep {
     display: flex;
     justify-content: space-around;
-    height: 45%;
+    height: 80%;
     width: 45%;
     background-color: #324A5E;
     border-radius: .5em;
@@ -278,4 +243,35 @@ h3 {
     justify-content: space-around;
     flex-direction: column;
     border-radius: .5em;
+}
+
+img {
+    height: 2.5em;
+}
+
+.sleep-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    grid-template-columns: repeat(8, 20%);
+    grid-auto-rows: repeat(3, 20%);
+    grid-column: 1/9;
+    grid-row: 1/4;
+    width: 45%;
+    margin-bottom: 1.5%;
+}
+
+.weekly-sleep {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: .5em;
+}
+
+.average-sleep-hour-count,
+.average-sleep-quality-count {
+    font-size: smaller;
 }
