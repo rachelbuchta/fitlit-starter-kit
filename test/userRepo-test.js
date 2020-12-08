@@ -7,7 +7,7 @@ const userTestData = require('./test-user-data')
 
 
 
-describe('userRepo', () => {
+describe('UserRepo', () => {
 
 
     it('should be an instance of UserRepo', () => {
