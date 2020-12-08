@@ -15,6 +15,6 @@ describe('User', () => {
 
         const user = new User(userTestData[0])
 
-        expect(user.getFirstName()).to.equal('Luisa Hane')
+        expect(user.getFirstName()).to.equal('Luisa')
     })
 })
