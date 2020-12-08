@@ -217,13 +217,7 @@ h3 {
     display: flex;
     flex-direction: row;
     border-radius: .5em;
-    /* height: 20%; */
-}
-
-.sleep-hours-heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    height: 45%;
 }
 
 
@@ -235,22 +229,50 @@ h3 {
 } */
 
 .sleep-hours-heading,
+.user-sleep-values,
 .weekly-sleep,
-.sleep-quality,
+
+/* .sleep-quality, */
+
 .daily-water,
 .weekly-water,
 .average-sleep-hours,
 .average-sleep-quality {
-    border: 4px solid black;
+    /* border: 4px solid black; */
     background-color: #324A5E;
 }
 
-.daily-sleep,
+
+/* .daily-sleep,
 .average-daily-sleep {
     display: flex;
+    justify-content: space-around;
+    height: 45%;
+    width: 45%;
+    background-color: #324A5E;
 }
 
 .sleep-hours-heading,
 .user-sleep-values {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+.daily-sleep,
+.average-daily-sleep {
+    display: flex;
+    justify-content: space-around;
+    height: 45%;
+    width: 45%;
+    background-color: #324A5E;
+    border-radius: .5em;
+}
+
+.sleep-hours-heading,
+.user-sleep-values {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
