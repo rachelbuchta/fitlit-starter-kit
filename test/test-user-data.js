@@ -37,3 +37,5 @@ const userTestData = [{
         33
     ]
 }]
+
+module.exports = userTestData
