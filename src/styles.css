@@ -270,9 +270,12 @@ h3 {
 }
 
 .sleep-hours-heading,
-.user-sleep-values {
+.user-sleep-values,
+.average-sleep-hours,
+.average-sleep-quality {
     text-align: center;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    border-radius: .5em;
 }
