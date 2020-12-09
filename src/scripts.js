@@ -1,4 +1,4 @@
-const currentUserRepo = new UserRepo(
+const currentUserRepo = new UserRepo([
   {
     "id": 1,
     "name": "Luisa Hane",
@@ -68,7 +68,7 @@ const currentUserRepo = new UserRepo(
       33,
       10
     ]
-  }
+  }]
 )
 // const allUserData = require('./data/users')
 const currentUser = new User(
@@ -97,7 +97,8 @@ const currentUser = new User(
     function displayUserInfo() {
       displayGreeting()
       displayUserStepGoal()
-      // displayUserStrideLength()
+      displayUserStrideLength()
+      displayAllUsersStepGoal()
     }
 
     function displayGreeting() {
@@ -108,6 +109,10 @@ const currentUser = new User(
       userStepGoal.innerText = currentUser.dailyStepGoal
     }
 
-    // function displayUserStrideLength() {
-    //
-    // }
+    function displayUserStrideLength() {
+      userStrideLength.innerText = currentUser.strideLength
+    }
+
+    function displayAllUsersStepGoal() {
+      othersStepGoal.innerText = currentUserRepo.calculateAverageSteps()
+    }
