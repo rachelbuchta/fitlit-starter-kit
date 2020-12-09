@@ -1,10 +1,9 @@
 class UserHydration {
   constructor(data) {
     this.data = data
-    // this.id = data.userID
-    // this.date = data.date
-    // this.numOunces = data.numOunces
-    console.log(this.data[0].numOunces)
+    this.id = data.userID
+    this.date = data.date
+    this.numOunces = data.numOunces
   }
 
   avgOuncesConsumed(id) {
