@@ -1,6 +1,7 @@
 class User {
   constructor(userData) {
     this.userData = userData
+    this.dailyStepGoal = userData.dailyStepGoal
   }
 
   getFirstName() {
