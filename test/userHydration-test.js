@@ -1,7 +1,6 @@
 const chai = require('chai')
 const expect = chai.expect
 
-// const UserRepo = require('../src/userRepo')
 const UserHydration = require('../src/userHydration')
 const userHydrationData = require('./test-userHydration-data')
 
@@ -23,14 +22,14 @@ describe('UserHydration', () => {
     expect(userHydration.avgOuncesConsumed(1)).to.equal(65)
   })
 
-  it.skip('should return amount of ounces consumed in a day by date', () => {
+  it('should return amount of ounces consumed in a day by date', () => {
 
     expect(userHydration.returnDailyConsumption("2019/06/15")).to.equal(37)
   })
 
-  it.skip('should return amount of ounces consumed in a week for each day', () => {
+  it('should return amount of ounces consumed in a week for each day', () => {
 
-    expect(userHydration.returnWeeklyConsumption()).to.equal({Sunday: 50, Monday: 37, Tuesday: 69, Wednesday: 96, Thursday: 61, Friday: 91, Saturday: 50})
+    expect(userHydration.returnWeeklyConsumption(1)).to.deep.equal({Sunday: 37, Monday: 69, Tuesday: 96, Wednesday: 61, Thursday: 91, Friday: 50, Saturday: 50})
   })
 
 })
