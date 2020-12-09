@@ -1,20 +1,21 @@
 class UserRepo {
-    constructor(data) {
-        this.data = data
-    }
-    getUserData(id) {
+  constructor(data) {
+    this.data = data
+  }
 
-        return this.data.find(user => user.id === id)
-    }
-    calculateAverageSteps() {
-        const totalSteps = this.data.reduce((acc, user) => {
-            (acc += user.dailyStepGoal)
-            return acc
-        }, 0)
-        return Math.round(totalSteps / this.data.length)
-    }
+  getUserData(id) {
+    return this.data.find(user => user.id === id)
+  }
+
+  calculateAverageSteps() {
+    const totalSteps = this.data.reduce((acc, user) => {
+      (acc += user.dailyStepGoal)
+      return acc
+    }, 0)
+    return Math.round(totalSteps / this.data.length)
+  }
 }
 
 if (typeof module !== 'undefined') {
-    module.exports = UserRepo
+  module.exports = UserRepo
 }
