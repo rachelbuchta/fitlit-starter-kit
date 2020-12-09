@@ -22,14 +22,14 @@ class UserHydration {
 
   returnWeeklyConsumption(id) {
     const currentUser = this.data.filter(day => day.userID == id)
-    const newObject = {Sunday: currentUser[0].numOunces,
+    const weeklyIntake = {Sunday: currentUser[0].numOunces,
      Monday: currentUser[1].numOunces,
      Tuesday: currentUser[2].numOunces,
      Wednesday: currentUser[3].numOunces,
      Thursday: currentUser[4].numOunces,
      Friday: currentUser[5].numOunces,
      Saturday: currentUser[6].numOunces}
-     return newObject
+     return weeklyIntake
 
     // currentUser.reduce((acc, day) => {
     //   console.log(acc.Monday = currentUser.numOunces)
