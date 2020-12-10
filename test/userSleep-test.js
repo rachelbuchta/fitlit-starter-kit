@@ -11,16 +11,16 @@ describe('UserSleep', () => {
     let userSleep
 
     beforeEach(function() {
-        userSleep = new UserSleep()
+        userSleep = new UserSleep(userSleepData)
     })
 
-    it.skip('should be an instance of UserSleep', () => {
+    it('should be an instance of UserSleep', () => {
 
         expect(userSleep).to.be.an.instanceof(UserSleep)
 
     })
 
-    it.skip('should calculate average amount of hours slept over all days', () => {
+    it('should calculate average amount of hours slept over all days', () => {
 
         expect(userSleep.calculateAvgHoursPerDay(1)).to.equal(8)
     })
@@ -38,7 +38,7 @@ describe('UserSleep', () => {
         expect(userSleep.getQualityByDay('2019/06/15')).to.equal(2.2)
     })
 
-    it.skip('should return hours slept by date for a week', () {
+    it.skip('should return hours slept by date for a week', () => {
         expect(userSleep.getHoursByWeek(1, '2019/06/15')).to.deep.equal([6.1, 4.1, 8, 10.4, 10.7, 9.3, 7.8])
     })
 
