@@ -4,30 +4,17 @@ class UserSleep {
   }
 
 
-  calculateAvgHoursPerDay(id) {
-    const userData = this.data.filter(day => day.userID === id)
-    const totalHours = userData.reduce((acc, day) => {
-      acc += day.hoursSlept
-      return acc
-    }, 0)
-    return Math.round(totalHours / userData.length)
-  }
-
-  calculateAvgQualityPerDay(id) {
+  calculateAvgDataPerDay(id, type) {
     const userData = this.data.filter(day => day.userID === id)
     const totalQuality = userData.reduce((acc, day) => {
-      acc += day.sleepQuality
+      acc += day[type]
       return acc
     }, 0)
     return Math.round(totalQuality / userData.length)
   }
 
-  getHoursByDay(date) {
-    return this.data.find(day => day.date === date).hoursSlept
-  }
-
-  getQualityByDay(date) {
-    return this.data.find(day => day.date === date).sleepQuality
+  getDataByDay(date, type) {
+    return this.data.find(day => day.date === date)[type]
   }
 
   getDataByWeek(id, date, type) {
