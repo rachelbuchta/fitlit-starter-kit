@@ -30,12 +30,12 @@ class UserSleep {
     return this.data.find(day => day.date === date).sleepQuality
   }
 
-  getHoursByWeek(id, date) {
+  getDataByWeek(id, date, type) {
     const userData = this.data.filter(day => day.userID === id)
     const weekSleep = userData.find(item => item.date === date)
     const index = userData.indexOf(weekSleep)
     const days = userData.slice(index, 7)
-    const hours = days.map(day => day.hoursSlept)
+    const hours = days.map(day => day[type])
     return hours
   }
 }

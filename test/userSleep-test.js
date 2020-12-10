@@ -43,13 +43,13 @@ describe('UserSleep', () => {
 
   it('should return hours slept by date for a week', () => {
 
-    expect(userSleep.getHoursByWeek(1, '2019/06/15')).to.deep.equal([6.1, 4.1, 8, 10.4, 10.7, 9.3, 7.8])
+    expect(userSleep.getDataByWeek(1, '2019/06/15', "hoursSlept")).to.deep.equal([6.1, 4.1, 8, 10.4, 10.7, 9.3, 7.8])
 
   })
 
-  it.skip('should return sleep quality by date for a week', () => {
+  it('should return sleep quality by date for a week', () => {
 
-    expect(userSleep.getHoursByWeek(1, '2019/06/15')).to.deep.equal([2.2, 3.8, 2.6, 3.1, 1.2, 1.2, 4.2])
+    expect(userSleep.getDataByWeek(1, '2019/06/15', "sleepQuality")).to.deep.equal([2.2, 3.8, 2.6, 3.1, 1.2, 1.2, 4.2])
 
   })
 
@@ -68,6 +68,6 @@ describe('UserSleep', () => {
   it.skip('should find who slept the most on a given day', () => {
 
     expect(userSleep.findTopSnoozer("2019/06/15")).to.deep.equal(3)
-    
+
   })
 })
