@@ -25,20 +25,20 @@ describe('UserSleep', () => {
         expect(userSleep.calculateAvgHoursPerDay(1)).to.equal(8)
     })
 
-    it.skip('should calculate average sleep quality over all days', () => {
+    it('should calculate average sleep quality over all days', () => {
         expect(userSleep.calculateAvgQualityPerDay(1)).to.equal(3)
     })
 
 
-    it.skip('should return amount of sleep by date', () => {
+    it('should return amount of sleep by date', () => {
         expect(userSleep.getHoursByDay('2019/06/15')).to.equal(6.1)
     })
 
-    it.skip('should get quality by date', () => {
+    it('should get quality by date', () => {
         expect(userSleep.getQualityByDay('2019/06/15')).to.equal(2.2)
     })
 
-    it.skip('should return hours slept by date for a week', () => {
+    it('should return hours slept by date for a week', () => {
         expect(userSleep.getHoursByWeek(1, '2019/06/15')).to.deep.equal([6.1, 4.1, 8, 10.4, 10.7, 9.3, 7.8])
     })
 
