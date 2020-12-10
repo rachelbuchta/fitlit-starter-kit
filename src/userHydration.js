@@ -26,9 +26,8 @@ class UserHydration {
       return item.numOunces
     })
     return week
-    console.log(week)
-
   }
+  
 }
 
 if (typeof module !== 'undefined') {

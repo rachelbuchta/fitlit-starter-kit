@@ -29,6 +29,7 @@ function displayGreeting() {
 }
 
 function displayUserStepGoal() {
+
   userStepGoal.innerText = currentUser.dailyStepGoal
 }
 
@@ -48,31 +49,11 @@ function displayDailyWaterIntake() {
 }
 
 function displayWeeklyWaterIntake() {
-  // console.log(userHydration.returnWeeklyConsumption(1))
-  // console.log(waterGridDisplay)
-  // let comeon = userHydration.returnWeeklyConsumption(5).forEach(item => {
-  //   console.log(item)
-  //    return item
-  //    })
 
-  // })
-// console.log(comeon)
-// console.log(waterParent)
-  // const numbers = userHydration.returnWeeklyConsumption(5)
-  // console.log(numbers)
-  const newArray = Array.from(waterGridDisplay)
-  console.log(Array.isArray(newArray))
-  const please = newArray.map(function(item, index) {
-    console.log(item)
-
-
-     return item.append(userHydration.returnWeeklyConsumption(3)[index])
-     // return item.append(comeon)
-     // console.log(waterGridDisplay)
+  const weekDisplay = Array.from(waterGridDisplay)
+  const populateWeeklyData = weekDisplay.map(function(item, index) {
+  return item.append(userHydration.returnWeeklyConsumption(1)[index])
 
    })
-   valueOf(section.water-box)
-  console.log(please)
-
 
 }
