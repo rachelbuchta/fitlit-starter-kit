@@ -9,14 +9,7 @@ const greeting = document.querySelector('h1')
 const othersStepGoal = document.querySelector('.all-users-step-goal')
 const dailyWater = document.querySelector('.water-ounces')
 const waterParent = document.querySelector('.parent-water')
-// const sundayWater = document.querySelector('#water-box7')
-// const mondayWater = document.querySelector('#water-box8')
-// const tuesdayWater = document.querySelector('#water-box9')
-// const wednesdayWater = document.querySelector('#water-box10')
-// const thursdayWater = document.querySelector('#water-box11')
-// const fridayWater = document.querySelector('#water-box12')
-// const saturdayWater = document.querySelector('#water-box13')
-const waterGridDisplay = document.querySelectorAll('.water-box')
+const waterGridDisplay = document.querySelectorAll('.water-grid-box')
 
 window.addEventListener('load', displayUserInfo)
 
@@ -57,10 +50,10 @@ function displayDailyWaterIntake() {
 function displayWeeklyWaterIntake() {
   // console.log(userHydration.returnWeeklyConsumption(1))
   // console.log(waterGridDisplay)
-  let comeon = userHydration.returnWeeklyConsumption(5).forEach(item => {
-    console.log(item)
-     return item
-     })
+  // let comeon = userHydration.returnWeeklyConsumption(5).forEach(item => {
+  //   console.log(item)
+  //    return item
+  //    })
 
   // })
 // console.log(comeon)
@@ -69,25 +62,17 @@ function displayWeeklyWaterIntake() {
   // console.log(numbers)
   const newArray = Array.from(waterGridDisplay)
   console.log(Array.isArray(newArray))
-  const please = newArray.map(item => {
+  const please = newArray.map(function(item, index) {
     console.log(item)
 
 
-     return item.append(userHydration.returnWeeklyConsumption(3))
+     return item.append(userHydration.returnWeeklyConsumption(3)[index])
      // return item.append(comeon)
      // console.log(waterGridDisplay)
 
    })
+   valueOf(section.water-box)
   console.log(please)
 
 
 }
-
-
-//   sundayWater.innerText = userHydration.returnWeeklyConsumption(1).Sunday
-//   mondayWater.innerText = userHydration.returnWeeklyConsumption(1).Monday
-//   tuesdayWater.innerText = userHydration.returnWeeklyConsumption(1).Tuesday
-//   wednesdayWater.innerText = userHydration.returnWeeklyConsumption(1).Wednesday
-//   thursdayWater.innerText = userHydration.returnWeeklyConsumption(1).Thursday
-//   fridayWater.innerText = userHydration.returnWeeklyConsumption(1).Friday
-//   saturdayWater.innerText = userHydration.returnWeeklyConsumption(1).Saturday
