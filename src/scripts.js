@@ -76,9 +76,12 @@ function displaySleepData() {
 function displayWeeklySleepData() {
 
   const hoursDisplay = Array.from(hoursGridDisplay)
-  console.log(hoursDisplay)
   const populateWeeklyHours = hoursDisplay.map(function(item,index) {
-    console.log(item.append(userSleep.getDataByWeek(1,'2019/06/15', 'hoursSlept')[index]))
-    // return item.append(userSleep.getDataByWeek(1,'2019/06/15', 'hoursSlept'))
+  return item.append(userSleep.getDataByWeek(1,'2019/06/15', 'hoursSlept')[index])
   })
+  const qualityDisplay = Array.from(qualityGridDisplay)
+  const populateWeeklyQuality = qualityDisplay.map(function(item,index) {
+  return item.append(userSleep.getDataByWeek(1,'2019/06/15', 'sleepQuality')[index])
+  })
+
 }
