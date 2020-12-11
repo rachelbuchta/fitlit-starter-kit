@@ -20,12 +20,12 @@ describe('UserSleep', () => {
 
   it('should calculate average amount of hours slept over all days', () => {
 
-    expect(userSleep.calculateAvgDataPerDay(1, 'hoursSlept')).to.equal(8)
+    expect(userSleep.calculateAvgDataPerDay(1, 'hoursSlept')).to.equal(8.1)
   })
 
   it('should calculate average sleep quality over all days', () => {
 
-    expect(userSleep.calculateAvgDataPerDay(1, 'sleepQuality')).to.equal(3)
+    expect(userSleep.calculateAvgDataPerDay(1, 'sleepQuality')).to.equal(2.6)
 
   })
 
@@ -53,19 +53,19 @@ describe('UserSleep', () => {
 
   })
 
-  it.skip('should calculate the average sleep qualuty for all users', () => {
+  it('should calculate the average sleep quality for all users', () => {
 
-    expect(userSleep.getOverallTotal()).to.equal(3.2)
-
-  })
-
-  it.skip('should find any user with an average above 3 for any given week, identiifed by date', () => {
-
-    expect(userSleep.findGoodSleepers()).to.deep.equal([2, 3])
+    expect(userSleep.getOverallAvgQuality()).to.equal(3.2)
 
   })
 
-  it.skip('should find who slept the most on a given day', () => {
+  it('should find any user with an average above 3 for any given week, identified by date', () => {
+
+    expect(userSleep.findGoodSleepers('2019/06/15')).to.deep.equal([2, 3])
+
+  })
+
+  it('should find who slept the most on a given day', () => {
 
     expect(userSleep.findTopSnoozer("2019/06/15")).to.deep.equal(3)
 

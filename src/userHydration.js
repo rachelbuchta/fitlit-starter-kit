@@ -27,7 +27,6 @@ class UserHydration {
     })
     return week
   }
-  
 }
 
 if (typeof module !== 'undefined') {
