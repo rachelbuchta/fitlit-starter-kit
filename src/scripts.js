@@ -10,6 +10,10 @@ const greeting = document.querySelector('h1')
 const othersStepGoal = document.querySelector('.all-users-step-goal')
 const dailyWater = document.querySelector('.water-ounces')
 const waterGridDisplay = document.querySelectorAll('.water-grid-box')
+const dailySleepHours = document.querySelector('.sleep-hour-count')
+const avgDailySleep = document.querySelector('.avg-sleep-hour-count')
+const dailySleepQuality = document.querySelector('.sleep-quality-count')
+const avgSleepQuality = document.querySelector('.avg-sleep-quality-count')
 
 window.addEventListener('load', displayUserInfo)
 
@@ -21,6 +25,7 @@ function displayUserInfo() {
   displayAllUsersStepGoal()
   displayDailyWaterIntake()
   displayWeeklyWaterIntake()
+  displaySleepData()
 }
 
 function displayGreeting() {
@@ -56,4 +61,9 @@ function displayWeeklyWaterIntake() {
 
    })
 
+}
+
+function displaySleepData() {
+  
+  dailySleepHours.innerText = userSleep.getDataByDay("2019/06/15", 'hoursSlept')
 }
