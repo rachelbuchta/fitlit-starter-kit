@@ -34,16 +34,8 @@ describe('UserHydration', () => {
 
   it('should return amount of ounces consumed in a week for each day', () => {
 
-    expect(userHydration.returnWeeklyConsumption(1)).to.deep.equal({
-      Sunday: 37,
-      Monday: 69,
-      Tuesday: 96,
-      Wednesday: 61,
-      Thursday: 91,
-      Friday: 50,
-      Saturday: 50
-    })
-    
+    expect(userHydration.returnWeeklyConsumption(1)).to.deep.equal([37, 69, 96, 61, 91, 50, 50])
+
   })
 
 })
