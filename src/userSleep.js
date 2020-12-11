@@ -36,19 +36,27 @@ class UserSleep {
     return parseFloat(averageQuality)
   }
 
-  findGoodSleepers(date) {
-    const foundDate = this.data.find(item => item.date === date)
-    console.log(foundDate)
-    const filterAllUsersByDate = this.data.filter(day => day.date === date)
-    console.log(filterAllUsersByDate)
-    const index = this.data.indexOf(foundDate)
-    // console.log(index)
-
-    // console.log(index)
-    // console.log(this.data)
-    const week = this.data.slice(index, foundDate.length)
-    // console.log("WWEEKK",week)
-  }
+  // findGoodSleepers(date) {
+  //   const foundDate = this.data.find(item => item.date === date)
+  //   // console.log(foundDate)
+  //   const getFirstUser = foundDate.userID
+  //   const filterWithID = this.data.filter(item => item.date === date)
+  //   console.log("USERID:",filterWithID)
+  //   // console.log("HELLO",getFirstUser)
+  //   const index = this.data.indexOf(foundDate)
+  //   console.log(index)
+  //   const filterAllUsersByDate = this.data.filter(day => day.date === date)
+  //   console.log(filterAllUsersByDate)
+  //   const index2 = filterAllUsersByDate.indexOf(foundDate)
+  //   console.log(index2)
+  //   // const findWeek = filterWithID.filter(item => item.date ==)
+  //   // get this first day and then the next 6 days
+  //   // console.log(index)
+  //   // console.log(index)
+  //   // console.log(this.data)
+  //   const week = this.data.slice(index, foundDate.length)
+  //   // console.log("WWEEKK",week)
+  // }
 
   findTopSnoozer(date) {
     const findDay = this.data.filter(day => day.date === date)
@@ -56,7 +64,8 @@ class UserSleep {
   }
 }
 
-
+// input: array of day objects
+//output: array of user id's
 // find the date where the week starts
 // filter every user who has data for that date
 //

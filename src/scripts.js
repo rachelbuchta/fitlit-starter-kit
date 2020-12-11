@@ -14,6 +14,8 @@ const dailySleepHours = document.querySelector('.sleep-hour-count')
 const avgDailySleep = document.querySelector('.avg-sleep-hour-count')
 const dailySleepQuality = document.querySelector('.sleep-quality-count')
 const avgSleepQuality = document.querySelector('.avg-sleep-quality-count')
+const hoursGridDisplay = document.querySelectorAll('.hours-grid-box')
+const qualityGridDisplay = document.querySelectorAll('.quality-grid-box')
 
 window.addEventListener('load', displayUserInfo)
 
@@ -26,6 +28,8 @@ function displayUserInfo() {
   displayDailyWaterIntake()
   displayWeeklyWaterIntake()
   displaySleepData()
+  displayWeeklySleepData()
+  // userSleep.findGoodSleepers('2019/06/18')
 }
 
 function displayGreeting() {
@@ -50,7 +54,7 @@ function displayAllUsersStepGoal() {
 
 function displayDailyWaterIntake() {
 
-  dailyWater.innerHTML = `${userHydration.returnDailyConsumption("2019/06/15")} OZs.`
+  dailyWater.innerHTML = `${userHydration.returnDailyConsumption('2019/06/15')} OZs.`
 }
 
 function displayWeeklyWaterIntake() {
@@ -58,12 +62,23 @@ function displayWeeklyWaterIntake() {
   const weekDisplay = Array.from(waterGridDisplay)
   const populateWeeklyData = weekDisplay.map(function(item, index) {
   return item.append(userHydration.returnWeeklyConsumption(1)[index])
-
    })
-
 }
 
 function displaySleepData() {
-  
-  dailySleepHours.innerText = userSleep.getDataByDay("2019/06/15", 'hoursSlept')
+
+  dailySleepHours.innerText = userSleep.getDataByDay('2019/06/15', 'hoursSlept')
+  dailySleepQuality.innerText = userSleep.getDataByDay('2019/06/15', 'sleepQuality')
+  avgDailySleep.innerText = userSleep.calculateAvgDataPerDay(1, 'hoursSlept')
+  avgSleepQuality.innerText = userSleep.calculateAvgDataPerDay(1, 'sleepQuality')
+}
+
+function displayWeeklySleepData() {
+
+  const hoursDisplay = Array.from(hoursGridDisplay)
+  console.log(hoursDisplay)
+  const populateWeeklyHours = hoursDisplay.map(function(item,index) {
+    console.log(item.append(userSleep.getDataByWeek(1,'2019/06/15', 'hoursSlept')[index]))
+    // return item.append(userSleep.getDataByWeek(1,'2019/06/15', 'hoursSlept'))
+  })
 }
