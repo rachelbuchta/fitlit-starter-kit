@@ -41,7 +41,6 @@ class UserSleep {
     console.log(foundDate)
     const filterAllUsersByDate = this.data.filter(day => day.date === date)
     console.log(filterAllUsersByDate)
-    const
     const index = this.data.indexOf(foundDate)
     // console.log(index)
 
@@ -60,7 +59,7 @@ class UserSleep {
 
 // find the date where the week starts
 // filter every user who has data for that date
-// 
+//
 
 if (typeof module !== 'undefined') {
   module.exports = UserSleep

@@ -1,6 +1,7 @@
 const userRepo = new UserRepo(userData)
 let currentUser = new User(userRepo.getUserData(1))
 let userHydration = new UserHydration(hydrationData)
+let userSleep = new UserSleep(sleepData)
 
 
 const userStepGoal = document.querySelector('.user-step-goal')
@@ -8,7 +9,6 @@ const userStrideLength = document.querySelector('.user-stride-length')
 const greeting = document.querySelector('h1')
 const othersStepGoal = document.querySelector('.all-users-step-goal')
 const dailyWater = document.querySelector('.water-ounces')
-const waterParent = document.querySelector('.parent-water')
 const waterGridDisplay = document.querySelectorAll('.water-grid-box')
 
 window.addEventListener('load', displayUserInfo)
