@@ -76,6 +76,18 @@ class UserActivity {
         console.log(daysExceeded);
         return daysExceeded
     }
+    findStairRecord(id) {
+        const userDays = this.activityData.filter(day => day.userID === id)
+
+        const topDay = userDays
+            .map(day => day.flightsOfStairs)
+            .sort((a, b) => {
+                return b - a
+            }).shift()
+
+        return topDay
+            // const topDay = Math.max(...topDays)
+    }
 }
 
 if (typeof module !== 'undefined') {

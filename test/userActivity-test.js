@@ -68,7 +68,7 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should return a users all time stair climbing record', () => {
+    it('should return a users all time stair climbing record', () => {
 
         expect(userActivity.findStairRecord(1)).to.equal(36)
 
