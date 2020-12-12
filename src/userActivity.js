@@ -23,12 +23,20 @@ class UserActivity {
         return parseFloat(milesWalked)
     }
     returnNumberOfSteps(id, date) {
-        const userDays = this.data
+        const stepCount = this.data
             .filter(day => day.userID === id)
             .find(userDay => userDay.date === date)
             .numSteps
-        console.log(userDays);
-        return userDays
+
+        return stepCount
+    }
+    returnMinutesActive(id, date) {
+        const minCount = this.data
+            .filter(day => day.userID === id)
+            .find(userDay => userDay.date === date)
+            .minutesActive
+        console.log(minCount);
+        return minCount
     }
 }
 

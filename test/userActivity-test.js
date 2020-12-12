@@ -40,7 +40,7 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should return how many minutes active a user was for a given day', () => {
+    it('should return how many minutes active a user was for a given day', () => {
 
         expect(userActivity.returnMinutesActive(1, "2019/06/15")).to.equal(140)
 
