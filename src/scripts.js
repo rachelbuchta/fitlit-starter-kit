@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const userRepo = new UserRepo(userData)
 let currentUser = new User(userRepo.getUserData(1))
 let userHydration = new UserHydration(hydrationData)
@@ -60,9 +61,9 @@ function displayDailyWaterIntake() {
 function displayWeeklyWaterIntake() {
 
   const weekDisplay = Array.from(waterGridDisplay)
-  const populateWeeklyData = weekDisplay.map(function(item, index) {
-  return item.append(userHydration.returnWeeklyConsumption(1)[index])
-   })
+  return weekDisplay.map(function(item, index) {
+    item.append(userHydration.returnWeeklyConsumption(1)[index])
+  })
 }
 
 function displaySleepData() {
@@ -76,12 +77,12 @@ function displaySleepData() {
 function displayWeeklySleepData() {
 
   const hoursDisplay = Array.from(hoursGridDisplay)
-  const populateWeeklyHours = hoursDisplay.map(function(item,index) {
-  return item.append(userSleep.getDataByWeek(1,'2019/06/15', 'hoursSlept')[index])
+  const populateWeeklyHours = hoursDisplay.map(function(item, index) {
+    return item.append(userSleep.getDataByWeek(1, '2019/06/15', 'hoursSlept')[index])
   })
   const qualityDisplay = Array.from(qualityGridDisplay)
-  const populateWeeklyQuality = qualityDisplay.map(function(item,index) {
-  return item.append(userSleep.getDataByWeek(1,'2019/06/15', 'sleepQuality')[index])
+  const populateWeeklyQuality = qualityDisplay.map(function(item, index) {
+    return item.append(userSleep.getDataByWeek(1, '2019/06/15', 'sleepQuality')[index])
   })
 
 }

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 class UserHydration {
   constructor(data) {
     this.data = data
@@ -7,7 +8,7 @@ class UserHydration {
   }
 
   avgOuncesConsumed(id) {
-    const userWeek = this.data.filter(day => day.userID == id)
+    const userWeek = this.data.filter(day => day.userID === id)
     const totalOunces = userWeek.reduce((acc, day) => {
       acc += day.numOunces
       return acc
@@ -21,7 +22,7 @@ class UserHydration {
   }
 
   returnWeeklyConsumption(id) {
-    const currentUser = this.data.filter(day => day.userID == id)
+    const currentUser = this.data.filter(day => day.userID === id)
     const week = currentUser.slice(0, 7).map(item => {
       return item.numOunces
     })

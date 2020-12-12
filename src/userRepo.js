@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 class UserRepo {
   constructor(data) {
     this.data = data
