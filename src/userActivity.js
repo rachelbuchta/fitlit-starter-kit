@@ -22,6 +22,14 @@ class UserActivity {
         const milesWalked = ((strideLength * numberOfSteps) / 5280).toFixed(1)
         return parseFloat(milesWalked)
     }
+    returnNumberOfSteps(id, date) {
+        const userDays = this.data
+            .filter(day => day.userID === id)
+            .find(userDay => userDay.date === date)
+            .numSteps
+        console.log(userDays);
+        return userDays
+    }
 }
 
 if (typeof module !== 'undefined') {

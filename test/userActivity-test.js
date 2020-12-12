@@ -24,7 +24,7 @@ describe('UserActivity', () => {
 
     })
 
-    it.only('should calculate the amount of miles a user has walked by a given day', () => {
+    it('should calculate the amount of miles a user has walked by a given day', () => {
 
 
         userActivity.findCurrentUser(1)
@@ -34,7 +34,7 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should return the number of steps taken on a given day', () => {
+    it('should return the number of steps taken on a given day', () => {
 
         expect(userActivity.returnNumberOfSteps(1, "2019/06/15")).to.equal(3577)
 
