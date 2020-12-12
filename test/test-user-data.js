@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const userTestData = [{
   "id": 1,
   "name": "Luisa Hane",

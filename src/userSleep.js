@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 class UserSleep {
   constructor(data) {
     this.data = data
@@ -60,7 +61,7 @@ class UserSleep {
 
   findTopSnoozer(date) {
     const findDay = this.data.filter(day => day.date === date)
-    return findDay.sort((a,b) => b.hoursSlept - a.hoursSlept).unshift()
+    return findDay.sort((a, b) => b.hoursSlept - a.hoursSlept).unshift()
   }
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 class User {
   constructor(userData) {
     this.id = userData.id
@@ -14,6 +15,6 @@ class User {
   }
 }
 
-if(typeof module !== 'undefined') {
+if (typeof module !== 'undefined') {
   module.exports = User
 }

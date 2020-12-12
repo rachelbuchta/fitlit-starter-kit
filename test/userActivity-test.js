@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const chai = require('chai')
 const expect = chai.expect
 
@@ -16,7 +17,8 @@ describe('UserActivity', () => {
 
   })
 
-  it('should be an instance of UserActivity', () => {
+  it.only('should be an instance of UserActivity', () => {
+    console.log(userRepo.getUserData(1))
 
     expect(userActivity).to.be.an.instanceof(UserActivity)
 
@@ -51,17 +53,17 @@ describe('UserActivity', () => {
 
   it('should return true if a user exceeded their step goal for a given date', () => {
 
-      userRepo.getUserData(1)
+    userRepo.getUserData(1)
 
-      expect(userActivity.exceedStepGoalCheck(1, "2019/06/15")).to.equal(false)
+    expect(userActivity.exceedStepGoalCheck(1, "2019/06/15")).to.equal(false)
 
   })
 
   it('should return all days where a user has exceeded their step goal', () => {
 
-      userRepo.getUserData(1)
+    userRepo.getUserData(1)
 
-    expect(userActivity.getExceededStepDays(1)).to.deep.equal(["2019/06/17","2019/06/20"])
+    expect(userActivity.getExceededStepDays(1)).to.deep.equal(["2019/06/17", "2019/06/20"])
 
   })
 
