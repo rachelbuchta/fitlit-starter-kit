@@ -46,17 +46,17 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should calculate average minutes active for a given week by date and ID', () => {
+    it('should calculate average minutes active for a given week by date and ID', () => {
 
         expect(userActivity.calculateAvgMinByWeek(1, "2019/06/15")).to.equal(171)
 
     })
 
-    it.skip('should return true if a user exceeded their step goal for a given date', () => {
+    it('should return true if a user exceeded their step goal for a given date', () => {
 
-        userRepo.getUserData(1)
+        userActivity.findCurrentUser(1)
 
-        expect(userActivity.exceedStepGoalCheck(1, "2019/06/15")).to.equal(false)
+        expect(userActivity.exceedStepGoalCheck("2019/06/15")).to.equal(false)
 
     })
 
