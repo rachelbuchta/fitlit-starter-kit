@@ -93,9 +93,17 @@ class UserActivity {
             acc += user.numSteps
             return acc
         }, 0)
-
-        console.log(avgSteps / dayOfUsers.length);
         return avgSteps / dayOfUsers.length
+    }
+    getDataByWeek(id, date, type) {
+        const userData = this.activityData.filter(day => day.userID === id)
+        const weekSleep = userData.find(item => item.date === date)
+        const index = userData.indexOf(weekSleep)
+        const days = userData.slice(index, 7)
+        const minsActive = days.map(day => day[type])
+
+        return minsActive
+
     }
 }
 

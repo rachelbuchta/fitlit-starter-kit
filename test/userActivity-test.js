@@ -80,7 +80,7 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should calculate average stairs climbed by all users for a given date', () => {
+    it('should calculate average stairs climbed by all users for a given date', () => {
 
         expect(userActivity.calculateAvgStairsClimbed("2019/06/15")).to.equal(20)
 
@@ -92,19 +92,19 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should return minutes active each day for a week by date', () => {
+    it('should return minutes active each day for a week by date', () => {
 
-        expect(userActivity.getDataByWeek(1, '2019/06/15', "sleepQuality")).to.deep.equal([140, 175, 168, 165, 275, 140, 135])
+        expect(userActivity.getDataByWeek(1, '2019/06/15', "minutesActive")).to.deep.equal([140, 175, 168, 165, 275, 140, 135])
     })
 
-    it.skip('should return number of steps each day for a week by date', () => {
+    it('should return number of steps each day for a week by date', () => {
 
-        expect(userActivity.getDataByWeek(1, '2019/06/15', "sleepQuality")).to.deep.equal([3577, 6637, 14329, 4419, 8429, 14478, 6760])
+        expect(userActivity.getDataByWeek(1, '2019/06/15', 'numSteps')).to.deep.equal([3577, 6637, 14329, 4419, 8429, 14478, 6760])
     })
 
-    it.skip('should return number of miles active each day for a week by date', () => {
+    it('should return number of stairs climbed each day for a week by date', () => {
 
-        expect(userActivity.getDataByWeek(1, '2019/06/15', "sleepQuality")).to.deep.equal([])
+        expect(userActivity.getDataByWeek(1, '2019/06/15', 'flightsOfStairs')).to.deep.equal([16, 36, 18, 33, 2, 12, 6])
     })
 
 })
