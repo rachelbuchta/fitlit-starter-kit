@@ -60,9 +60,9 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should return all days where a user has exceeded their step goal', () => {
+    it('should return all days where a user has exceeded their step goal', () => {
 
-        userRepo.getUserData(1)
+        userActivity.findCurrentUser(1)
 
         expect(userActivity.getExceededStepDays(1)).to.deep.equal(["2019/06/17", "2019/06/20"])
 

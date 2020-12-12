@@ -55,13 +55,26 @@ class UserActivity {
     exceedStepGoalCheck(date) {
         const stepGoal = this.currentUser.dailyStepGoal
         const stepsTaken = this.activityData.find(day => day.date === date).numSteps
-            // console.log(stepGoal);
+
         if (stepsTaken > stepGoal) {
             return true
         } else {
             return false
         }
-        console.log(stepsTaken.numSteps);
+
+    }
+    getExceededStepDays(id) {
+        const stepGoal = this.currentUser.dailyStepGoal
+        const userDays = this.activityData.filter(day => day.userID === id)
+        const daysExceeded = userDays.reduce((acc, day) => {
+            if (day.numSteps > stepGoal) {
+                acc.push(day.date)
+
+            }
+            return acc
+        }, [])
+        console.log(daysExceeded);
+        return daysExceeded
     }
 }
 
