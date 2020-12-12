@@ -95,6 +95,14 @@ class UserActivity {
         }, 0)
         return avgSteps / dayOfUsers.length
     }
+    calculateAvgStairsClimbed(date) {
+        const dayOfUsers = this.activityData.filter(day => day.date === date)
+        const avgFlights = dayOfUsers.reduce((acc, user) => {
+            acc += user.flightsOfStairs
+            return acc
+        }, 0)
+        return Math.round(avgFlights / dayOfUsers.length)
+    }
     getDataByWeek(id, date, type) {
         const userData = this.activityData.filter(day => day.userID === id)
         const weekSleep = userData.find(item => item.date === date)
