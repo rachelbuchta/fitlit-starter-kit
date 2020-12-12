@@ -73,7 +73,6 @@ class UserActivity {
             }
             return acc
         }, [])
-        console.log(daysExceeded);
         return daysExceeded
     }
     findStairRecord(id) {
@@ -87,6 +86,16 @@ class UserActivity {
 
         return topDay
             // const topDay = Math.max(...topDays)
+    }
+    calculateAvgTotalSteps(date) {
+        const dayOfUsers = this.activityData.filter(day => day.date === date)
+        const avgSteps = dayOfUsers.reduce((acc, user) => {
+            acc += user.numSteps
+            return acc
+        }, 0)
+
+        console.log(avgSteps / dayOfUsers.length);
+        return avgSteps / dayOfUsers.length
     }
 }
 

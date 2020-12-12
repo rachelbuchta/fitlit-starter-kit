@@ -74,7 +74,7 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should calculate average number of steps taken for all users on a given date', () => {
+    it('should calculate average number of steps taken for all users on a given date', () => {
 
         expect(userActivity.calculateAvgTotalSteps("2019/06/15")).to.equal(5091)
 
