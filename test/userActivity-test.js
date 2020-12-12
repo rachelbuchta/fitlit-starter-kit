@@ -86,7 +86,7 @@ describe('UserActivity', () => {
 
     })
 
-    it.skip('should calculate average number of minutes active between all users for a given date', () => {
+    it('should calculate average number of minutes active between all users for a given date', () => {
 
         expect(userActivity.calculateAvgMinActive("2019/06/15")).to.equal(131)
 

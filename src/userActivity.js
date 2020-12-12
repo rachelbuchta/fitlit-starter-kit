@@ -103,6 +103,14 @@ class UserActivity {
         }, 0)
         return Math.round(avgFlights / dayOfUsers.length)
     }
+    calculateAvgMinActive(date) {
+        const dayOfUsers = this.activityData.filter(day => day.date === date)
+        const avgMins = dayOfUsers.reduce((acc, user) => {
+            acc += user.minutesActive
+            return acc
+        }, 0)
+        return Math.round(avgMins / dayOfUsers.length)
+    }
     getDataByWeek(id, date, type) {
         const userData = this.activityData.filter(day => day.userID === id)
         const weekSleep = userData.find(item => item.date === date)
