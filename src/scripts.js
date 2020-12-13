@@ -1,11 +1,13 @@
 // const UserActivity = require("./userActivity")
 
+// const UserActivity = require("./userActivity")
+
 /* eslint-disable max-len */
 const userRepo = new UserRepo(userData)
 
 let userHydration = new UserHydration(hydrationData)
 let userSleep = new UserSleep(sleepData)
-let userActivityONe = new UserActivity(activityData)
+let userActivity = new UserActivity(activityData)
 let currentUser = new User(userRepo.getUserData(1))
 
 
@@ -45,6 +47,7 @@ function displayUserInfo() {
     displayWeeklyWaterIntake()
     displaySleepData()
     displayWeeklySleepData()
+    displayActivityData()
         // userSleep.findGoodSleepers('2019/06/18')
 }
 
@@ -100,4 +103,8 @@ function displayWeeklySleepData() {
         return item.append(userSleep.getDataByWeek(1, '2019/06/15', 'sleepQuality')[index])
     })
 
+}
+
+function displayActivityData() {
+    stepCounter.innerText = userActivity.returnNumberOfSteps(1, '2019/06/15')
 }
