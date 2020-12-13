@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 
 
-let userTestData = require('../test/test-user-data')
-let UserRepo = require('../src/userRepo')
-let userRepo = new UserRepo(userTestData)
+// let userTestData = require('../test/test-user-data')
+// let UserRepo = require('../src/userRepo')
+// let userRepo = new UserRepo(userTestData)
 
 class UserActivity {
     constructor(activityData) {

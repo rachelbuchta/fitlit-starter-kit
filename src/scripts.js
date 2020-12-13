@@ -97,9 +97,9 @@ function displaySleepData() {
 }
 
 function displayActivityData() {
-    stepCounter.innerText = `${userActivity.returnNumberOfSteps(currentUser.id, '2019/06/15')} Steps`
-    minuteCounter.innerText = `${userActivity.returnMinutesActive(currentUser.id, '2019/06/15')} Minutes`
-    flightCounter.innerText = `${userActivity.returnFlightsClimbed(currentUser.id, '2019/06/15')} Flights of Stairs`
+    stepCounter.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15','numSteps')} Steps`
+    minuteCounter.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15','minutesActive')} Minutes`
+    flightCounter.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15','flightsOfStairs')} Flights of Stairs`
 }
 
 function displayComparisons() {
