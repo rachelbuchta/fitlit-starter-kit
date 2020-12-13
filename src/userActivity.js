@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 
-const UserRepo = require('./userRepo')
-const userTestData = require('../test/test-user-data')
-let userRepo = new UserRepo(userTestData)
+// const UserRepo = require('./userRepo')
+// const userTestData = require('../test/test-user-data')
+// let testUserRepo = new UserRepo(userTestData)
 
 class UserActivity {
     constructor(activityData) {
@@ -12,7 +12,7 @@ class UserActivity {
     }
 
     findCurrentUser(id) {
-        this.currentUser = userRepo.getUserData(id)
+        this.currentUser = testUserRepo.getUserData(id)
     }
 
     calculateMilesWalked(date) {
@@ -117,7 +117,6 @@ class UserActivity {
         const index = userData.indexOf(weekSleep)
         const days = userData.slice(index, 7)
         const minsActive = days.map(day => day[type])
-
         return minsActive
 
     }
