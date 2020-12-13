@@ -24,8 +24,9 @@ const avgSleepQuality = document.querySelector('.avg-sleep-quality-count')
 const hoursGridDisplay = document.querySelectorAll('.hours-grid-box')
 const qualityGridDisplay = document.querySelectorAll('.quality-grid-box')
 const stepCounter = document.querySelector('.step-counter')
-const inuteCounter = document.querySelector('.minute-counter')
+const minuteCounter = document.querySelector('.minute-counter')
 const mileCounter = document.querySelector('.mile-counter')
+const flightCounter = document.querySelector('.flight-counter')
 const stepsGridDisplay = document.querySelectorAll('.step-grid-box')
 const minutesGridDisplay = document.querySelectorAll('.minutes-grid-box')
 const flightsGridBox = document.querySelectorAll('.minutes-grid-box')
@@ -48,6 +49,7 @@ function displayUserInfo() {
     displaySleepData()
     displayWeeklySleepData()
     displayActivityData()
+    displayComparisons()
         // userSleep.findGoodSleepers('2019/06/18')
 }
 
@@ -107,4 +109,12 @@ function displayWeeklySleepData() {
 
 function displayActivityData() {
     stepCounter.innerText = userActivity.returnNumberOfSteps(1, '2019/06/15')
+    minuteCounter.innerText = userActivity.returnMinutesActive(1, '2019/06/15')
+    flightCounter.innerText = userActivity.returnFlightsClimbed(1, '2019/06/15')
+}
+
+function displayComparisons() {
+    stepsComparison.innerText = `Others's Average: ${userActivity.calculateAvgTotalSteps('2019/06/15')}`
+    minutesComparison.innerText = `Other's Average: ${userActivity.calculateAvgMinActive('2019/06/15')}`
+    flightsComparison.innerText = `Other's Average: ${userActivity.calculateAvgStairsClimbed('2019/06/15')}`
 }

@@ -38,6 +38,15 @@ class UserActivity {
 
         return minCount
     }
+    returnFlightsClimbed(id, date) {
+        const flightCount = this.activityData
+            .filter(day => day.userID === id)
+            .find(userDay => userDay.date === date)
+            .flightsOfStairs
+        console.log(flightCount);
+        return flightCount
+            // write test for me!!
+    }
     calculateAvgMinByWeek(id, date) {
         const userDays = this.activityData
             .filter(day => day.userID === id)
