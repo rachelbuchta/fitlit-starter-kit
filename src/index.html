@@ -1,179 +1,183 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <title>Activity Tracker</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Activity Tracker</title>
 </head>
+
 <body>
-  <main>
-    <section class='greeting'>
-      <h1></h1>
-    </section>
-    <article class='user-info-card'>
-      <section class='user-step-goal-box'>
-        <h2>Your Daily Step Goal</h2>
-        <p class='user-step-goal'></p>
-        <h2>Your Stride Length</h2>
-        <p class='user-stride-length'></p>
-      </section>
-      <section class='all-users-step-goal-box'>
-        <h2>Others Daily Step Goal</h2>
-        <p class='all-users-step-goal'></p>
-      </section>
-    </article>
-    <article class='activity-box'>
-      <img src='../images/running.svg' alt='Running Legs'>
-      <section class='daily-activities'>
-        <div class='activity-card' id='step-card'>
-          <h3>Number of Steps</h3>
-          <p class='step-counter'>10,000 steps</p>
-          <p class='step-comparison'>That is X more steps than the average! </p>
-        </div>
-        <div class='activity-card' id='minutes-card'>
-          <h3>Minutes Active</h3>
-          <p class='minute-counter'>45 mins</p>
-          <p class='minute-comparison'>That is X more minutes than the average! </p>
-        </div>
-        <div class='activity-card' id='miles-card'>
-          <h3>Miles Walked</h3>
-          <p class='mile-counter'>10 mi.</p>
-          <p class='mile-comparison'>That is X more miles than the average! </p>
-        </div>
-      </section>
-      <h3 class='week-grid-label'>Your Week</h3>
-      <section class='weekly-activities'>
-        <div class='activity-grid'>
-          <div class="box" id="box0"></div>
-          <div class="box" id="box1">S</div>
-          <div class="box" id="box2">M</div>
-          <div class="box" id="box3">T</div>
-          <div class="box" id="box4">W</div>
-          <div class="box" id="box5">T</div>
-          <div class="box" id="box6">F</div>
-          <div class="box" id="box7">S</div>
-          <div class="steps-grid-box" id="box8">Steps</div>
-          <div class="steps-grid-box" id="box9"></div>
-          <div class="steps-grid-box" id="box10"></div>
-          <div class="steps-grid-box" id="box11"></div>
-          <div class="steps-grid-box" id="box12"></div>
-          <div class="steps-grid-box" id="box13"></div>
-          <div class="steps-grid-box" id="box14"></div>
-          <div class="steps-grid-box" id="box15"></div>
-          <div class="box" id="box16">Minutes</div>
-          <div class="minutes-grid-box" id="box17"></div>
-          <div class="minutes-grid-box" id="box18"></div>
-          <div class="minutes-grid-box" id="box19"></div>
-          <div class="minutes-grid-box" id="box20"></div>
-          <div class="minutes-grid-box" id="box21"></div>
-          <div class="minutes-grid-box" id="box22"></div>
-          <div class="minutes-grid-box" id="box23"></div>
-          <div class="box" id="box24">Miles</div>
-          <div class="miles-grid-box" id="box25"></div>
-          <div class="miles-grid-box" id="box26"></div>
-          <div class="miles-grid-box" id="box27"></div>
-          <div class="miles-grid-box" id="box28"></div>
-          <div class="miles-grid-box" id="box29"></div>
-          <div class="miles-grid-box" id="box30"></div>
-          <div class="miles-grid-box" id="box31"></div>
-        </div>
-      </section>
-    </article>
-    <article class='sleep-hydration-box'>
-      <section class='water-box'>
-        <img src='../images/glass-of-water-water.svg' alt='Water Glass'>
-        <div class='water-wrapper'>
-          <div class='daily-water'>
-            <h4>Today's Fill</h4>
-            <p class='water-ounces'>3 oz.</p>
-          </div>
-          <div class='weekly-water'>
-            <h4 class='water-intake'>Weekly Water In OZs</h4>
-            <div class='water-grid'>
-              <div class="box" id="water-box0">S</div>
-              <div class="box" id="water-box1">M</div>
-              <div class="box" id="water-box2">T</div>
-              <div class="box" id="water-box3">W</div>
-              <div class="box" id="water-box4">T</div>
-              <div class="box" id="water-box5">F</div>
-              <div class="box" id="water-box6">S</div>
-              <div class="water-grid-box" id="water-box7"></div>
-              <div class="water-grid-box" id="water-box8"></div>
-              <div class="water-grid-box" id="water-box9"></div>
-              <div class="water-grid-box" id="water-box10"></div>
-              <div class="water-grid-box" id="water-box11"></div>
-              <div class="water-grid-box" id="water-box12"></div>
-              <div class="water-grid-box" id="water-box13"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class='sleep-box'>
-        <img src='../images/bed.svg' alt='Bed And Moon'>
-        <div class='sleep-wrapper'>
-          <div class='daily-sleep'>
-            <div class='sleep-hours-heading'>
-              <h4 class='sleep-hours'>Hours</h4>
-              <p class='sleep-hour-count'></p>
-            </div>
-            <div class='user-sleep-values'>
-              <h4 class='sleep-quality'>Quality</h4>
-              <p class='sleep-quality-count'></p>
-            </div>
-          </div>
-          <div class='average-daily-sleep'>
-            <div class='average-sleep-hours'>
-              <h6>Average Hours</h6>
-              <p class='avg-sleep-hour-count'></p>
-            </div>
-            <div class='avg-sleep-quality'>
-              <h6>Average Quality</h6>
-              <p class='avg-sleep-quality-count'></p>
-            </div>
-          </div>
-        </div>
-        <div class='weekly-sleep'>
-          <h4>Weekly Sleep</h4>
-          <div class='sleep-grid'>
-            <div class="box" id="sleep-box0"></div>
-            <div class="box" id="sleep-box1">S</div>
-            <div class="box" id="sleep-box2">M</div>
-            <div class="box" id="sleep-box3">T</div>
-            <div class="box" id="sleep-box4">W</div>
-            <div class="box" id="sleep-box5">T</div>
-            <div class="box" id="sleep-box6">F</div>
-            <div class="box" id="sleep-box7">S</div>
-            <div class="box" id="sleep-box8">H</div>
-            <div class="hours-grid-box" id="sleep-box9"></div>
-            <div class="hours-grid-box" id="sleep-box10"></div>
-            <div class="hours-grid-box" id="sleep-box11"></div>
-            <div class="hours-grid-box" id="sleep-box12"></div>
-            <div class="hours-grid-box" id="sleep-box13"></div>
-            <div class="hours-grid-box" id="sleep-box14"></div>
-            <div class="hours-grid-box" id="sleep-box15"></div>
-            <div class="box" id="sleep-box16">Q</div>
-            <div class="quality-grid-box" id="sleep-box17"></div>
-            <div class="quality-grid-box" id="sleep-box18"></div>
-            <div class="quality-grid-box" id="sleep-box19"></div>
-            <div class="quality-grid-box" id="sleep-box20"></div>
-            <div class="quality-grid-box" id="sleep-box21"></div>
-            <div class="quality-grid-box" id="sleep-box22"></div>
-            <div class="quality-grid-box" id="sleep-box23"></div>
-          </div>
-        </div>
-      </section>
-    </article>
-  </main>
-  <script type="text/javascript" src="../data/users.js"></script>
-  <script type="text/javascript" src="../data/hydration.js"></script>
-  <script type="text/javascript" src="../data/sleep.js"></script>
-  <script type="text/javascript" src="../data/activity.js"></script>
-  <script type="text/javascript" src="../src/userSleep.js"></script>
-  <script type="text/javascript" src="../src/userHydration.js"></script>
-  <script type="text/javascript" src="../src/userActivity.js"></script>
-  <script type="text/javascript" src="../src/userRepo.js"></script>
-  <script type="text/javascript" src="../src/user.js"></script>
-  <script type="text/javascript" src="./scripts.js"></script>
+    <main>
+        <section class='greeting'>
+            <h1></h1>
+        </section>
+        <article class='user-info-card'>
+            <section class='user-step-goal-box'>
+                <h2>Your Daily Step Goal</h2>
+                <p class='user-step-goal'></p>
+                <h2>Your Stride Length</h2>
+                <p class='user-stride-length'></p>
+            </section>
+            <section class='all-users-step-goal-box'>
+                <h2>Others Daily Step Goal</h2>
+                <p class='all-users-step-goal'></p>
+            </section>
+        </article>
+        <article class='activity-box'>
+            <img src='../images/running.svg' alt='Running Legs'>
+            <section class='daily-activities'>
+                <div class='activity-card' id='step-card'>
+                    <h3>Today's Step</h3>
+                    <p class='step-counter'>10,000 steps</p>
+                    <!-- put in miles display -->
+                    <p class='step-comparison'>That is X more steps than the average! </p>
+                </div>
+                <div class='activity-card' id='minutes-card'>
+                    <h3>Minutes Active</h3>
+                    <p class='minute-counter'>45 mins</p>
+                    <p class='minute-comparison'>That is X more minutes than the average! </p>
+                </div>
+                <div class='activity-card' id='miles-card'>
+                    <h3>Flights Climbed</h3>
+                    <p class='flight-counter'>10 mi.</p>
+                    <p class='flight-comparison'>That is X more flights than the average! </p>
+                </div>
+            </section>
+            <h3 class='week-grid-label'>Your Week</h3>
+            <section class='weekly-activities'>
+                <div class='activity-grid'>
+                    <div class="box" id="box0"></div>
+                    <div class="box" id="box1">S</div>
+                    <div class="box" id="box2">M</div>
+                    <div class="box" id="box3">T</div>
+                    <div class="box" id="box4">W</div>
+                    <div class="box" id="box5">T</div>
+                    <div class="box" id="box6">F</div>
+                    <div class="box" id="box7">S</div>
+                    <div class="box" id="box8">Steps</div>
+                    <div class="steps-grid-box" id="box9"></div>
+                    <div class="steps-grid-box" id="box10"></div>
+                    <div class="steps-grid-box" id="box11"></div>
+                    <div class="steps-grid-box" id="box12"></div>
+                    <div class="steps-grid-box" id="box13"></div>
+                    <div class="steps-grid-box" id="box14"></div>
+                    <div class="steps-grid-box" id="box15"></div>
+                    <div class="box" id="box16">Minutes</div>
+                    <div class="minutes-grid-box" id="box17"></div>
+                    <div class="minutes-grid-box" id="box18"></div>
+                    <div class="minutes-grid-box" id="box19"></div>
+                    <div class="minutes-grid-box" id="box20"></div>
+                    <div class="minutes-grid-box" id="box21"></div>
+                    <div class="minutes-grid-box" id="box22"></div>
+                    <div class="minutes-grid-box" id="box23"></div>
+                    <div class="box" id="box24">Flights</div>
+                    <div class="flights-grid-box" id="box25"></div>
+                    <div class="flights-grid-box" id="box26"></div>
+                    <div class="flights-grid-box" id="box27"></div>
+                    <div class="flights-grid-box" id="box28"></div>
+                    <div class="flights-grid-box" id="box29"></div>
+                    <div class="flights-grid-box" id="box30"></div>
+                    <div class="flights-grid-box" id="box31"></div>
+                </div>
+            </section>
+        </article>
+        <article class='sleep-hydration-box'>
+            <section class='water-box'>
+                <img src='../images/glass-of-water-water.svg' alt='Water Glass'>
+                <div class='water-wrapper'>
+                    <div class='daily-water'>
+                        <h4>Today's Fill</h4>
+                        <p class='water-ounces'>3 oz.</p>
+                    </div>
+                    <div class='weekly-water'>
+                        <h4 class='water-intake'>Weekly Water In OZs</h4>
+                        <div class='water-grid'>
+                            <div class="box" id="water-box0">S</div>
+                            <div class="box" id="water-box1">M</div>
+                            <div class="box" id="water-box2">T</div>
+                            <div class="box" id="water-box3">W</div>
+                            <div class="box" id="water-box4">T</div>
+                            <div class="box" id="water-box5">F</div>
+                            <div class="box" id="water-box6">S</div>
+                            <div class="water-grid-box" id="water-box7"></div>
+                            <div class="water-grid-box" id="water-box8"></div>
+                            <div class="water-grid-box" id="water-box9"></div>
+                            <div class="water-grid-box" id="water-box10"></div>
+                            <div class="water-grid-box" id="water-box11"></div>
+                            <div class="water-grid-box" id="water-box12"></div>
+                            <div class="water-grid-box" id="water-box13"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class='sleep-box'>
+                <img src='../images/bed.svg' alt='Bed And Moon'>
+                <div class='sleep-wrapper'>
+                    <div class='daily-sleep'>
+                        <div class='sleep-hours-heading'>
+                            <h4 class='sleep-hours'>Hours</h4>
+                            <p class='sleep-hour-count'></p>
+                        </div>
+                        <div class='user-sleep-values'>
+                            <h4 class='sleep-quality'>Quality</h4>
+                            <p class='sleep-quality-count'></p>
+                        </div>
+                    </div>
+                    <div class='average-daily-sleep'>
+                        <div class='average-sleep-hours'>
+                            <h6>Average Hours</h6>
+                            <p class='avg-sleep-hour-count'></p>
+                        </div>
+                        <div class='avg-sleep-quality'>
+                            <h6>Average Quality</h6>
+                            <p class='avg-sleep-quality-count'></p>
+                        </div>
+                    </div>
+                </div>
+                <div class='weekly-sleep'>
+                    <h4>Weekly Sleep</h4>
+                    <div class='sleep-grid'>
+                        <div class="box" id="sleep-box0"></div>
+                        <div class="box" id="sleep-box1">S</div>
+                        <div class="box" id="sleep-box2">M</div>
+                        <div class="box" id="sleep-box3">T</div>
+                        <div class="box" id="sleep-box4">W</div>
+                        <div class="box" id="sleep-box5">T</div>
+                        <div class="box" id="sleep-box6">F</div>
+                        <div class="box" id="sleep-box7">S</div>
+                        <div class="box" id="sleep-box8">H</div>
+                        <div class="hours-grid-box" id="sleep-box9"></div>
+                        <div class="hours-grid-box" id="sleep-box10"></div>
+                        <div class="hours-grid-box" id="sleep-box11"></div>
+                        <div class="hours-grid-box" id="sleep-box12"></div>
+                        <div class="hours-grid-box" id="sleep-box13"></div>
+                        <div class="hours-grid-box" id="sleep-box14"></div>
+                        <div class="hours-grid-box" id="sleep-box15"></div>
+                        <div class="box" id="sleep-box16">Q</div>
+                        <div class="quality-grid-box" id="sleep-box17"></div>
+                        <div class="quality-grid-box" id="sleep-box18"></div>
+                        <div class="quality-grid-box" id="sleep-box19"></div>
+                        <div class="quality-grid-box" id="sleep-box20"></div>
+                        <div class="quality-grid-box" id="sleep-box21"></div>
+                        <div class="quality-grid-box" id="sleep-box22"></div>
+                        <div class="quality-grid-box" id="sleep-box23"></div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <script type="text/javascript" src="../data/users.js"></script>
+    <script type="text/javascript" src="../data/hydration.js"></script>
+    <script type="text/javascript" src="../data/sleep.js"></script>
+    <script type="text/javascript" src="../data/activity.js"></script>
+    <script type="text/javascript" src="../src/userSleep.js"></script>
+    <script type="text/javascript" src="../src/userHydration.js"></script>
+    <script type="text/javascript" src="../src/userActivity.js"></script>
+    <script type="text/javascript" src="../src/userRepo.js"></script>
+    <script type="text/javascript" src="../src/user.js"></script>
+    <script type="text/javascript" src="./scripts.js"></script>
 </body>
+
 </html>
