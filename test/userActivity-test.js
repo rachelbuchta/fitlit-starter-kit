@@ -27,10 +27,10 @@ describe('UserActivity', () => {
     it('should calculate the amount of miles a user has walked by a given day', () => {
 
 
-        userActivity.findCurrentUser(1)
+        // userActivity.findCurrentUser(1)
 
 
-        expect(userActivity.calculateMilesWalked("2019/06/15")).to.equal(2.9)
+        expect(userActivity.calculateMilesWalked(1, "2019/06/15")).to.equal(2.9)
 
     })
 

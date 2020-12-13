@@ -83,6 +83,7 @@ main {
 
 .daily-activities {
     display: flex;
+    width: 100%;
     border-radius: .5em;
     justify-content: space-around;
     margin-bottom: 1.5%;
@@ -103,6 +104,22 @@ main {
     border-radius: .5em;
     padding: .5%;
     background-color: #E19181;
+}
+
+h3,
+h2 {
+  font-size: 1.3em;
+}
+
+.miles-walked {
+  background-color: #AC9F57;
+  border-radius: .5em;
+  width: 80%;
+  font-size: 1.1em;
+}
+
+#step-card{
+  width: 100%;
 }
 
 .weekly-activities {
@@ -136,6 +153,15 @@ main {
     width: 80%;
     text-align: center;
     border-radius: .5em;
+}
+
+/* .week-day-box, */
+h2,
+h3,
+h4,
+h6 {
+  font-weight: bold;
+  text-shadow: 2px 2px 0px #AC9F57;
 }
 
 
