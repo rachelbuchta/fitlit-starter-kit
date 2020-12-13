@@ -1,227 +1,248 @@
 * {
-    font-family: 'Hind Siliguri', sans-serif;
-    margin: 0;
-    color: white;
+  font-family: 'Hind Siliguri', sans-serif;
+  margin: 0;
+  color: white;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-around;
-    background-color: #EAF5F1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  background-color: #EAF5F1;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 
 /* User Greeting */
-
 .greeting {
-    display: flex;
-    justify-content: space-around;
-    border-radius: .5em;
-    border: .08em solid #AC9F57;
-    background-color: #70A3A1;
-    align-self: center;
-    align-items: center;
-    height: 10vh;
-    width: 95%;
-    font-size: 3em;
-    margin-top: -1%;
+  display: flex;
+  justify-content: space-around;
+  border-radius: .5em;
+  border: .08em solid #AC9F57;
+  background-color: #70A3A1;
+  align-self: center;
+  align-items: center;
+  height: 10vh;
+  width: 95%;
+  font-size: 3em;
+  margin-top: -1%;
 }
 
-
 /* User Info Card */
-
 .user-info-card {
-    display: flex;
-    justify-content: space-evenly;
-    width: 85%;
-    height: 18vh;
-    font-size: 1em;
-    border-radius: .5em;
-    align-self: center;
-    align-items: center;
-    border: 2px solid #AC9F57;
-    background-color: #8BB87E;
-    margin-top: .5%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 85%;
+  height: 18vh;
+  font-size: 1em;
+  border-radius: .5em;
+  align-self: center;
+  align-items: center;
+  border: 2px solid #AC9F57;
+  background-color: #8BB87E;
+  margin-top: .5%;
 }
 
 .user-step-goal-box,
 .all-users-step-goal-box {
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    border-radius: .5em;
-    padding: 0% 2% 0% 2%;
-    height: 85%;
-    align-items: center;
-    flex-direction: column;
-    background-color: #446063;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  border-radius: .5em;
+  padding: 0% 2% 0% 2%;
+  height: 85%;
+  align-items: center;
+  flex-direction: column;
+  background-color: #446063;
 }
 
-
 /* Activity Section */
-
 .activity-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-    justify-content: space-evenly;
-    width: 75%;
-    height: 38vh;
-    border-radius: .5em;
-    background-color: #C8E0F3;
-    border: .08em solid #AC9F57;
-    margin: .5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: space-evenly;
+  width: 75%;
+  height: 38vh;
+  border-radius: .5em;
+  background-color: #C8E0F3;
+  border: .08em solid #AC9F57;
+  margin: .5%;
 }
 
 .daily-activities {
-    display: flex;
-    border-radius: .5em;
-    justify-content: space-around;
-    margin-bottom: 1.5%;
+  display: flex;
+  width: 100%;
+  border-radius: .5em;
+  justify-content: space-around;
+  margin-bottom: 1.5%;
 }
 
 .activity-card {
-    display: flex;
-    font-size: 1em;
-    margin-right: 3%;
-    margin-bottom: 2%;
-    margin-left: 3%;
-    height: 90%;
-    width: 65%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    border-radius: .5em;
-    padding: .5%;
-    background-color: #E19181;
+  display: flex;
+  font-size: 1em;
+  margin-right: 3%;
+  margin-bottom: 2%;
+  margin-left: 3%;
+  height: 90%;
+  width: 65%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: .5em;
+  padding: .5%;
+  background-color: #E19181;
+}
+
+h3,
+h2,
+h4 {
+  font-size: 1.3em;
+}
+
+
+.miles-walked {
+  background-color: #AC9F57;
+  border-radius: .5em;
+  width: 80%;
+  font-size: 1.1em;
+}
+
+#step-card {
+  width: 100%;
 }
 
 .weekly-activities {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    border-radius: .5em;
-    background-color: #E19181;
-    width: 80%;
-    height: 14vh;
-    margin-bottom: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  border-radius: .5em;
+  background-color: #E19181;
+  width: 80%;
+  height: 14vh;
+  margin-bottom: 1%;
 }
 
 .activity-grid {
-    display: grid;
-    font-size: 1em;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    grid-template-columns: repeat(8, 19%);
-    grid-template-rows: repeat(4, 23%);
-    width: 65%;
-    height: 100%;
-    grid-column: 1 / 9;
-    grid-row: 1 / 4;
+  display: grid;
+  font-size: 1em;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  grid-template-columns: repeat(8, 19%);
+  grid-template-rows: repeat(4, 23%);
+  width: 65%;
+  height: 100%;
+  grid-column: 1 / 9;
+  grid-row: 1 / 4;
 }
 
 .week-grid-label {
-    background-color: #E19181;
-    width: 80%;
-    text-align: center;
-    border-radius: .5em;
+  background-color: #E19181;
+  width: 80%;
+  text-align: center;
+  border-radius: .5em;
 }
 
+.week-day-box {
+font-weight: bold;
+}
+
+h2,
+h3,
+h4,
+h6 {
+  font-weight: bold;
+  text-shadow: 2px 2px 0px #AC9F57;
+}
 
 /* Water and Sleep Display */
-
 .sleep-hydration-box {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    width: 95%;
-    justify-content: space-around;
-    height: 23vh;
-    border-radius: .5em;
-    margin-top: .5%;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  width: 95%;
+  justify-content: space-around;
+  height: 23vh;
+  border-radius: .5em;
+  margin-top: .5%;
 }
 
 .water-wrapper,
 .sleep-wrapper {
-    display: flex;
-    border-radius: .5em;
-    justify-content: space-around;
-    height: 80%;
-    width: 100%;
+  display: flex;
+  border-radius: .5em;
+  justify-content: space-around;
+  height: 80%;
+  width: 100%;
 }
 
 .water-box,
 .sleep-box {
-    display: flex;
-    justify-content: space-around;
-    border-radius: .5em;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 45%;
-    background-color: #9ECAC8;
-    border: .08em solid #AC9F57;
-    margin-top: 1%;
-    padding-bottom: 1%;
+  display: flex;
+  justify-content: space-around;
+  border-radius: .5em;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 45%;
+  background-color: #9ECAC8;
+  border: .08em solid #AC9F57;
+  margin-top: 1%;
+  padding-bottom: 1%;
 }
 
 .daily-water,
 .weekly-water {
-    display: flex;
-    border-radius: .5em;
-    font-size: 1em;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    height: 90%;
-    width: 45%;
+  display: flex;
+  border-radius: .5em;
+  font-size: 1em;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+  width: 45%;
 }
 
-
 /* Water Display */
-
 .water-grid {
-    display: grid;
-    font-size: 1em;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    width: 50%;
-    height: 80%;
-    grid-template-columns: repeat(7, 25%);
-    grid-template-rows: repeat(2, 25%);
-    grid-column: 1 / 8;
-    grid-row: 1 / 3;
+  display: grid;
+  font-size: 1em;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 50%;
+  height: 80%;
+  grid-template-columns: repeat(7, 25%);
+  grid-template-rows: repeat(2, 25%);
+  grid-column: 1 / 8;
+  grid-row: 1 / 3;
 }
 
 .water-ounces {
-    font-size: 2.4em;
+  font-size: 2.4em;
 }
 
 .average-sleep-hours,
 .average-sleep-quality,
-{
-    display: flex;
-    flex-direction: row;
-    border-radius: .5em;
-    height: 45%;
+  {
+  display: flex;
+  flex-direction: row;
+  border-radius: .5em;
+  height: 45%;
 }
 
 .sleep-box {
-    display: flex;
-    background-color: #85A0B7;
-    border: .08em solid #AC9F57;
+  display: flex;
+  background-color: #85A0B7;
+  border: .08em solid #AC9F57;
 }
 
 .sleep-hours-heading,
@@ -231,54 +252,63 @@ main {
 .weekly-water,
 .average-sleep-hours,
 .average-sleep-quality {
-    background-color: #324A5E;
+  background-color: #324A5E;
 }
 
 .daily-sleep,
 .average-daily-sleep {
-    display: flex;
-    justify-content: space-around;
-    height: 80%;
-    width: 45%;
-    background-color: #324A5E;
-    border-radius: .5em;
+  display: flex;
+  justify-content: space-around;
+  height: 80%;
+  width: 45%;
+  background-color: #324A5E;
+  border-radius: .5em;
 }
 
 .sleep-hours-heading,
 .user-sleep-values,
 .average-sleep-hours,
-.avg-sleep-quality {
-    font-size: 1em;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    border-radius: .5em;
+.average-sleep-quality {
+  /* font-size: 1em; */
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: .5em;
 }
 
 img {
-    height: 2.5em;
+  height: 2.5em;
+}
+
+.avg-header,
+.sleep-quality,
+.sleep-hours,
+.week-sleep-header
+ {
+  font-size: 1em;
 }
 
 .sleep-grid {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    font-size: 1em;
-    grid-template-columns: repeat(8, 20%);
-    grid-auto-rows: repeat(3, 20%);
-    grid-column: 1 / 9;
-    grid-row: 1 / 4;
-    width: 45%;
-    margin-bottom: 1.5%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 1em;
+  grid-template-columns: repeat(8, 20%);
+  grid-auto-rows: repeat(3, 20%);
+  grid-column: 1 / 9;
+  grid-row: 1 / 4;
+  width: 45%;
+  margin-bottom: 1.5%;
 }
 
 .weekly-sleep {
-    height: 100%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: .5em;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  margin: 1%;
+  flex-direction: column;
+  align-items: center;
+  border-radius: .5em;
 }

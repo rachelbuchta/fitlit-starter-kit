@@ -1,139 +1,138 @@
 /* eslint-disable max-len */
 
 
-// const userTestData = require('../test/test-user-data')
-// const UserRepo = require('./userRepo')
-// let testUserRepo = new UserRepo(userTestData)
+// let userTestData = require('../test/test-user-data')
+// let UserRepo = require('../src/userRepo')
+// let userRepo = new UserRepo(userTestData)
 
 class UserActivity {
-    constructor(activityData) {
-        this.activityData = activityData
-        this.currentUser
+  constructor(activityData) {
+    this.activityData = activityData
+    this.currentUser
+  }
 
-    }
+  findCurrentUser(id) {
+    this.currentUser = userRepo.getUserData(id)
+}
 
-    findCurrentUser(id) {
-        this.currentUser = testUserRepo.getUserData(id)
-    }
+  calculateMilesWalked(id, date) {
+    this.findCurrentUser(id)
+    const strideLength = this.currentUser.strideLength
+    const numberOfSteps = this.activityData
+      .filter(day => day.date === date)
+      .find(user => user.userID === this.currentUser.id).numSteps
+    const milesWalked = ((strideLength * numberOfSteps) / 5280).toFixed(1)
+    return parseFloat(milesWalked)
+  }
 
-    calculateMilesWalked(date) {
-        const strideLength = this.currentUser.strideLength
-        const numberOfSteps = this.activityData.filter(day => day.date === date)
-            .find(user => user.userID === this.currentUser.id).numSteps
-        const milesWalked = ((strideLength * numberOfSteps) / 5280).toFixed(1)
-        return parseFloat(milesWalked)
-    }
-    returnNumberOfSteps(id, date) {
-        const stepCount = this.activityData
-            .filter(day => day.userID === id)
-            .find(userDay => userDay.date === date)
-            .numSteps
+  returnNumberOfSteps(id, date) {
+    const stepCount = this.activityData
+      .filter(day => day.userID === id)
+      .find(userDay => userDay.date === date)
+      .numSteps
+    return stepCount
+  }
 
-        return stepCount
-    }
-    returnMinutesActive(id, date) {
-        const minCount = this.activityData
-            .filter(day => day.userID === id)
-            .find(userDay => userDay.date === date)
-            .minutesActive
+  returnMinutesActive(id, date) {
+    const minCount = this.activityData
+      .filter(day => day.userID === id)
+      .find(userDay => userDay.date === date)
+      .minutesActive
+    return minCount
+  }
 
-        return minCount
-    }
-    returnFlightsClimbed(id, date) {
-        const flightCount = this.activityData
-            .filter(day => day.userID === id)
-            .find(userDay => userDay.date === date)
-            .flightsOfStairs
-        console.log(flightCount);
-        return flightCount
-            // write test for me!!
-    }
-    calculateAvgMinByWeek(id, date) {
-        const userDays = this.activityData
-            .filter(day => day.userID === id)
-        const startDay = userDays.find(day => day.date === date)
-        const dayIndex = userDays.indexOf(startDay)
-        const week = userDays.slice(dayIndex, 7)
-        const totalMins = week.reduce((acc, day) => {
-            acc += day.minutesActive
-            return acc
-        }, 0)
-        const avgMins = totalMins / 7
+  returnFlightsClimbed(id, date) {
+    const flightCount = this.activityData
+      .filter(day => day.userID === id)
+      .find(userDay => userDay.date === date)
+      .flightsOfStairs
+    console.log(flightCount);
+    return flightCount
+    // write test for me!!
+  }
+  calculateAvgMinByWeek(id, date) {
+    const userDays = this.activityData
+      .filter(day => day.userID === id)
+    const startDay = userDays.find(day => day.date === date)
+    const dayIndex = userDays.indexOf(startDay)
+    const week = userDays.slice(dayIndex, 7)
+    const totalMins = week.reduce((acc, day) => {
+      acc += day.minutesActive
+      return acc
+    }, 0)
+    const avgMins = totalMins / 7
+    return Math.round(avgMins)
+  }
 
-        return Math.round(avgMins)
+  exceedStepGoalCheck(date) {
+    const stepGoal = this.currentUser.dailyStepGoal
+    const stepsTaken = this.activityData.find(day => day.date === date).numSteps
+    if (stepsTaken > stepGoal) {
+      return true
+    } else {
+      return false
     }
-    exceedStepGoalCheck(date) {
-        const stepGoal = this.currentUser.dailyStepGoal
-        const stepsTaken = this.activityData.find(day => day.date === date).numSteps
+  }
 
-        if (stepsTaken > stepGoal) {
-            return true
-        } else {
-            return false
-        }
+  getExceededStepDays(id) {
+    const stepGoal = this.currentUser.dailyStepGoal
+    const userDays = this.activityData.filter(day => day.userID === id)
+    const daysExceeded = userDays.reduce((acc, day) => {
+      if (day.numSteps > stepGoal) {
+        acc.push(day.date)
+      }
+      return acc
+    }, [])
+    return daysExceeded
+  }
 
-    }
-    getExceededStepDays(id) {
-        const stepGoal = this.currentUser.dailyStepGoal
-        const userDays = this.activityData.filter(day => day.userID === id)
-        const daysExceeded = userDays.reduce((acc, day) => {
-            if (day.numSteps > stepGoal) {
-                acc.push(day.date)
+  findStairRecord(id) {
+    const userDays = this.activityData.filter(day => day.userID === id)
+    const topDay = userDays
+      .map(day => day.flightsOfStairs)
+      .sort((a, b) => {
+        return b - a
+      }).shift()
+    return topDay
+    // const topDay = Math.max(...topDays)
+  }
+  calculateAvgTotalSteps(date) {
+    const dayOfUsers = this.activityData.filter(day => day.date === date)
+    const avgSteps = dayOfUsers.reduce((acc, user) => {
+      acc += user.numSteps
+      return acc
+    }, 0)
+    return Math.round(avgSteps / dayOfUsers.length)
+  }
+  calculateAvgStairsClimbed(date) {
+    const dayOfUsers = this.activityData.filter(day => day.date === date)
+    const avgFlights = dayOfUsers.reduce((acc, user) => {
+      acc += user.flightsOfStairs
+      return acc
+    }, 0)
+    return Math.round(avgFlights / dayOfUsers.length)
+  }
+  calculateAvgMinActive(date) {
+    const dayOfUsers = this.activityData.filter(day => day.date === date)
+    const avgMins = dayOfUsers.reduce((acc, user) => {
+      acc += user.minutesActive
+      return acc
+    }, 0)
+    return Math.round(avgMins / dayOfUsers.length)
+  }
+  getDataByWeek(id, date, type) {
+    const userData = this.activityData.filter(day => day.userID === id)
+    const weekSleep = userData.find(item => item.date === date)
+    const index = userData.indexOf(weekSleep)
+    const days = userData.slice(index, 7)
+    const minsActive = days.map(day => day[type])
+    return minsActive
 
-            }
-            return acc
-        }, [])
-        return daysExceeded
-    }
-    findStairRecord(id) {
-        const userDays = this.activityData.filter(day => day.userID === id)
-
-        const topDay = userDays
-            .map(day => day.flightsOfStairs)
-            .sort((a, b) => {
-                return b - a
-            }).shift()
-
-        return topDay
-            // const topDay = Math.max(...topDays)
-    }
-    calculateAvgTotalSteps(date) {
-        const dayOfUsers = this.activityData.filter(day => day.date === date)
-        const avgSteps = dayOfUsers.reduce((acc, user) => {
-            acc += user.numSteps
-            return acc
-        }, 0)
-        return avgSteps / dayOfUsers.length
-    }
-    calculateAvgStairsClimbed(date) {
-        const dayOfUsers = this.activityData.filter(day => day.date === date)
-        const avgFlights = dayOfUsers.reduce((acc, user) => {
-            acc += user.flightsOfStairs
-            return acc
-        }, 0)
-        return Math.round(avgFlights / dayOfUsers.length)
-    }
-    calculateAvgMinActive(date) {
-        const dayOfUsers = this.activityData.filter(day => day.date === date)
-        const avgMins = dayOfUsers.reduce((acc, user) => {
-            acc += user.minutesActive
-            return acc
-        }, 0)
-        return Math.round(avgMins / dayOfUsers.length)
-    }
-    getDataByWeek(id, date, type) {
-        const userData = this.activityData.filter(day => day.userID === id)
-        const weekSleep = userData.find(item => item.date === date)
-        const index = userData.indexOf(weekSleep)
-        const days = userData.slice(index, 7)
-        const minsActive = days.map(day => day[type])
-        return minsActive
-
-    }
+  }
 }
 
 if (typeof module !== 'undefined') {
-    module.exports = UserActivity
+  module.exports = UserActivity
 }
 
 

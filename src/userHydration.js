@@ -16,8 +16,9 @@ class UserHydration {
     return Math.round(totalOunces / userWeek.length)
   }
 
-  returnDailyConsumption(date) {
-    const day = this.data.find(day => day.date === date)
+  returnDailyConsumption(id, date) {
+    const currentUser = this.data.filter(day => day.userID === id)
+    const day = currentUser.find(day => day.date === date)
     return day.numOunces
   }
 

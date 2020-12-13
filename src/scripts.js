@@ -3,12 +3,11 @@
 // const UserActivity = require("./userActivity")
 
 /* eslint-disable max-len */
-const userRepo = new UserRepo(userData)
-
+let userRepo = new UserRepo(userData)
 let userHydration = new UserHydration(hydrationData)
 let userSleep = new UserSleep(sleepData)
 let userActivity = new UserActivity(activityData)
-let currentUser = new User(userRepo.getUserData(1))
+let currentUser = new User(userRepo.getUserData(3))
 
 
 const userStepGoal = document.querySelector('.user-step-goal')
@@ -25,7 +24,6 @@ const hoursGridDisplay = document.querySelectorAll('.hours-grid-box')
 const qualityGridDisplay = document.querySelectorAll('.quality-grid-box')
 const stepCounter = document.querySelector('.step-counter')
 const minuteCounter = document.querySelector('.minute-counter')
-const mileCounter = document.querySelector('.mile-counter')
 const flightCounter = document.querySelector('.flight-counter')
 const stepsGridDisplay = document.querySelectorAll('.steps-grid-box')
 const minutesGridDisplay = document.querySelectorAll('.minutes-grid-box')
@@ -33,105 +31,95 @@ const flightsGridDisplay = document.querySelectorAll('.flights-grid-box')
 const stepsComparison = document.querySelector('.step-comparison')
 const minutesComparison = document.querySelector('.minute-comparison')
 const flightsComparison = document.querySelector('.flight-comparison')
+const milesWalked = document.querySelector('.miles-walked')
 
 
 
-window.addEventListener('load', displayUserInfo)
+window.addEventListener('load', displayAllData)
+
+
+function displayAllData() {
+  displayUserInfo()
+  displayAllUsersStepGoal()
+  displayDailyWaterIntake()
+  displayWeeklyWaterIntake()
+  displaySleepData()
+  displayActivityData()
+  displayComparisons()
+  displayWeeklyActivityData()
+  displayMilesWalked()
+}
 
 
 function displayUserInfo() {
-    displayGreeting()
-    displayUserStepGoal()
-    displayUserStrideLength()
-    displayAllUsersStepGoal()
-    displayDailyWaterIntake()
-    displayWeeklyWaterIntake()
-    displaySleepData()
-    displayWeeklySleepData()
-    displayActivityData()
-    displayComparisons()
-    displayWeeklyActivityData()
-        // userSleep.findGoodSleepers('2019/06/18')
-}
-
-function displayGreeting() {
-
-    greeting.innerHTML = `Hello, ${currentUser.getFirstName()}`
-}
-
-function displayUserStepGoal() {
-
-    userStepGoal.innerText = currentUser.dailyStepGoal
-}
-
-function displayUserStrideLength() {
-
-    userStrideLength.innerText = currentUser.strideLength
+  greeting.innerHTML = `Hello, ${currentUser.getFirstName()}`
+  userStepGoal.innerText = currentUser.dailyStepGoal
+  userStrideLength.innerText = currentUser.strideLength
 }
 
 function displayAllUsersStepGoal() {
-
-    othersStepGoal.innerText = userRepo.calculateAverageSteps()
+  othersStepGoal.innerText = userRepo.calculateAverageSteps()
 }
 
 function displayDailyWaterIntake() {
-
-    dailyWater.innerHTML = `${userHydration.returnDailyConsumption('2019/06/15')} OZs.`
+  dailyWater.innerHTML = `${userHydration.returnDailyConsumption(currentUser.id,'2019/06/15')} OZs.`
 }
 
 function displayWeeklyWaterIntake() {
+  const weekDisplay = Array.from(waterGridDisplay)
+  return weekDisplay.map(function(item, index) {
+    item.append(userHydration.returnWeeklyConsumption(currentUser.id)[index])
+  })
+}
 
-    const weekDisplay = Array.from(waterGridDisplay)
-    return weekDisplay.map(function(item, index) {
-        item.append(userHydration.returnWeeklyConsumption(1)[index])
+function createDailySleepData(element, identifier, type) {
+  element.innerText = userSleep.getDataByDay(identifier, type)
+}
+
+function createAvgSleepData(element, identifier, type) {
+  element.innerText = userSleep.calculateAvgDataPerDay(identifier, type)
+}
+
+function createWeeklySleepData(display, type) {
+  Array.from(display)
+    .map(function(item, index) {
+      return item.append(userSleep.getDataByWeek(currentUser.id, '2019/06/15', type)[index])
     })
 }
 
 function displaySleepData() {
-
-    dailySleepHours.innerText = userSleep.getDataByDay('2019/06/15', 'hoursSlept')
-    dailySleepQuality.innerText = userSleep.getDataByDay('2019/06/15', 'sleepQuality')
-    avgDailySleep.innerText = userSleep.calculateAvgDataPerDay(1, 'hoursSlept')
-    avgSleepQuality.innerText = userSleep.calculateAvgDataPerDay(1, 'sleepQuality')
-}
-
-function displayWeeklySleepData() {
-
-    const hoursDisplay = Array.from(hoursGridDisplay)
-    const populateWeeklyHours = hoursDisplay.map(function(item, index) {
-        return item.append(userSleep.getDataByWeek(1, '2019/06/15', 'hoursSlept')[index])
-    })
-    const qualityDisplay = Array.from(qualityGridDisplay)
-    const populateWeeklyQuality = qualityDisplay.map(function(item, index) {
-        return item.append(userSleep.getDataByWeek(1, '2019/06/15', 'sleepQuality')[index])
-    })
-
+  createWeeklySleepData(hoursGridDisplay, 'hoursSlept')
+  createWeeklySleepData(qualityGridDisplay, 'sleepQuality')
+  createDailySleepData(dailySleepHours,'2019/06/15', 'hoursSlept')
+  createDailySleepData(dailySleepQuality,'2019/06/15', 'sleepQuality')
+  createAvgSleepData(avgDailySleep, currentUser.id, 'hoursSlept')
+  createAvgSleepData(avgSleepQuality, currentUser.id, 'sleepQuality')
 }
 
 function displayActivityData() {
-    stepCounter.innerText = userActivity.returnNumberOfSteps(1, '2019/06/15')
-    minuteCounter.innerText = userActivity.returnMinutesActive(1, '2019/06/15')
-    flightCounter.innerText = userActivity.returnFlightsClimbed(1, '2019/06/15')
+  stepCounter.innerText = `${userActivity.returnNumberOfSteps(currentUser.id, '2019/06/15')} Steps`
+  minuteCounter.innerText = `${userActivity.returnMinutesActive(currentUser.id, '2019/06/15')} Minutes`
+  flightCounter.innerText = `${userActivity.returnFlightsClimbed(currentUser.id, '2019/06/15')} Flights of Stairs`
 }
 
 function displayComparisons() {
-    stepsComparison.innerText = `Others's Average: ${userActivity.calculateAvgTotalSteps('2019/06/15')}`
-    minutesComparison.innerText = `Other's Average: ${userActivity.calculateAvgMinActive('2019/06/15')}`
-    flightsComparison.innerText = `Other's Average: ${userActivity.calculateAvgStairsClimbed('2019/06/15')}`
+  stepsComparison.innerText = `Overall Daily Average: ${userActivity.calculateAvgTotalSteps('2019/06/15')}`
+  minutesComparison.innerText = `Overall Daily Average: ${userActivity.calculateAvgMinActive('2019/06/15')}`
+  flightsComparison.innerText = `Overall Daily Average: ${userActivity.calculateAvgStairsClimbed('2019/06/15')}`
 }
 
 function displayWeeklyActivityData() {
-    const stepsDisplay = Array.from(stepsGridDisplay)
+  Array.from(stepsGridDisplay).map(function(item, index) {
+    return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', 'numSteps')[index])
+  })
+  Array.from(minutesGridDisplay).map(function(item, index) {
+    return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', 'minutesActive')[index])
+  })
+  Array.from(flightsGridDisplay).map(function(item, index) {
+    return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', 'flightsOfStairs')[index])
+  })
+}
 
-    const populateWeeklySteps = stepsDisplay.map(function(item, index) {
-        return item.append(userActivity.getDataByWeek(1, '2019/06/15', 'numSteps')[index])
-    })
-    const minsDisplay = Array.from(minutesGridDisplay)
-    const populateWeeklyMinutes = minsDisplay.map(function(item, index) {
-        return item.append(userActivity.getDataByWeek(1, '2019/06/15', 'minutesActive')[index])
-    })
-    const flightsDisplay = Array.from(flightsGridDisplay)
-    const populateWeeklyFlights = flightsDisplay.map(function(item, index) {
-        return item.append(userActivity.getDataByWeek(1, '2019/06/15', 'flightsOfStairs')[index])
-    })
+function displayMilesWalked() {
+  milesWalked.innerText = `That's the equivalent to ${userActivity.calculateMilesWalked(currentUser.id,'2019/06/15')} miles!`
 }
