@@ -23,31 +23,34 @@ class UserActivity {
         return parseFloat(((this.currentUser.strideLength * numberOfSteps) / 5280).toFixed(1))
     }
 
-    returnNumberOfSteps(id, date) {
-        const stepCount = this.activityData
+    returnActivityData(id, date, type) {
+        return this.activityData
             .filter(day => day.userID === id)
-            .find(userDay => userDay.date === date)
-            .numSteps
-        return stepCount
+            .find(userDay => userDay.date === date)[type]
     }
 
-    returnMinutesActive(id, date) {
-        const minCount = this.activityData
-            .filter(day => day.userID === id)
-            .find(userDay => userDay.date === date)
-            .minutesActive
-        return minCount
-    }
+    // returnNumberOfSteps(id, date) {
+    //     return this.activityData
+    //         .filter(day => day.userID === id)
+    //         .find(userDay => userDay.date === date)
+    //         .numSteps
+    // }
 
-    returnFlightsClimbed(id, date) {
-        const flightCount = this.activityData
-            .filter(day => day.userID === id)
-            .find(userDay => userDay.date === date)
-            .flightsOfStairs
-        console.log(flightCount);
-        return flightCount
-            // write test for me!!
-    }
+    // returnMinutesActive(id, date) {
+    //     return this.activityData
+    //         .filter(day => day.userID === id)
+    //         .find(userDay => userDay.date === date)
+    //         .minutesActive
+    // }
+
+    // returnFlightsClimbed(id, date) {
+    //     const flightCount = this.activityData
+    //         .filter(day => day.userID === id)
+    //         .find(userDay => userDay.date === date)
+    //         .flightsOfStairs
+    //     return flightCount
+    //         // write test for me!!
+    // }
     calculateAvgMinByWeek(id, date) {
         const userDays = this.activityData
             .filter(day => day.userID === id)
