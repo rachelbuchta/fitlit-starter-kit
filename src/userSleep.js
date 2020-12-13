@@ -15,33 +15,33 @@ class UserSleep {
         return parseFloat((totalAmount / this.currentUser.length).toFixed(1))
     }
 
-    getDataByDay(date, type) {
-        return this.data.find(day => day.date === date)[type]
-    }
-
-    getDataByWeek(id, date, type) {
-        const userData = this.data.filter(day => day.userID === id)
-
-        const weekSleep = userData.find(item => item.date === date)
-        const index = userData.indexOf(weekSleep)
-        const days = userData.slice(index, 7)
-        const hours = days.map(day => day[type])
-        return hours
-    }
-
     getOverallAvgQuality() {
         const totalQuality = this.data.reduce((acc, day) => {
             acc += day.sleepQuality
             return acc
         }, 0)
-        const averageQuality = (totalQuality / this.data.length).toFixed(1)
-        return parseFloat(averageQuality)
+        return parseFloat((totalQuality / this.data.length).toFixed(1))
+    }
+
+    getDataByDay(date, type) {
+        return this.data.find(day => day.date === date)[type]
+    }
+
+    getDataByWeek(id, date, type) {
+
+        this.findDay(id)
+        const weekSleep = this.currentUser.find(item => item.date === date)
+        const index = this.currentUser.indexOf(weekSleep)
+        const days = this.currentUser.slice(index, 7)
+        const weeklyData = days.map(day => day[type])
+        return weeklyData
     }
 
     findTopSnoozer(date) {
         const findDay = this.data.filter(day => day.date === date)
         return findDay.sort((a, b) => b.hoursSlept - a.hoursSlept).unshift()
     }
+
     findDay(id) {
         this.currentUser = this.data.filter(day => day.userID === id)
     }
