@@ -27,9 +27,9 @@ const stepCounter = document.querySelector('.step-counter')
 const minuteCounter = document.querySelector('.minute-counter')
 const mileCounter = document.querySelector('.mile-counter')
 const flightCounter = document.querySelector('.flight-counter')
-const stepsGridDisplay = document.querySelectorAll('.step-grid-box')
+const stepsGridDisplay = document.querySelectorAll('.steps-grid-box')
 const minutesGridDisplay = document.querySelectorAll('.minutes-grid-box')
-const flightsGridBox = document.querySelectorAll('.minutes-grid-box')
+const flightsGridDisplay = document.querySelectorAll('.flights-grid-box')
 const stepsComparison = document.querySelector('.step-comparison')
 const minutesComparison = document.querySelector('.minute-comparison')
 const flightsComparison = document.querySelector('.flight-comparison')
@@ -50,6 +50,7 @@ function displayUserInfo() {
     displayWeeklySleepData()
     displayActivityData()
     displayComparisons()
+    displayWeeklyActivityData()
         // userSleep.findGoodSleepers('2019/06/18')
 }
 
@@ -117,4 +118,20 @@ function displayComparisons() {
     stepsComparison.innerText = `Others's Average: ${userActivity.calculateAvgTotalSteps('2019/06/15')}`
     minutesComparison.innerText = `Other's Average: ${userActivity.calculateAvgMinActive('2019/06/15')}`
     flightsComparison.innerText = `Other's Average: ${userActivity.calculateAvgStairsClimbed('2019/06/15')}`
+}
+
+function displayWeeklyActivityData() {
+    const stepsDisplay = Array.from(stepsGridDisplay)
+
+    const populateWeeklySteps = stepsDisplay.map(function(item, index) {
+        return item.append(userActivity.getDataByWeek(1, '2019/06/15', 'numSteps')[index])
+    })
+    const minsDisplay = Array.from(minutesGridDisplay)
+    const populateWeeklyMinutes = minsDisplay.map(function(item, index) {
+        return item.append(userActivity.getDataByWeek(1, '2019/06/15', 'minutesActive')[index])
+    })
+    const flightsDisplay = Array.from(flightsGridDisplay)
+    const populateWeeklyFlights = flightsDisplay.map(function(item, index) {
+        return item.append(userActivity.getDataByWeek(1, '2019/06/15', 'flightsOfStairs')[index])
+    })
 }
