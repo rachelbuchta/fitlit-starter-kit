@@ -9,6 +9,7 @@ class UserActivity {
     constructor(activityData) {
         this.activityData = activityData
         this.currentUser
+        this.allUsersForDay
     }
 
     findCurrentUser(id) {
@@ -29,40 +30,16 @@ class UserActivity {
             .find(userDay => userDay.date === date)[type]
     }
 
-    // returnNumberOfSteps(id, date) {
-    //     return this.activityData
-    //         .filter(day => day.userID === id)
-    //         .find(userDay => userDay.date === date)
-    //         .numSteps
-    // }
-
-    // returnMinutesActive(id, date) {
-    //     return this.activityData
-    //         .filter(day => day.userID === id)
-    //         .find(userDay => userDay.date === date)
-    //         .minutesActive
-    // }
-
-    // returnFlightsClimbed(id, date) {
-    //     const flightCount = this.activityData
-    //         .filter(day => day.userID === id)
-    //         .find(userDay => userDay.date === date)
-    //         .flightsOfStairs
-    //     return flightCount
-    //         // write test for me!!
-    // }
     calculateAvgMinByWeek(id, date) {
-        const userDays = this.activityData
-            .filter(day => day.userID === id)
-        const startDay = userDays.find(day => day.date === date)
-        const dayIndex = userDays.indexOf(startDay)
-        const week = userDays.slice(dayIndex, 7)
+        this.returnUserDays(id)
+        const startDay = this.allUsersForDay.find(day => day.date === date)
+        const dayIndex = this.allUsersForDay.indexOf(startDay)
+        const week = this.allUsersForDay.slice(dayIndex, 7)
         const totalMins = week.reduce((acc, day) => {
             acc += day.minutesActive
             return acc
         }, 0)
-        const avgMins = totalMins / 7
-        return Math.round(avgMins)
+        return Math.round(totalMins / 7)
     }
 
     exceedStepGoalCheck(date) {
@@ -86,7 +63,9 @@ class UserActivity {
         }, [])
         return daysExceeded
     }
-
+    returnUserDays(id) {
+        this.allUsersForDay = this.activityData.filter(day => day.userID === id)
+    }
     findStairRecord(id) {
         const userDays = this.activityData.filter(day => day.userID === id)
         const topDay = userDays
