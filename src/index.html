@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <title>Activity Tracker</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <main>
     <section class='greeting'>
@@ -28,27 +26,21 @@
     <article class='activity-box'>
       <img src='../images/running.svg' alt='Running Legs'>
       <section class='daily-activities'>
-        <!-- <div class='activity-card' id='step-card'>
-                    <h3>Today's Step</h3>
-                    <p class='step-counter'>10,000 steps</p>
-                    <!-- put in miles display -->
-        <!-- <p class='step-comparison'>That is X more steps than the average! </p>
-                <!-- </div> -->
         <div class='activity-card' id='minutes-card'>
           <h3>You Were Active For:</h3>
-          <p class='minute-counter'>45 mins</p>
-          <p class='minute-comparison'>That is X more minutes than the average! </p>
+          <p class='minute-counter'></p>
+          <p class='minute-comparison'></p>
         </div>
         <div class='activity-card' id='step-card'>
           <h3>Today You've Walked:</h3>
-          <p class='step-counter'>10,000 steps</p>
+          <p class='step-counter'></p>
           <p class='miles-walked'></p>
-          <p class='step-comparison'>That is X more steps than the average! </p>
+          <p class='step-comparison'></p>
         </div>
         <div class='activity-card' id='miles-card'>
           <h3>That's like climbing:</h3>
-          <p class='flight-counter'>10 mi.</p>
-          <p class='flight-comparison'>That is X more flights than the average! </p>
+          <p class='flight-counter'></p>
+          <p class='flight-comparison'></p>
         </div>
       </section>
       <h3 class='week-grid-label'>Your Week</h3>
@@ -94,8 +86,8 @@
         <img src='../images/glass-of-water-water.svg' alt='Water Glass'>
         <div class='water-wrapper'>
           <div class='daily-water'>
-            <h4>Today's Fill</h4>
-            <p class='water-ounces'>3 oz.</p>
+            <h4>Today You've Drank:</h4>
+            <p class='water-ounces'></p>
           </div>
           <div class='weekly-water'>
             <h4 class='water-intake'>Weekly Water In OZs</h4>
@@ -133,17 +125,17 @@
           </div>
           <div class='average-daily-sleep'>
             <div class='average-sleep-hours'>
-              <h6>Average Hours</h6>
+              <h4 class='avg-header'>Average Hours</h4>
               <p class='avg-sleep-hour-count'></p>
             </div>
-            <div class='avg-sleep-quality'>
-              <h6>Average Quality</h6>
+            <div class='average-sleep-quality'>
+              <h4 class='avg-header'>Average Quality</h4>
               <p class='avg-sleep-quality-count'></p>
             </div>
           </div>
         </div>
         <div class='weekly-sleep'>
-          <h4>Weekly Sleep</h4>
+          <h4 class='week-sleep-header'>Weekly Sleep</h4>
           <div class='sleep-grid'>
             <div class="box" id="sleep-box0"></div>
             <div class="week-day-box" id="sleep-box1">S</div>
@@ -185,5 +177,4 @@
   <script type="text/javascript" src="../src/user.js"></script>
   <script type="text/javascript" src="./scripts.js"></script>
 </body>
-
 </html>

@@ -9,39 +9,38 @@ class UserActivity {
   constructor(activityData) {
     this.activityData = activityData
     this.currentUser
-
   }
 
   findCurrentUser(id) {
     this.currentUser = userRepo.getUserData(id)
-
-  }
+}
 
   calculateMilesWalked(id, date) {
     this.findCurrentUser(id)
     const strideLength = this.currentUser.strideLength
     const numberOfSteps = this.activityData
-    .filter(day => day.date === date)
-    .find(user => user.userID === this.currentUser.id).numSteps
+      .filter(day => day.date === date)
+      .find(user => user.userID === this.currentUser.id).numSteps
     const milesWalked = ((strideLength * numberOfSteps) / 5280).toFixed(1)
     return parseFloat(milesWalked)
   }
+
   returnNumberOfSteps(id, date) {
     const stepCount = this.activityData
       .filter(day => day.userID === id)
       .find(userDay => userDay.date === date)
       .numSteps
-
     return stepCount
   }
+
   returnMinutesActive(id, date) {
     const minCount = this.activityData
       .filter(day => day.userID === id)
       .find(userDay => userDay.date === date)
       .minutesActive
-
     return minCount
   }
+
   returnFlightsClimbed(id, date) {
     const flightCount = this.activityData
       .filter(day => day.userID === id)
@@ -62,41 +61,38 @@ class UserActivity {
       return acc
     }, 0)
     const avgMins = totalMins / 7
-
     return Math.round(avgMins)
   }
+
   exceedStepGoalCheck(date) {
     const stepGoal = this.currentUser.dailyStepGoal
     const stepsTaken = this.activityData.find(day => day.date === date).numSteps
-
     if (stepsTaken > stepGoal) {
       return true
     } else {
       return false
     }
-
   }
+
   getExceededStepDays(id) {
     const stepGoal = this.currentUser.dailyStepGoal
     const userDays = this.activityData.filter(day => day.userID === id)
     const daysExceeded = userDays.reduce((acc, day) => {
       if (day.numSteps > stepGoal) {
         acc.push(day.date)
-
       }
       return acc
     }, [])
     return daysExceeded
   }
+
   findStairRecord(id) {
     const userDays = this.activityData.filter(day => day.userID === id)
-
     const topDay = userDays
       .map(day => day.flightsOfStairs)
       .sort((a, b) => {
         return b - a
       }).shift()
-
     return topDay
     // const topDay = Math.max(...topDays)
   }

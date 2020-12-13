@@ -29,7 +29,7 @@ describe('UserHydration', () => {
 
   it('should return amount of ounces consumed in a day by date', () => {
 
-    expect(userHydration.returnDailyConsumption("2019/06/15")).to.equal(37)
+    expect(userHydration.returnDailyConsumption(1, "2019/06/15")).to.equal(37)
 
   })
 
