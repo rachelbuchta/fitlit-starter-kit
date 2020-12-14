@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
   <title>Activity Tracker</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <main>
     <section class='greeting'>
@@ -26,26 +28,26 @@
     <article class='activity-box'>
       <img src='../images/running.svg' alt='Running Legs'>
       <section class='daily-activities'>
-        <div class='activity-card' id='minutes-card'>
+        <section class='activity-card' id='minutes-card'>
           <h3>You Were Active For:</h3>
           <p class='minute-counter'></p>
           <p class='minute-comparison'></p>
-        </div>
-        <div class='activity-card' id='step-card'>
+        </section>
+        <section class='activity-card' id='step-card'>
           <h3>Today You've Walked:</h3>
           <p class='step-counter'></p>
           <p class='miles-walked'></p>
           <p class='step-comparison'></p>
-        </div>
-        <div class='activity-card' id='miles-card'>
+        </section>
+        <section class='activity-card' id='miles-card'>
           <h3>That's like climbing:</h3>
           <p class='flight-counter'></p>
           <p class='flight-comparison'></p>
-        </div>
+        </section>
       </section>
       <h3 class='week-grid-label'>Your Week</h3>
-      <section class='weekly-activities'>
-        <div class='activity-grid'>
+      <article class='weekly-activities'>
+        <section class='activity-grid'>
           <div class="box" id="box0"></div>
           <div class="week-day-box" id="box1">S</div>
           <div class="week-day-box" id="box2">M</div>
@@ -78,20 +80,20 @@
           <div class="flights-grid-box" id="box29"></div>
           <div class="flights-grid-box" id="box30"></div>
           <div class="flights-grid-box" id="box31"></div>
-        </div>
-      </section>
+        </section>
+      </article>
     </article>
     <article class='sleep-hydration-box'>
       <section class='water-box'>
         <img src='../images/glass-of-water-water.svg' alt='Water Glass'>
-        <div class='water-wrapper'>
-          <div class='daily-water'>
+        <section class='water-wrapper'>
+          <article class='daily-water'>
             <h4>Today You've Drank:</h4>
             <p class='water-ounces'></p>
-          </div>
-          <div class='weekly-water'>
+          </article>
+          <section class='weekly-water'>
             <h4 class='water-intake'>Weekly Water In OZs</h4>
-            <div class='water-grid'>
+            <section class='water-grid'>
               <div class="week-day-box" id="water-box0">S</div>
               <div class="week-day-box" id="water-box1">M</div>
               <div class="week-day-box" id="water-box2">T</div>
@@ -106,37 +108,37 @@
               <div class="water-grid-box" id="water-box11"></div>
               <div class="water-grid-box" id="water-box12"></div>
               <div class="water-grid-box" id="water-box13"></div>
-            </div>
-          </div>
-        </div>
+            </section>
+          </section>
+        </section>
       </section>
       <section class='sleep-box'>
         <img src='../images/bed.svg' alt='Bed And Moon'>
-        <div class='sleep-wrapper'>
-          <div class='daily-sleep'>
-            <div class='sleep-hours-heading'>
+        <section class='sleep-wrapper'>
+          <section class='daily-sleep'>
+            <article class='sleep-hours-heading'>
               <h4 class='sleep-hours'>Hours</h4>
               <p class='sleep-hour-count'></p>
-            </div>
-            <div class='user-sleep-values'>
+            </article>
+            <article class='user-sleep-values'>
               <h4 class='sleep-quality'>Quality</h4>
               <p class='sleep-quality-count'></p>
-            </div>
-          </div>
-          <div class='average-daily-sleep'>
-            <div class='average-sleep-hours'>
+            </article>
+          </section>
+          <section class='average-daily-sleep'>
+            <article class='average-sleep-hours'>
               <h4 class='avg-header'>Average Hours</h4>
               <p class='avg-sleep-hour-count'></p>
-            </div>
-            <div class='average-sleep-quality'>
+            </article>
+            <article class='average-sleep-quality'>
               <h4 class='avg-header'>Average Quality</h4>
               <p class='avg-sleep-quality-count'></p>
-            </div>
-          </div>
-        </div>
-        <div class='weekly-sleep'>
+            </article>
+          </section>
+        </section>
+        <section class='weekly-sleep'>
           <h4 class='week-sleep-header'>Weekly Sleep</h4>
-          <div class='sleep-grid'>
+          <section class='sleep-grid'>
             <div class="box" id="sleep-box0"></div>
             <div class="week-day-box" id="sleep-box1">S</div>
             <div class="week-day-box" id="sleep-box2">M</div>
@@ -161,8 +163,8 @@
             <div class="quality-grid-box" id="sleep-box21"></div>
             <div class="quality-grid-box" id="sleep-box22"></div>
             <div class="quality-grid-box" id="sleep-box23"></div>
-          </div>
-        </div>
+          </section>
+        </section>
       </section>
     </article>
   </main>
@@ -177,4 +179,5 @@
   <script type="text/javascript" src="../src/user.js"></script>
   <script type="text/javascript" src="./scripts.js"></script>
 </body>
+
 </html>

@@ -1,36 +1,37 @@
 /* eslint-disable max-len */
 class UserHydration {
-    constructor(data) {
-        this.data = data
-        this.id = data.userID
-        this.date = data.date
-        this.numOunces = data.numOunces
-        this.currentUser
-    }
+  constructor(data) {
+    this.data = data
+    // this.id = data.userID
+    // this.date = data.date
+    // this.numOunces = data.numOunces
+    this.currentUser
+  }
 
-    avgOuncesConsumed(id) {
-        this.findUser(id)
-        const totalOunces = this.currentUser.reduce((acc, day) => {
-            acc += day.numOunces
-            return acc
-        }, 0)
-        return Math.round(totalOunces / this.currentUser.length)
-    }
+  findUser(id) {
+    this.currentUser = this.data.filter(day => day.userID === id)
+  }
 
-    returnDailyConsumption(id, date) {
-        this.findUser(id)
-        return this.currentUser.find(day => day.date === date).numOunces
-    }
+  avgOuncesConsumed(id) {
+    this.findUser(id)
+    const totalOunces = this.currentUser.reduce((acc, day) => {
+      acc += day.numOunces
+      return acc
+    }, 0)
+    return Math.round(totalOunces / this.currentUser.length)
+  }
 
-    returnWeeklyConsumption(id) {
-        this.findUser(id)
-        return this.currentUser.slice(0, 7).map(item => item.numOunces)
-    }
-    findUser(id) {
-        this.currentUser = this.data.filter(day => day.userID === id)
-    }
+  returnDailyConsumption(id, date) {
+    this.findUser(id)
+    return this.currentUser.find(day => day.date === date).numOunces
+  }
+
+  returnWeeklyConsumption(id) {
+    this.findUser(id)
+    return this.currentUser.slice(0, 7).map(item => item.numOunces)
+  }
 }
 
 if (typeof module !== 'undefined') {
-    module.exports = UserHydration
+  module.exports = UserHydration
 }
