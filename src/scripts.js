@@ -93,7 +93,9 @@ function displaySleepData() {
     createAvgSleepData(avgSleepQuality, currentUser.id, 'sleepQuality')
 }
 
-
+function createActivityData(element, dataType, descriptor) {
+    element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15',dataType)} ${descriptor}`
+}
 
 function displayActivityData() {
     createActivityData(minuteCounter, 'minutesActive', 'Minutes')
@@ -101,14 +103,14 @@ function displayActivityData() {
     createActivityData(stepCounter, 'numSteps', 'Steps')
 }
 
-function createActivityData(element, dataType, descriptor) {
-    element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15',dataType)} ${descriptor}`
+function createComparisonData(element, dataType) {
+    element.innerText = `Today's Overall Average: ${userActivity.calculateAvgActivityData('2019/06/15', dataType)}`
 }
 
 function displayComparisons() {
-    stepsComparison.innerText = `Overall Daily Average: ${userActivity.calculateAvgActivityData('2019/06/15', 'numSteps')}`
-    minutesComparison.innerText = `Overall Daily Average: ${userActivity.calculateAvgActivityData('2019/06/15','minutesActive')}`
-    flightsComparison.innerText = `Overall Daily Average: ${userActivity.calculateAvgActivityData('2019/06/15','flightsOfStairs')}`
+    createComparisonData(stepsComparison, 'numSteps')
+    createComparisonData(minutesComparison, 'minutesActive')
+    createComparisonData(flightsComparison, 'flightsOfStairs')
 }
 
 function displayWeeklyActivityData() {
