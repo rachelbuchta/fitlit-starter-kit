@@ -1,10 +1,4 @@
 /* eslint-disable max-len */
-
-
-// let userTestData = require('../test/test-user-data')
-// let UserRepo = require('../src/userRepo')
-// let userRepo = new UserRepo(userTestData)
-
 class UserActivity {
   constructor(activityData) {
     this.activityData = activityData
@@ -12,12 +6,8 @@ class UserActivity {
     this.allUsersForDay
   }
 
-  findCurrentUser(id) {
-    this.currentUser = userRepo.getUserData(id)
-  }
-
-  calculateMilesWalked(id, date) {
-    this.findCurrentUser(id)
+  calculateMilesWalked(id, date, userData) {
+    this.currentUser = userData.getUserData(id)
     const numberOfSteps = this.activityData
       .filter(day => day.date === date)
       .find(user => user.userID === this.currentUser.id).numSteps
@@ -42,13 +32,15 @@ class UserActivity {
     return Math.round(totalMins / 7)
   }
 
-  exceedStepGoalCheck(date) {
+  exceedStepGoalCheck(id, date, userData) {
+    this.currentUser = userData.getUserData(id)
     const stepGoal = this.currentUser.dailyStepGoal
     const stepsTaken = this.activityData.find(day => day.date === date).numSteps
     return (stepsTaken > stepGoal)
   }
 
-  getExceededStepDays(id) {
+  getExceededStepDays(id, userData) {
+    this.currentUser = userData.getUserData(id)
     const stepGoal = this.currentUser.dailyStepGoal
     const userDays = this.activityData.filter(day => day.userID === id)
     return userDays.reduce((acc, day) => {

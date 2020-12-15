@@ -1,13 +1,9 @@
-// const UserActivity = require("./userActivity")
-
-// const UserActivity = require("./userActivity")
-
 /* eslint-disable max-len */
 let userRepo = new UserRepo(userData)
 let userHydration = new UserHydration(hydrationData)
 let userSleep = new UserSleep(sleepData)
 let userActivity = new UserActivity(activityData)
-let currentUser = new User(userRepo.getUserData(6))
+let currentUser = new User(userRepo.getUserData(34))
 
 
 const userStepGoal = document.querySelector('.user-step-goal')
@@ -32,7 +28,6 @@ const stepsComparison = document.querySelector('.step-comparison')
 const minutesComparison = document.querySelector('.minute-comparison')
 const flightsComparison = document.querySelector('.flight-comparison')
 const milesWalked = document.querySelector('.miles-walked')
-
 
 
 window.addEventListener('load', displayAllData)
@@ -125,5 +120,6 @@ function displayWeeklyActivityData() {
 }
 
 function displayMilesWalked() {
+    userActivity.currentUser = userRepo.getUserData(currentUser.id)
     milesWalked.innerText = `That's the equivalent to ${userActivity.calculateMilesWalked(currentUser.id,'2019/06/15', userRepo)} miles!`
 }

@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
-const activityTestData = [
-  {
+const activityTestData = [{
     "userID": 1,
     "date": "2019/06/15",
     "numSteps": 3577,

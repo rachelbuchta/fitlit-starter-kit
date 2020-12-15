@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
-const testSleepData = [
-  {
+const testSleepData = [{
     "userID": 1,
     "date": "2019/06/15",
     "hoursSlept": 6.1,

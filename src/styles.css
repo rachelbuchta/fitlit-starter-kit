@@ -310,8 +310,7 @@ img {
   border-radius: .5em;
 }
 
-@media screen and (min-width: 675px) and (max-width: 800px) {
-
+@media screen and (max-width: 800px) {
   main {
     display: flex;
     justify-content: space-around;
@@ -450,165 +449,176 @@ img {
 } */
 /* (overflow-block: scroll) */
 @media screen and (max-width: 600px) {
+  body {
+    height: auto;
+  }
 
- body {
-        height: auto;
-    }
- main {
-        display: flex;
-        justify-content: space-around;
-        margin: 0%;
-        overflow: scroll;
-    }
-    .greeting {
-        height: 10%;
-        width: 95%;
-    }
-    .user-info-card {
-        height: 75%;
-        width: 95%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        border: .08em solid #AC9F57;
-        margin: .2%;
-    }
-    .user-step-goal-box,
-    .all-users-step-goal-box {
-        height: 90%;
-        width: 80%;
-        margin: .2%;
-        border: .08em solid #AC9F57;
-    }
+  main {
+    display: flex;
+    justify-content: space-around;
+    margin: 0%;
+    overflow: scroll;
+  }
+
+  .greeting {
+    height: 10%;
+    width: 95%;
+  }
+
+  .user-info-card {
+    height: 75%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: .08em solid #AC9F57;
+    margin: .2%;
+  }
+
+  .user-step-goal-box,
+  .all-users-step-goal-box {
+    height: 90%;
+    width: 80%;
+    margin: .2%;
+    border: .08em solid #AC9F57;
+  }
 
   .activity-box {
-        height: 100%;
-        width: 96%;
+    height: 100%;
+    width: 96%;
+  }
 
-    }
-    img {
-        height: 2em;
-        margin: .2%;
-    }
-    .daily-activities {
-        display: flex;
-        flex-direction: column;
-        border: .08em solid #AC9F57;
-        align-items: center;
-        /* grid-template-columns: repeat(1, 80%);
-        grid-auto-rows: repeat(3, 20%); */
-        /* grid-template-columns: repeat(2, 45%); */
-        /* grid-template-columns: repeat(2, 45%);
-        grid-auto-rows: 45% 45%;
-        grid-column: 1 / 3;
-        grid-row: 1 / 2; */
-        /* flex-direction: column; */
-        border: black;
-        width: 100%;
-        height: 100%;
-    }
+  img {
+    height: 2em;
+    margin: .2%;
+  }
 
-    #minutes-card,
-    #miles-card {
+  .daily-activities {
+    display: flex;
+    flex-direction: column;
+    border: .08em solid #AC9F57;
+    align-items: center;
+    grid-template-columns: repeat(1, 80%);
+    grid-auto-rows: repeat(3, 20%);
+    grid-template-columns: repeat(2, 45%);
+    grid-template-columns: repeat(2, 45%);
+    grid-auto-rows: 45% 45%;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    flex-direction: column;
+    border: black;
+    width: 100%;
+    height: 100%;
+  }
 
-      display: flex;
-      flex-direction: column;
-      border: .08em solid #AC9F57;
-      /* justify-content: flex-end; */
-      width: 90%;
-      height: 30%;
-      margin: .2%;
-    }
-    /*.activity-card {
-        height: 85%;
-     } */
+  #minutes-card,
+  #miles-card {
+    display: flex;
+    flex-direction: column;
+    border: .08em solid #AC9F57;
+    justify-content: flex-end;
+    width: 90%;
+    height: 30%;
+    margin: .2%;
+  }
 
-     #step-card {
-      display: flex;
-      flex-direction: column;
-      border: .08em solid #AC9F57;
-      /* justify-content: flex-start; */
-      width: 90%;
-      margin: .2%;
-      height: 60%;
-    }
-     .week-grid-label {
-        height: 9%;
-        width: 95%;
-        border: .08em solid #AC9F57;
-    }
+  .activity-card {
+    height: 85%;
+  }
 
-.weekly-activities {
+  #step-card {
+    display: flex;
+    flex-direction: column;
+    border: .08em solid #AC9F57;
+    justify-content: flex-start;
+    width: 90%;
+    margin: .2%;
+    height: 60%;
+  }
+
+  .week-grid-label {
+    height: 9%;
+    width: 95%;
+    border: .08em solid #AC9F57;
+  }
+
+  .weekly-activities {
     width: 95%;
     height: 100%;
     border: .08em solid #AC9F57;
-}
+  }
 
   .activity-grid {
-        /* height: 100%; */
-        width: 65%;
+    height: 100%;
+    width: 65%;
+    grid-template-columns: repeat(8, 19%);
+    grid-template-rows: repeat(4, 25%);
+  }
 
-        grid-template-columns: repeat(8, 19%);
-        grid-template-rows: repeat(4, 25%);
-    }
-    .sleep-hydration-box {
-      display: flex;
-      flex-direction: column;
-        height: 80%;
-        width: 95%;
-    }
-    .water-box,
-    .sleep-box {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-    }
-    .water-wrapper,
-    .sleep-wrapper {
-      display: flex;
-      flex-direction: column;
-        width: 95%;
-        height: 100%;
-    }
+  .sleep-hydration-box {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 95%;
+  }
 
-      .daily-water {
-        width: 95%;
-        height: 20%;
-        text-align: center;
-    }
+  .water-box,
+  .sleep-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 
+  .water-wrapper,
+  .sleep-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 100%;
+  }
 
-    .weekly-water {
-        width: 95%;
-        /* height: 40%; */
-        text-align: center;
-    }
-    .water-grid {
-        width: 70%;
-        /* height: 100%; */
-        grid-template-columns: repeat(7, 20%);
-        grid-template-rows: repeat(2, 25%);
-    }
-    .daily-sleep,
-    .average-daily-sleep {
-        height: 95%;
-        width: 47%;
-    }
-    .avg-header {
-        font-size: .75em;
-    }
-    .weekly-sleep {
-        height: 100%;
-        width: 95%;
-    }
-    .week-sleep-header {
-        margin-bottom: .7%;
-    }
-    .sleep-grid {
-        height: 100%;
-        width: 60%;
-        grid-template-columns: repeat(8, 20%);
-        grid-auto-rows: repeat(3, 15%);
-    } */ */
- }
+  .daily-water {
+    width: 95%;
+    height: 20%;
+    text-align: center;
+  }
+
+  .weekly-water {
+    width: 95%;
+    height: 40%;
+    text-align: center;
+  }
+
+  .water-grid {
+    width: 70%;
+    height: 100%;
+    grid-template-columns: repeat(7, 20%);
+    grid-template-rows: repeat(2, 25%);
+  }
+
+  .daily-sleep,
+  .average-daily-sleep {
+    height: 95%;
+    width: 47%;
+  }
+
+  .avg-header {
+    font-size: .75em;
+  }
+
+  .weekly-sleep {
+    height: 100%;
+    width: 95%;
+  }
+
+  .week-sleep-header {
+    margin-bottom: .7%;
+  }
+
+  .sleep-grid {
+    height: 100%;
+    width: 60%;
+    grid-template-columns: repeat(8, 20%);
+    grid-auto-rows: repeat(3, 15%);
+  }
