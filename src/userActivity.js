@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 
 
-// let userTestData = require('../test/test-user-data')
-// let UserRepo = require('../src/userRepo')
-// let userRepo = new UserRepo(userTestData)
+let userTestData = require('../test/test-user-data')
+let UserRepo = require('../src/userRepo')
+let userRepo = new UserRepo(userTestData)
 
 class UserActivity {
     constructor(activityData) {
@@ -45,11 +45,7 @@ class UserActivity {
     exceedStepGoalCheck(date) {
         const stepGoal = this.currentUser.dailyStepGoal
         const stepsTaken = this.activityData.find(day => day.date === date).numSteps
-        if (stepsTaken > stepGoal) {
-            return true
-        } else {
-            return false
-        }
+        return (stepsTaken > stepGoal)
     }
 
     getExceededStepDays(id) {
