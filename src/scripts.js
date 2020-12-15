@@ -93,10 +93,16 @@ function displaySleepData() {
     createAvgSleepData(avgSleepQuality, currentUser.id, 'sleepQuality')
 }
 
+
+
 function displayActivityData() {
-    stepCounter.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15','numSteps')} Steps`
-    minuteCounter.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15','minutesActive')} Minutes`
-    flightCounter.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15','flightsOfStairs')} Flights of Stairs`
+    createActivityData(minuteCounter, 'minutesActive', 'Minutes')
+    createActivityData(flightCounter, 'flightsOfStairs', 'Flights of Stairs')
+    createActivityData(stepCounter, 'numSteps', 'Steps')
+}
+
+function createActivityData(element, dataType, descriptor) {
+    element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15',dataType)} ${descriptor}`
 }
 
 function displayComparisons() {
