@@ -34,92 +34,92 @@ window.addEventListener('load', displayAllData)
 
 
 function displayAllData() {
-    displayUserInfo()
-    displayAllUsersStepGoal()
-    displayWaterData()
-    displaySleepData()
-    displayActivityData()
-    displayComparisons()
-    displayWeeklyActivityData()
-    displayMilesWalked()
+  displayUserInfo()
+  displayAllUsersStepGoal()
+  displayWaterData()
+  displaySleepData()
+  displayActivityData()
+  displayComparisons()
+  displayWeeklyActivityData()
+  displayMilesWalked()
 }
 
 
 function displayUserInfo() {
-    greeting.innerHTML = `Hello, ${currentUser.getFirstName()}`
-    userStepGoal.innerText = currentUser.dailyStepGoal
-    userStrideLength.innerText = currentUser.strideLength
+  greeting.innerHTML = `Hello, ${currentUser.getFirstName()}`
+  userStepGoal.innerText = currentUser.dailyStepGoal
+  userStrideLength.innerText = currentUser.strideLength
 }
 
 function displayAllUsersStepGoal() {
-    othersStepGoal.innerText = userRepo.calculateAverageSteps()
+  othersStepGoal.innerText = userRepo.calculateAverageSteps()
 }
 
 function displayWaterData() {
-    dailyWater.innerHTML = `${userHydration.returnDailyConsumption(currentUser.id,'2019/06/15')} OZs.`
-    const weekDisplay = Array.from(waterGridDisplay)
-    return weekDisplay.map(function(item, index) {
-        item.append(userHydration.returnWeeklyConsumption(currentUser.id)[index])
-    })
+  dailyWater.innerHTML = `${userHydration.returnDailyConsumption(currentUser.id, '2019/06/15')} OZs.`
+  const weekDisplay = Array.from(waterGridDisplay)
+  return weekDisplay.map(function(item, index) {
+    item.append(userHydration.returnWeeklyConsumption(currentUser.id)[index])
+  })
 }
 
 function createDailySleepData(element, identifier, type) {
-    element.innerText = userSleep.getDataByDay(identifier, type)
+  element.innerText = userSleep.getDataByDay(identifier, type)
 }
 
 function createAvgSleepData(element, identifier, type) {
-    element.innerText = userSleep.calculateAvgDataPerDay(identifier, type)
+  element.innerText = userSleep.calculateAvgDataPerDay(identifier, type)
 }
 
 function createWeeklySleepData(display, type) {
-    Array.from(display)
-        .map(function(item, index) {
-            return item.append(userSleep.getDataByWeek(currentUser.id, '2019/06/15', type)[index])
-        })
-}
-
-function displaySleepData() {
-    createWeeklySleepData(hoursGridDisplay, 'hoursSlept')
-    createWeeklySleepData(qualityGridDisplay, 'sleepQuality')
-    createDailySleepData(dailySleepHours, '2019/06/15', 'hoursSlept')
-    createDailySleepData(dailySleepQuality, '2019/06/15', 'sleepQuality')
-    createAvgSleepData(avgDailySleep, currentUser.id, 'hoursSlept')
-    createAvgSleepData(avgSleepQuality, currentUser.id, 'sleepQuality')
-}
-
-function createActivityData(element, dataType, descriptor) {
-    element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15',dataType)} ${descriptor}`
-}
-
-function displayActivityData() {
-    createActivityData(minuteCounter, 'minutesActive', 'Minutes')
-    createActivityData(flightCounter, 'flightsOfStairs', 'Flights of Stairs')
-    createActivityData(stepCounter, 'numSteps', 'Steps')
-}
-
-function createComparisonData(element, dataType) {
-    element.innerText = `Today's Overall Average: ${userActivity.calculateAvgActivityData('2019/06/15', dataType)}`
-}
-
-function displayComparisons() {
-    createComparisonData(stepsComparison, 'numSteps')
-    createComparisonData(minutesComparison, 'minutesActive')
-    createComparisonData(flightsComparison, 'flightsOfStairs')
-}
-
-function createWeeklyActivityData(element, dataType) {
-    Array.from(element).map(function(item, index) {
-        return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', dataType)[index])
+  Array.from(display)
+    .map(function(item, index) {
+      return item.append(userSleep.getDataByWeek(currentUser.id, '2019/06/15', type)[index])
     })
 }
 
+function displaySleepData() {
+  createWeeklySleepData(hoursGridDisplay, 'hoursSlept')
+  createWeeklySleepData(qualityGridDisplay, 'sleepQuality')
+  createDailySleepData(dailySleepHours, '2019/06/15', 'hoursSlept')
+  createDailySleepData(dailySleepQuality, '2019/06/15', 'sleepQuality')
+  createAvgSleepData(avgDailySleep, currentUser.id, 'hoursSlept')
+  createAvgSleepData(avgSleepQuality, currentUser.id, 'sleepQuality')
+}
+
+function createActivityData(element, dataType, descriptor) {
+  element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/06/15', dataType)} ${descriptor}`
+}
+
+function displayActivityData() {
+  createActivityData(minuteCounter, 'minutesActive', 'Minutes')
+  createActivityData(flightCounter, 'flightsOfStairs', 'Flights of Stairs')
+  createActivityData(stepCounter, 'numSteps', 'Steps')
+}
+
+function createComparisonData(element, dataType) {
+  element.innerText = `Today's Overall Average: ${userActivity.calculateAvgActivityData('2019/06/15', dataType)}`
+}
+
+function displayComparisons() {
+  createComparisonData(stepsComparison, 'numSteps')
+  createComparisonData(minutesComparison, 'minutesActive')
+  createComparisonData(flightsComparison, 'flightsOfStairs')
+}
+
+function createWeeklyActivityData(element, dataType) {
+  Array.from(element).map(function(item, index) {
+    return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', dataType)[index])
+  })
+}
+
 function displayWeeklyActivityData() {
-    createWeeklyActivityData(stepsGridDisplay, 'numSteps')
-    createWeeklyActivityData(minutesGridDisplay, 'minutesActive')
-    createWeeklyActivityData(flightsGridDisplay, 'flightsOfStairs')
+  createWeeklyActivityData(stepsGridDisplay, 'numSteps')
+  createWeeklyActivityData(minutesGridDisplay, 'minutesActive')
+  createWeeklyActivityData(flightsGridDisplay, 'flightsOfStairs')
 }
 
 function displayMilesWalked() {
-    userActivity.currentUser = userRepo.getUserData(currentUser.id)
-    milesWalked.innerText = `That's the equivalent to ${userActivity.calculateMilesWalked(currentUser.id,'2019/06/15', userRepo)} miles!`
+  userActivity.currentUser = userRepo.getUserData(currentUser.id)
+  milesWalked.innerText = `That's the equivalent to ${userActivity.calculateMilesWalked(currentUser.id, '2019/06/15', userRepo)} miles!`
 }

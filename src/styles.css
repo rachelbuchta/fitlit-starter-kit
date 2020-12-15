@@ -442,22 +442,18 @@ img {
   }
 }
 
-/* @media (overflow-block: scroll) {
-  element{
-   color: red;
- }
-} */
-/* (overflow-block: scroll) */
 @media screen and (max-width: 600px) {
+
   body {
-    height: auto;
+    height: 150%;
+    padding: 1%;
   }
 
   main {
     display: flex;
     justify-content: space-around;
-    margin: 0%;
-    overflow: scroll;
+    margin: 1.5%;
+    /* overflow: scroll; */
   }
 
   .greeting {
@@ -496,7 +492,7 @@ img {
   .daily-activities {
     display: flex;
     flex-direction: column;
-    border: .08em solid #AC9F57;
+    /* border: .08em solid #AC9F57; */
     align-items: center;
     grid-template-columns: repeat(1, 80%);
     grid-auto-rows: repeat(3, 20%);
@@ -505,8 +501,6 @@ img {
     grid-auto-rows: 45% 45%;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-    flex-direction: column;
-    border: black;
     width: 100%;
     height: 100%;
   }
@@ -558,47 +552,75 @@ img {
   .sleep-hydration-box {
     display: flex;
     flex-direction: column;
-    height: 80%;
+
+    margin-top: -1%;
+    /* align-items: center;
+    align-content: center;
+    justify-content: center; */
+    height: 25em;
     width: 95%;
   }
 
   .water-box,
-  .sleep-box {
+  .sleep-box
+   {
     display: flex;
     flex-direction: column;
+    border: .08em solid #AC9F57;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
-    height: 100%;
+    border: .08em solid #AC9F57;
+    justify-content: flex-end;
+
   }
 
-  .water-wrapper,
-  .sleep-wrapper {
+.water-ounces {
+  font-size: 1em;
+}
+  .water-wrapper{
+  /* .sleep-wrapper { */
     display: flex;
     flex-direction: column;
-    width: 95%;
+    /* justify-content: center; */
+    width: 100%;
     height: 100%;
   }
 
   .daily-water {
     width: 95%;
-    height: 20%;
+    height: 60%;
+    border: .08em solid #AC9F57;
+    align-self: center;
     text-align: center;
+    margin: .2%;
   }
 
   .weekly-water {
     width: 95%;
-    height: 40%;
+    height: 60%;
+    border: .08em solid #AC9F57;
+    align-self: center;
     text-align: center;
   }
 
   .water-grid {
-    width: 70%;
+
+    grid-template-columns: repeat(7, 15%);
+    grid-template-rows: repeat(2, 50%);
+    grid-auto-rows: 45% 45%;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    /* width: 70%;
     height: 100%;
     grid-template-columns: repeat(7, 20%);
-    grid-template-rows: repeat(2, 25%);
+    grid-template-rows: repeat(2, 25%); */
   }
 
   .daily-sleep,
   .average-daily-sleep {
+    border: .08em solid #AC9F57;
     height: 95%;
     width: 47%;
   }
@@ -610,6 +632,7 @@ img {
   .weekly-sleep {
     height: 100%;
     width: 95%;
+    border: .08em solid #AC9F57;
   }
 
   .week-sleep-header {

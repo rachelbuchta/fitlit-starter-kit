@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-const hydrationTestData = [{
+const hydrationTestData = [
+  {
     "userID": 1,
     "date": "2019/06/15",
     "numOunces": 37
