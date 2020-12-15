@@ -41,7 +41,6 @@ window.addEventListener('load', displayAllData)
 function displayAllData() {
     displayUserInfo()
     displayAllUsersStepGoal()
-
     displayWaterData()
     displaySleepData()
     displayActivityData()
@@ -113,16 +112,16 @@ function displayComparisons() {
     createComparisonData(flightsComparison, 'flightsOfStairs')
 }
 
+function createWeeklyActivityData(element, dataType) {
+    Array.from(element).map(function(item, index) {
+        return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', dataType)[index])
+    })
+}
+
 function displayWeeklyActivityData() {
-    Array.from(stepsGridDisplay).map(function(item, index) {
-        return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', 'numSteps')[index])
-    })
-    Array.from(minutesGridDisplay).map(function(item, index) {
-        return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', 'minutesActive')[index])
-    })
-    Array.from(flightsGridDisplay).map(function(item, index) {
-        return item.append(userActivity.getDataByWeek(currentUser.id, '2019/06/15', 'flightsOfStairs')[index])
-    })
+    createWeeklyActivityData(stepsGridDisplay, 'numSteps')
+    createWeeklyActivityData(minutesGridDisplay, 'minutesActive')
+    createWeeklyActivityData(flightsGridDisplay, 'flightsOfStairs')
 }
 
 function displayMilesWalked() {
