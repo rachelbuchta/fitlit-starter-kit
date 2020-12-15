@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 
 
-let userTestData = require('../test/test-user-data')
-let UserRepo = require('../src/userRepo')
-let userRepo = new UserRepo(userTestData)
+// let userTestData = require('../test/test-user-data')
+// let UserRepo = require('../src/userRepo')
+// let userRepo = new UserRepo(userTestData)
 
 class UserActivity {
     constructor(activityData) {
@@ -79,41 +79,15 @@ class UserActivity {
             // const topDay = Math.max(...topDays)
     }
 
-    // calculateAvgTotalSteps(date) {
-    //   const dayOfUsers = this.activityData.filter(day => day.date === date)
-    //   const avgSteps = dayOfUsers.reduce((acc, user) => {
-    //     acc += user.numSteps
-    //     return acc
-    //   }, 0)
-    //   return Math.round(avgSteps / dayOfUsers.length)
-    // }
-
     calculateAvgActivityData(date, dataType) {
-            const dayOfUsers = this.activityData.filter(day => day.date === date)
-            const avgSteps = dayOfUsers.reduce((acc, user) => {
-                    acc += user[dataType]
-                    return acc
-                },
-                0)
-            return Math.round(avgSteps / dayOfUsers.length)
-        }
-        // calculateAvgStairsClimbed(date) {
-        //     const dayOfUsers = this.activityData.filter(day => day.date === date)
-        //     const avgFlights = dayOfUsers.reduce((acc, user) => {
-        //         acc += user.flightsOfStairs
-        //         return acc
-        //     }, 0)
-        //     return Math.round(avgFlights / dayOfUsers.length)
-        // }
-
-    // calculateAvgMinActive(date) {
-    //     const dayOfUsers = this.activityData.filter(day => day.date === date)
-    //     const avgMins = dayOfUsers.reduce((acc, user) => {
-    //         acc += user.minutesActive
-    //         return acc
-    //     }, 0)
-    //     return Math.round(avgMins / dayOfUsers.length)
-    // }
+        const dayOfUsers = this.activityData.filter(day => day.date === date)
+        const avgSteps = dayOfUsers.reduce((acc, user) => {
+                acc += user[dataType]
+                return acc
+            },
+            0)
+        return Math.round(avgSteps / dayOfUsers.length)
+    }
 
     getDataByWeek(id, date, type) {
         const userData = this.activityData.filter(day => day.userID === id)
