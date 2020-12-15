@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 
 
-let userTestData = require('../test/test-user-data')
-let UserRepo = require('../src/userRepo')
-let userRepo = new UserRepo(userTestData)
+// let userTestData = require('../test/test-user-data')
+// let UserRepo = require('../src/userRepo')
+// let userRepo = new UserRepo(userTestData)
 
 class UserActivity {
     constructor(activityData) {
@@ -74,10 +74,9 @@ class UserActivity {
     calculateAvgActivityData(date, dataType) {
         const dayOfUsers = this.activityData.filter(day => day.date === date)
         const avgSteps = dayOfUsers.reduce((acc, user) => {
-                acc += user[dataType]
-                return acc
-            },
-            0)
+            acc += user[dataType]
+            return acc
+        }, 0)
         return Math.round(avgSteps / dayOfUsers.length)
     }
 
@@ -95,17 +94,3 @@ class UserActivity {
 if (typeof module !== 'undefined') {
     module.exports = UserActivity
 }
-
-
-
-
-
-
-
-
-// const newUserRepo = new UserRepo(userTestData)
-// const newActivityRepo = new UserRepo(acivityTestData)
-
-//         const milesWalked = ((newUserRepo.getUserData(id).strideLength * numberOfSteps.getUserData(id).numSteps) / 5280).toFixed(1)
-//         return parseFloat(milesWalked)
-//     }

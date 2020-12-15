@@ -41,8 +41,8 @@ window.addEventListener('load', displayAllData)
 function displayAllData() {
     displayUserInfo()
     displayAllUsersStepGoal()
-    displayDailyWaterIntake()
-    displayWeeklyWaterIntake()
+
+    displayWaterData()
     displaySleepData()
     displayActivityData()
     displayComparisons()
@@ -61,11 +61,8 @@ function displayAllUsersStepGoal() {
     othersStepGoal.innerText = userRepo.calculateAverageSteps()
 }
 
-function displayDailyWaterIntake() {
+function displayWaterData() {
     dailyWater.innerHTML = `${userHydration.returnDailyConsumption(currentUser.id,'2019/06/15')} OZs.`
-}
-
-function displayWeeklyWaterIntake() {
     const weekDisplay = Array.from(waterGridDisplay)
     return weekDisplay.map(function(item, index) {
         item.append(userHydration.returnWeeklyConsumption(currentUser.id)[index])
