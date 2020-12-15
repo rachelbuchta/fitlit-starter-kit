@@ -315,6 +315,13 @@ img {
 
 @media screen and (max-width: 800px) {
 
+  main {
+    display: flex;
+    justify-content: space-around;
+    height: 95%;
+    margin: 0%;
+  }
+
   .greeting {
     height: 10%;
     width: 95%;
@@ -349,7 +356,6 @@ img {
 #minutes-card,
 #miles-card {
   width: 20%;
-
 }
 
 .activity-card {
@@ -388,18 +394,53 @@ img {
   height: 100%;
 }
 
-.water-wrapper {
+.water-wrapper,
+.sleep-wrapper {
   width: 100%;
   height: 100%;
 }
 
-.daily-water,
+.daily-water {
+  width: 47%;
+  height: 96%;
+  text-align: center;
+}
 .weekly-water {
-  width: 45%;
+  width: 47%;
+  height: 96%;
+  text-align: center;
 }
 
+.water-grid {
+  width: 70%;
+  height: 100%;
+  grid-template-columns: repeat(7, 20%);
+  grid-template-rows: repeat(2, 25%);
+}
 
+.daily-sleep,
+.average-daily-sleep {
+  height: 95%;
+  width: 47%;
+}
 
+.avg-header {
+  font-size: .75em;
+}
 
+.weekly-sleep {
+  height: 100%;
+  width: 95%;
+}
 
+.week-sleep-header {
+  margin-bottom: .7%;
+}
+
+.sleep-grid {
+  height: 100%;
+  width: 60%;
+  grid-template-columns: repeat(8, 20%);
+  grid-auto-rows: repeat(3, 15%);
+}
 }
