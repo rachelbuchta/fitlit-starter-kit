@@ -1,50 +1,48 @@
 /* eslint-disable max-len */
 class UserSleep {
-    constructor(data) {
-        this.data = data
-        this.currentUser
-    }
+  constructor(data) {
+    this.data = data
+    this.currentUser
+  }
 
+  calculateAvgDataPerDay(id, type) {
+    this.findDay(id)
+    const totalAmount = this.currentUser.reduce((acc, day) => {
+      acc += day[type]
+      return acc
+    }, 0)
+    return parseFloat((totalAmount / this.currentUser.length).toFixed(1))
+  }
 
-    calculateAvgDataPerDay(id, type) {
-        this.findDay(id)
-        const totalAmount = this.currentUser.reduce((acc, day) => {
-            acc += day[type]
-            return acc
-        }, 0)
-        return parseFloat((totalAmount / this.currentUser.length).toFixed(1))
-    }
+  getOverallAvgQuality() {
+    const totalQuality = this.data.reduce((acc, day) => {
+      acc += day.sleepQuality
+      return acc
+    }, 0)
+    return parseFloat((totalQuality / this.data.length).toFixed(1))
+  }
 
-    getOverallAvgQuality() {
-        const totalQuality = this.data.reduce((acc, day) => {
-            acc += day.sleepQuality
-            return acc
-        }, 0)
-        return parseFloat((totalQuality / this.data.length).toFixed(1))
-    }
+  getDataByDay(date, type) {
+    return this.data.find(day => day.date === date)[type]
+  }
 
-    getDataByDay(date, type) {
-        return this.data.find(day => day.date === date)[type]
-    }
+  getDataByWeek(id, date, type) {
+    this.findDay(id)
+    const weekSleep = this.currentUser.find(item => item.date === date)
+    const index = this.currentUser.indexOf(weekSleep)
+    const days = this.currentUser.slice(index, 7)
+    const weeklyData = days.map(day => day[type])
+    return weeklyData
+  }
 
-    getDataByWeek(id, date, type) {
+  findTopSnoozer(date) {
+    const findDay = this.data.filter(day => day.date === date)
+    return findDay.sort((a, b) => b.hoursSlept - a.hoursSlept).unshift()
+  }
 
-        this.findDay(id)
-        const weekSleep = this.currentUser.find(item => item.date === date)
-        const index = this.currentUser.indexOf(weekSleep)
-        const days = this.currentUser.slice(index, 7)
-        const weeklyData = days.map(day => day[type])
-        return weeklyData
-    }
-
-    findTopSnoozer(date) {
-        const findDay = this.data.filter(day => day.date === date)
-        return findDay.sort((a, b) => b.hoursSlept - a.hoursSlept).unshift()
-    }
-
-    findDay(id) {
-        this.currentUser = this.data.filter(day => day.userID === id)
-    }
+  findDay(id) {
+    this.currentUser = this.data.filter(day => day.userID === id)
+  }
 }
 
 // findGoodSleepers(date) {
@@ -77,5 +75,5 @@ class UserSleep {
 //
 
 if (typeof module !== 'undefined') {
-    module.exports = UserSleep
+  module.exports = UserSleep
 }
