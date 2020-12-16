@@ -13,7 +13,7 @@ class UserRepo {
       (acc += user.dailyStepGoal)
       return acc
     }, 0)
-    return Math.round(totalSteps / this.data.length)
+    return Math.round(totalSteps / this.data.length).toLocaleString()
   }
 }
 

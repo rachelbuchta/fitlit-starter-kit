@@ -30,7 +30,7 @@ const flightsComparison = document.querySelector('.flight-comparison')
 const milesWalked = document.querySelector('.miles-walked')
 
 
-// window.addEventListener('load', displayAllData)
+window.addEventListener('load', displayAllData)
 // document.addEventListener('drag', function(event) {
 //
 // }, false)
@@ -68,7 +68,7 @@ function generateRandomUser() {
 
 function displayUserInfo() {
   greeting.innerHTML = `Hello, ${currentUser.getFirstName()}`
-  userStepGoal.innerText = currentUser.dailyStepGoal
+  userStepGoal.innerText = currentUser.dailyStepGoal.toLocaleString()
   userStrideLength.innerText = currentUser.strideLength
 }
 

@@ -16,7 +16,7 @@ class UserActivity {
   returnActivityData(id, date, type) {
     return this.activityData
       .filter(day => day.userID === id)
-      .find(userDay => userDay.date === date)[type]
+      .find(userDay => userDay.date === date)[type].toLocaleString()
   }
 
   calculateAvgMinByWeek(id, date) {
@@ -63,7 +63,7 @@ class UserActivity {
       acc += user[dataType]
       return acc
     }, 0)
-    return Math.round(avgSteps / dayOfUsers.length)
+    return Math.round(avgSteps / dayOfUsers.length).toLocaleString()
   }
 
   getDataByWeek(id, date, type) {
@@ -72,7 +72,7 @@ class UserActivity {
     const index = userDataByID.indexOf(startDay)
     const days = userDataByID.slice(index, index + 7)
     const dataForAWeek = days.map(day => day[type])
-    return dataForAWeek
+    return dataForAWeek.map(num => num.toLocaleString())
   }
 }
 
