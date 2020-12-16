@@ -6,8 +6,7 @@ class UserSleep {
   }
 
   calculateAvgDataOverAllDays(id, type) {
-
-    this.findUser(id)
+    this.currentUser = this.data.filter(day => day.userID === id)
     const totalAmount = this.currentUser.reduce((acc, day) => {
       acc += day[type]
       return acc
@@ -24,12 +23,12 @@ class UserSleep {
   }
 
   getDataByDay(id, date, type) {
-    this.findUser(id)
+    this.currentUser = this.data.filter(day => day.userID === id)
     return this.currentUser.find(day => day.date === date)[type]
   }
 
   getDataByWeek(id, date, type) {
-    this.findUser(id)
+    this.currentUser = this.data.filter(day => day.userID === id)
     const weekSleep = this.currentUser.find(item => item.date === date)
     const index = this.currentUser.indexOf(weekSleep)
     const days = this.currentUser.slice(index, index + 7)
@@ -41,74 +40,33 @@ class UserSleep {
     const findDay = this.data.filter(day => day.date === date)
     return findDay.sort((a, b) => b.hoursSlept - a.hoursSlept).unshift()
   }
-
-  findUser(id) {
-    return this.currentUser = this.data.filter(day => day.userID === id)
-  }
 }
 
 // findGoodSleepers(date) {
 
-      //
-  		// const dates = this.data.map(el => el.sleepData)
-      // console.log(dates)
-  		// const newDates = dates.map(el => el.concat())
-  		// console.log(newDates)
-  		// const allSleep = this.userSleepData.map(el => el.sleepData);
-  		// // console.log(allSleep)
-  		// allSleep.reduce(function(a,b) {
-  		// 	const sleepDates = b.filter(el => dates.push(el.date))
-  		// 	return a
-  		// }, [])
-  		// console.log(dates)
-  		// const startDate = dates.findIndex(el => el === date)
-  		// const dateRange = allSleep.slice(startDate, startDate+7).map(el => el.sleepQuality <3)
-  		// console.log(dateRange)
-  		//   this.data.filter(function(el) {
-  		// 	let values = Object.values(el.data)
-  		// 	let num = values.findIndex(el => el.date === date)
-  		// 	let week = values.slice(num, num+7)
-      //
-  		// 	let sleepQualitySum = week.reduce((acc,curr) => {
-      //
-  		// 		acc += curr.sleepQuality
-  		// 		return acc
-  		// 	},0)
-  		// 	let weekAvg = sleepQualitySum/7
-  		// 	return weekAvg > 3
-      //
-  		// }).map(el => el.userID)
-  		// console.log(findGoodSleepers())
 // const final = this.data.reduce((acc, user) => {
-  // const final = this.data.filter(day => day.date === date)[0]
-  // console.log(final)
-    // console.log(final)
-    // const userIndex = this.data.indexOf(this.data.find(day => day.date === date))[0]
-    // console.log(userIndex)
-  //   const userIDData = findDate
-  //   // console.log(userIDData);
-  //   const filterData = this.data.filter(day => day.userID === findDate)
-  //   console.log(filterData)
-  //   const userWeek = filterData.slice(userIndex, 7)
-  //   const avgQualityRough = userWeek.reduce((acc, day) => {
-  //     acc += day.sleepQuality
-  //     return acc
-  //   }, 0)
-  //   if ((avgQualityRough / 7) > 3) {
-  //     acc.push(user.userID)
-  //   }
-  //
-  // return acc
+// const final = this.data.filter(day => day.date === date)[0]
+// console.log(final)
+// console.log(final)
+// const userIndex = this.data.indexOf(this.data.find(day => day.date === date))[0]
+// console.log(userIndex)
+//   const userIDData = findDate
+//   // console.log(userIDData);
+//   const filterData = this.data.filter(day => day.userID === findDate)
+//   console.log(filterData)
+//   const userWeek = filterData.slice(userIndex, 7)
+//   const avgQualityRough = userWeek.reduce((acc, day) => {
+//     acc += day.sleepQuality
+//     return acc
+//   }, 0)
+//   if ((avgQualityRough / 7) > 3) {
+//     acc.push(user.userID)
+//   }
+//
+// return acc
 
 // }
 // findDate ++
-
-  // }
-
-
-
-
-// }
 
 
 // Find all users who average a sleep quality greater than 3 for a given week (7 days) - you should be able to calculate this for any week, not just the latest week

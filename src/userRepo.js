@@ -6,10 +6,6 @@ class UserRepo {
 
   getUserData(id) {
     return this.data.find(user => user.id === id)
-    // console.log((Object.values(id)));
-    // return this.data.find(user => Object.values(user).includes(id))
-    // activity repo = userID
-    //user repo = id
   }
 
   calculateAverageSteps() {

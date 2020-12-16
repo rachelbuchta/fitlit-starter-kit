@@ -4,6 +4,7 @@ let userHydration = new UserHydration(hydrationData)
 let userSleep = new UserSleep(sleepData)
 let userActivity = new UserActivity(activityData)
 let currentUser
+let dragged
 
 const userStepGoal = document.querySelector('.user-step-goal')
 const userStrideLength = document.querySelector('.user-stride-length')
@@ -30,6 +31,22 @@ const milesWalked = document.querySelector('.miles-walked')
 
 
 window.addEventListener('load', displayAllData)
+document.addEventListener('drag', function(event) {
+
+}, false)
+document.addEventListener('dragstart', function (event) {
+  dragged = event.target
+}, false)
+
+document.addEventListener('dragend', function(event) {
+
+}, false)
+
+document.addEventListener('dragover', function (event) {
+  event.preventDefault()
+}, false)
+
+
 
 
 function displayAllData() {

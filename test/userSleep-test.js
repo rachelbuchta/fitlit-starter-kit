@@ -4,7 +4,6 @@ const expect = chai.expect
 
 const UserSleep = require('../src/userSleep')
 const userSleepData = require('./test-userSleep-data')
-const userOneSleepData = require('./test-userSleep-data')
 
 describe('UserSleep', () => {
   let userSleep
@@ -26,36 +25,30 @@ describe('UserSleep', () => {
 
   })
 
-  // it('should have a method that finds all of a users sleep data by ID and assigns it the property of currentUser', () => {
-  //   console.log("Hey",userOneSleepData)
-  //   console.log("ANOTHERONE", userSleep.findUser(1))
-  //   expect(userSleep.findUser(1)).to.equal(userOneSleepData)
-  //   expect(userSleep.currentUser).to.equal(userOneSleepData)
-  //
-  // })
-
-  it('should calculate average amount of hours slept over all days', () => {
+  it('should calculate average amount of hours slept over all days for a user', () => {
 
     expect(userSleep.calculateAvgDataOverAllDays(1, 'hoursSlept')).to.equal(7.8)
-    // expect(userSleep.calculateAvgDataOverAllDays(3, 'hoursSlept')).to.equal(8.1)
+    expect(userSleep.calculateAvgDataOverAllDays(3, 'hoursSlept')).to.equal(7.6)
   })
 
-  it('should calculate average sleep quality over all days', () => {
+  it('should calculate average sleep quality over all days for a user', () => {
 
     expect(userSleep.calculateAvgDataOverAllDays(3, 'sleepQuality')).to.equal(3.3)
-    // expect(userSleep.calculateAvgDataOverAllDays(3, 'sleepQuality')).to.equal(2.6)
+    expect(userSleep.calculateAvgDataOverAllDays(1, 'sleepQuality')).to.equal(2.8)
 
   })
 
   it('should return amount of sleep by date', () => {
 
     expect(userSleep.getDataByDay(1, '2019/06/15', 'hoursSlept')).to.equal(6.1)
+    expect(userSleep.getDataByDay(3, '2019/06/25', 'hoursSlept')).to.equal(6.4)
 
   })
 
   it('should get quality by date', () => {
 
     expect(userSleep.getDataByDay(1, '2019/06/15', 'sleepQuality')).to.equal(2.2)
+    expect(userSleep.getDataByDay(3, '2019/06/25', 'sleepQuality')).to.equal(4.9)
 
   })
 
