@@ -30,21 +30,21 @@ const flightsComparison = document.querySelector('.flight-comparison')
 const milesWalked = document.querySelector('.miles-walked')
 
 
-window.addEventListener('load', displayAllData)
-document.addEventListener('drag', function(event) {
-
-}, false)
-document.addEventListener('dragstart', function (event) {
-  dragged = event.target
-}, false)
-
-document.addEventListener('dragend', function(event) {
-
-}, false)
-
-document.addEventListener('dragover', function (event) {
-  event.preventDefault()
-}, false)
+// window.addEventListener('load', displayAllData)
+// document.addEventListener('drag', function(event) {
+//
+// }, false)
+// document.addEventListener('dragstart', function (event) {
+//   dragged = event.target
+// }, false)
+//
+// document.addEventListener('dragend', function(event) {
+//
+// }, false)
+//
+// document.addEventListener('dragover', function (event) {
+//   event.preventDefault()
+// }, false)
 
 
 
