@@ -5,8 +5,9 @@ class UserSleep {
     this.currentUser
   }
 
-  calculateAvgDataPerDay(id, type) {
-    this.findDay(id)
+  calculateAvgDataOverAllDays(id, type) {
+
+    this.findUser(id)
     const totalAmount = this.currentUser.reduce((acc, day) => {
       acc += day[type]
       return acc
@@ -22,14 +23,13 @@ class UserSleep {
     return parseFloat((totalQuality / this.data.length).toFixed(1))
   }
 
-  getDataByDay(date, type) {
-    // return this.data.find(day => day.date === date)[type]
-    console.log(this.data.find(day => day.date === date)[type])
-    return this.data.find(day => day.date === date)[type]
+  getDataByDay(id, date, type) {
+    this.findUser(id)
+    return this.currentUser.find(day => day.date === date)[type]
   }
 
   getDataByWeek(id, date, type) {
-    this.findDay(id)
+    this.findUser(id)
     const weekSleep = this.currentUser.find(item => item.date === date)
     const index = this.currentUser.indexOf(weekSleep)
     const days = this.currentUser.slice(index, index + 7)
@@ -42,8 +42,8 @@ class UserSleep {
     return findDay.sort((a, b) => b.hoursSlept - a.hoursSlept).unshift()
   }
 
-  findDay(id) {
-    this.currentUser = this.data.filter(day => day.userID === id)
+  findUser(id) {
+    return this.currentUser = this.data.filter(day => day.userID === id)
   }
 }
 

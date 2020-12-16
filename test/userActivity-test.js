@@ -122,12 +122,14 @@ describe('UserActivity', () => {
 
     expect(userActivity.getDataByWeek(1, '2019/06/15', 'numSteps')).to.deep.equal([3577, 6637, 14329, 4419, 8429, 14478, 6760])
     expect(userActivity.getDataByWeek(2, '2019/06/22', 'numSteps')).to.deep.equal([3605, 4148, 8568, 10305, 11522, 4240, 12555])
+
   })
 
   it('should return number of stairs climbed each day for a week by date', () => {
 
     expect(userActivity.getDataByWeek(1, '2019/06/15', 'flightsOfStairs')).to.deep.equal([16, 36, 18, 33, 2, 12, 6])
     expect(userActivity.getDataByWeek(3, '2019/06/22', 'flightsOfStairs')).to.deep.equal([17, 9, 45, 37, 45, 45, 19])
+    
   })
 
 })

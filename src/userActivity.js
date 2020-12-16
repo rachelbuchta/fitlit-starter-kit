@@ -32,7 +32,7 @@ class UserActivity {
   }
 
   exceedStepGoalCheck(id, date, userData) {
-    console.log(this.currentUser = userData.getUserData(id))
+    this.currentUser = userData.getUserData(id)
     const stepGoal = this.currentUser.dailyStepGoal
     const stepsTaken = this.activityData.find(day => day.date === date).numSteps
     return (stepsTaken > stepGoal)

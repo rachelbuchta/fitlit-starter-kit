@@ -45,8 +45,8 @@ function displayAllData() {
 }
 
 function generateRandomUser() {
-  const user = Math.floor(Math.random() * 50) + 1;
-  currentUser = new User(userRepo.getUserData(user))
+  const userID = Math.floor(Math.random() * 50) + 1;
+  currentUser = new User(userRepo.getUserData(userID))
 }
 
 function displayUserInfo() {
@@ -70,18 +70,18 @@ function displayWaterData() {
 function displaySleepData() {
   createWeeklySleepData(hoursGridDisplay, 'hoursSlept')
   createWeeklySleepData(qualityGridDisplay, 'sleepQuality')
-  createDailySleepData(dailySleepHours, '2019/09/22', 'hoursSlept')
-  createDailySleepData(dailySleepQuality, '2019/09/22', 'sleepQuality')
+  createDailySleepData(dailySleepHours, currentUser.id, '2019/09/22', 'hoursSlept')
+  createDailySleepData(dailySleepQuality, currentUser.id, '2019/09/22', 'sleepQuality')
   createAvgSleepData(avgDailySleep, currentUser.id, 'hoursSlept')
   createAvgSleepData(avgSleepQuality, currentUser.id, 'sleepQuality')
 }
 
-function createDailySleepData(element, identifier, type) {
-  element.innerText = userSleep.getDataByDay(identifier, type)
+function createDailySleepData(element, id, date, dataType) {
+  element.innerText = userSleep.getDataByDay(id, date, dataType)
 }
 
-function createAvgSleepData(element, identifier, type) {
-  element.innerText = userSleep.calculateAvgDataPerDay(identifier, type)
+function createAvgSleepData(element, id, type) {
+  element.innerText = userSleep.calculateAvgDataOverAllDays(id, type)
 }
 
 function createWeeklySleepData(display, type) {
@@ -91,14 +91,14 @@ function createWeeklySleepData(display, type) {
     })
 }
 
-function createDailyActivityData(element, dataType, descriptor) {
-  element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/09/22', dataType)} ${descriptor}`
-}
-
 function displayDailyActivityData() {
   createDailyActivityData(minuteCounter, 'minutesActive', 'Minutes')
   createDailyActivityData(flightCounter, 'flightsOfStairs', 'Flights of Stairs')
   createDailyActivityData(stepCounter, 'numSteps', 'Steps')
+}
+
+function createDailyActivityData(element, dataType, descriptor) {
+  element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/09/22', dataType)} ${descriptor}`
 }
 
 function createComparisonData(element, dataType) {
