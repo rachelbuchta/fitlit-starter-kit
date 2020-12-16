@@ -5,8 +5,8 @@ class UserSleep {
     this.currentUser
   }
 
-  calculateAvgDataPerDay(id, type) {
-    this.findDay(id)
+  calculateAvgDataOverAllDays(id, type) {
+    this.currentUser = this.data.filter(day => day.userID === id)
     const totalAmount = this.currentUser.reduce((acc, day) => {
       acc += day[type]
       return acc
@@ -22,15 +22,16 @@ class UserSleep {
     return parseFloat((totalQuality / this.data.length).toFixed(1))
   }
 
-  getDataByDay(date, type) {
-    return this.data.find(day => day.date === date)[type]
+  getDataByDay(id, date, type) {
+    this.currentUser = this.data.filter(day => day.userID === id)
+    return this.currentUser.find(day => day.date === date)[type]
   }
 
   getDataByWeek(id, date, type) {
-    this.findDay(id)
+    this.currentUser = this.data.filter(day => day.userID === id)
     const weekSleep = this.currentUser.find(item => item.date === date)
     const index = this.currentUser.indexOf(weekSleep)
-    const days = this.currentUser.slice(index, 7)
+    const days = this.currentUser.slice(index, index + 7)
     const weeklyData = days.map(day => day[type])
     return weeklyData
   }
@@ -39,11 +40,34 @@ class UserSleep {
     const findDay = this.data.filter(day => day.date === date)
     return findDay.sort((a, b) => b.hoursSlept - a.hoursSlept).unshift()
   }
-
-  findDay(id) {
-    this.currentUser = this.data.filter(day => day.userID === id)
-  }
 }
+
+// findGoodSleepers(date) {
+
+// const final = this.data.reduce((acc, user) => {
+// const final = this.data.filter(day => day.date === date)[0]
+// console.log(final)
+// console.log(final)
+// const userIndex = this.data.indexOf(this.data.find(day => day.date === date))[0]
+// console.log(userIndex)
+//   const userIDData = findDate
+//   // console.log(userIDData);
+//   const filterData = this.data.filter(day => day.userID === findDate)
+//   console.log(filterData)
+//   const userWeek = filterData.slice(userIndex, 7)
+//   const avgQualityRough = userWeek.reduce((acc, day) => {
+//     acc += day.sleepQuality
+//     return acc
+//   }, 0)
+//   if ((avgQualityRough / 7) > 3) {
+//     acc.push(user.userID)
+//   }
+//
+// return acc
+
+// }
+// findDate ++
+
 
 // Find all users who average a sleep quality greater than 3 for a given week (7 days) - you should be able to calculate this for any week, not just the latest week
 
