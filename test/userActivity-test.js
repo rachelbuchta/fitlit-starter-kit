@@ -19,14 +19,28 @@ describe('UserActivity', () => {
 
   it('should be an instance of UserActivity', () => {
 
-
     expect(userActivity).to.be.an.instanceof(UserActivity)
+
+  })
+
+  it('should hold activity data for each user', () => {
+
+    expect(userActivity.activityData).to.equal(userActivityData)
+
+  })
+
+  it('should have a property of currentUser that holds their data stored in userRepo', () => {
+
+    userActivity.exceedStepGoalCheck(2, "2019/06/28", userRepo)
+
+    expect(userActivity.currentUser).to.equal(userTestData[1])
 
   })
 
   it('should calculate the amount of miles a user has walked by a given day', () => {
 
     expect(userActivity.calculateMilesWalked(1, "2019/06/15", userRepo)).to.equal(2.9)
+    expect(userActivity.calculateMilesWalked(3, "2019/06/28", userRepo)).to.equal(5.4)
 
   })
 
@@ -36,7 +50,6 @@ describe('UserActivity', () => {
     expect(userActivity.returnActivityData(2, "2019/06/28", 'numSteps')).to.equal(12555)
     expect(userActivity.returnActivityData(3, "2019/06/25", 'numSteps')).to.equal(4473)
 
-
   })
 
   it('should return how many minutes active a user was for a given day', () => {
@@ -45,6 +58,7 @@ describe('UserActivity', () => {
     expect(userActivity.returnActivityData(2, "2019/06/28", 'minutesActive')).to.equal(193)
 
   })
+
   it('should return how many flights of stairs a user has climbed in a given day', () => {
 
     expect(userActivity.returnActivityData(1, "2019/06/15", 'flightsOfStairs')).to.equal(16)
@@ -62,18 +76,20 @@ describe('UserActivity', () => {
   it('should return true if a user exceeded their step goal for a given date', () => {
 
     expect(userActivity.exceedStepGoalCheck(1, "2019/06/15", userRepo)).to.equal(false)
+    expect(userActivity.exceedStepGoalCheck(2, "2019/06/28", userRepo)).to.equal(true)
 
   })
 
   it('should return all days where a user has exceeded their step goal', () => {
 
-    expect(userActivity.getExceededStepDays(1, userRepo)).to.deep.equal(["2019/06/17", "2019/06/20"])
+    expect(userActivity.getExceededStepDays(1, userRepo)).to.deep.equal(["2019/06/17", "2019/06/20", "2019/06/22", "2019/06/23", "2019/06/28"])
 
   })
 
   it('should return a users all time stair climbing record', () => {
 
-    expect(userActivity.findStairRecord(1)).to.equal(36)
+    expect(userActivity.findStairRecord(1)).to.equal(39)
+    expect(userActivity.findStairRecord(3)).to.equal(46)
 
   })
 

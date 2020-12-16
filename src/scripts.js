@@ -3,8 +3,7 @@ let userRepo = new UserRepo(userData)
 let userHydration = new UserHydration(hydrationData)
 let userSleep = new UserSleep(sleepData)
 let userActivity = new UserActivity(activityData)
-let currentUser 
-
+let currentUser
 
 const userStepGoal = document.querySelector('.user-step-goal')
 const userStrideLength = document.querySelector('.user-stride-length')
@@ -36,10 +35,10 @@ window.addEventListener('load', displayAllData)
 function displayAllData() {
   generateRandomUser()
   displayUserInfo()
-  displayAllUsersStepGoal()
+  displayAllUsersAvgStepGoal()
   displayWaterData()
   displaySleepData()
-  displayActivityData()
+  displayDailyActivityData()
   displayComparisons()
   displayWeeklyActivityData()
   displayMilesWalked()
@@ -50,14 +49,13 @@ function generateRandomUser() {
   currentUser = new User(userRepo.getUserData(user))
 }
 
-
 function displayUserInfo() {
   greeting.innerHTML = `Hello, ${currentUser.getFirstName()}`
   userStepGoal.innerText = currentUser.dailyStepGoal
   userStrideLength.innerText = currentUser.strideLength
 }
 
-function displayAllUsersStepGoal() {
+function displayAllUsersAvgStepGoal() {
   othersStepGoal.innerText = userRepo.calculateAverageSteps()
 }
 
@@ -67,6 +65,15 @@ function displayWaterData() {
   return weekDisplay.map(function(item, index) {
     item.append(userHydration.returnWeeklyConsumption(currentUser.id)[index])
   })
+}
+
+function displaySleepData() {
+  createWeeklySleepData(hoursGridDisplay, 'hoursSlept')
+  createWeeklySleepData(qualityGridDisplay, 'sleepQuality')
+  createDailySleepData(dailySleepHours, '2019/09/22', 'hoursSlept')
+  createDailySleepData(dailySleepQuality, '2019/09/22', 'sleepQuality')
+  createAvgSleepData(avgDailySleep, currentUser.id, 'hoursSlept')
+  createAvgSleepData(avgSleepQuality, currentUser.id, 'sleepQuality')
 }
 
 function createDailySleepData(element, identifier, type) {
@@ -84,23 +91,14 @@ function createWeeklySleepData(display, type) {
     })
 }
 
-function displaySleepData() {
-  createWeeklySleepData(hoursGridDisplay, 'hoursSlept')
-  createWeeklySleepData(qualityGridDisplay, 'sleepQuality')
-  createDailySleepData(dailySleepHours, '2019/09/22', 'hoursSlept')
-  createDailySleepData(dailySleepQuality, '2019/09/22', 'sleepQuality')
-  createAvgSleepData(avgDailySleep, currentUser.id, 'hoursSlept')
-  createAvgSleepData(avgSleepQuality, currentUser.id, 'sleepQuality')
-}
-
-function createActivityData(element, dataType, descriptor) {
+function createDailyActivityData(element, dataType, descriptor) {
   element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/09/22', dataType)} ${descriptor}`
 }
 
-function displayActivityData() {
-  createActivityData(minuteCounter, 'minutesActive', 'Minutes')
-  createActivityData(flightCounter, 'flightsOfStairs', 'Flights of Stairs')
-  createActivityData(stepCounter, 'numSteps', 'Steps')
+function displayDailyActivityData() {
+  createDailyActivityData(minuteCounter, 'minutesActive', 'Minutes')
+  createDailyActivityData(flightCounter, 'flightsOfStairs', 'Flights of Stairs')
+  createDailyActivityData(stepCounter, 'numSteps', 'Steps')
 }
 
 function createComparisonData(element, dataType) {
