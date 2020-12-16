@@ -32,7 +32,7 @@ class UserSleep {
     this.findDay(id)
     const weekSleep = this.currentUser.find(item => item.date === date)
     const index = this.currentUser.indexOf(weekSleep)
-    const days = this.currentUser.slice(index, 7)
+    const days = this.currentUser.slice(index, index + 7)
     const weeklyData = days.map(day => day[type])
     return weeklyData
   }

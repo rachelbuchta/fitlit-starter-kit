@@ -3,7 +3,7 @@ let userRepo = new UserRepo(userData)
 let userHydration = new UserHydration(hydrationData)
 let userSleep = new UserSleep(sleepData)
 let userActivity = new UserActivity(activityData)
-let currentUser = new User(userRepo.getUserData(10))
+let currentUser 
 
 
 const userStepGoal = document.querySelector('.user-step-goal')
@@ -34,7 +34,7 @@ window.addEventListener('load', displayAllData)
 
 
 function displayAllData() {
-  // generateRandomUser()
+  generateRandomUser()
   displayUserInfo()
   displayAllUsersStepGoal()
   displayWaterData()
@@ -45,10 +45,10 @@ function displayAllData() {
   displayMilesWalked()
 }
 
-// function generateRandomUser() {
-//   const user = Math.floor(Math.random() * 50) + 1;
-//   currentUser = new User(userRepo.getUserData(user))
-// }
+function generateRandomUser() {
+  const user = Math.floor(Math.random() * 50) + 1;
+  currentUser = new User(userRepo.getUserData(user))
+}
 
 
 function displayUserInfo() {
