@@ -60,7 +60,7 @@ describe('UserSleep', () => {
 
   })
 
-  it.skip('should find any user with an average slee quality above 3 for any given week, identified by date', () => {
+  it('should find any user with an average slee quality above 3 for any given week, identified by date', () => {
 
     expect(userSleep.findGoodSleepers('2019/06/15')).to.deep.equal([2, 3])
 

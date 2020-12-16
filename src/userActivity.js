@@ -3,7 +3,6 @@ class UserActivity {
   constructor(activityData) {
     this.activityData = activityData
     this.currentUser
-    this.allUsersForDay
   }
 
   calculateMilesWalked(id, date, userData) {
@@ -21,10 +20,10 @@ class UserActivity {
   }
 
   calculateAvgMinByWeek(id, date) {
-    this.returnUserDays(id)
-    const startDay = this.allUsersForDay.find(day => day.date === date)
-    const dayIndex = this.allUsersForDay.indexOf(startDay)
-    const week = this.allUsersForDay.slice(dayIndex, 7)
+    const userDataByID = this.activityData.filter(day => day.userID === id)
+    const startDay = userDataByID.find(day => day.date === date)
+    const dayIndex = userDataByID.indexOf(startDay)
+    const week = userDataByID.slice(dayIndex, dayIndex + 7)
     const totalMins = week.reduce((acc, day) => {
       acc += day.minutesActive
       return acc
@@ -51,10 +50,6 @@ class UserActivity {
     }, [])
   }
 
-  returnUserDays(id) {
-    this.allUsersForDay = this.activityData.filter(day => day.userID === id)
-  }
-
   findStairRecord(id) {
     const userDays = this.activityData.filter(day => day.userID === id)
     const topDay = userDays
@@ -72,12 +67,12 @@ class UserActivity {
   }
 
   getDataByWeek(id, date, type) {
-    const userData = this.activityData.filter(day => day.userID === id)
-    const weekSleep = userData.find(item => item.date === date)
-    const index = userData.indexOf(weekSleep)
-    const days = userData.slice(index, 7)
-    const minsActive = days.map(day => day[type])
-    return minsActive
+    const userDataByID = this.activityData.filter(day => day.userID === id)
+    const startDay = userDataByID.find(item => item.date === date)
+    const index = userDataByID.indexOf(startDay)
+    const days = userDataByID.slice(index, index + 7)
+    const dataForAWeek = days.map(day => day[type])
+    return dataForAWeek
   }
 }
 
