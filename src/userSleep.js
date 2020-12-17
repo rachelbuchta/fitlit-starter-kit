@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-
 class UserSleep {
   constructor(data) {
     this.data = data
@@ -49,7 +48,7 @@ class UserSleep {
       }
       return acc
     }, [])
-    const indexObject = this.data.find(day => day.date === date) //
+    const indexObject = this.data.find(day => day.date === date)
     const index = this.data.indexOf(indexObject)
     const allUserWeeks = this.data.slice(index, (index + (userCount.length * 7)))
     const singleUserWeek = userCount.filter(userID => {
