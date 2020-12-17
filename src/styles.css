@@ -377,13 +377,7 @@ img {
   .week-grid-label {
     height: 9%;
   }
-
-  /* .weekly-activities
-{
-  width: 100%;
-  height: 100%;
-
-} */
+  
   .activity-grid {
     height: 100%;
     width: 95%;
@@ -503,13 +497,6 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-template-columns: repeat(1, 80%);
-    grid-auto-rows: repeat(3, 20%);
-    grid-template-columns: repeat(2, 45%);
-    grid-template-columns: repeat(2, 45%);
-    grid-auto-rows: 45% 45%;
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
     width: 100%;
     height: 100%;
   }
