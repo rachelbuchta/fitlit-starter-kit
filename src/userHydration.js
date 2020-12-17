@@ -23,9 +23,13 @@ class UserHydration {
     return this.currentUser.find(day => day.date === date).numOunces
   }
 
-  returnWeeklyConsumption(id) {
+  returnWeeklyConsumption(id, date) {
     this.findUser(id)
-    return this.currentUser.slice(0, 7).map(item => item.numOunces)
+    const startDay = this.currentUser.find(item => item.date === date)
+    const index = this.currentUser.indexOf(startDay)
+    const days = this.currentUser.slice(index, index + 7)
+    const dataForAWeek = days.map(day => day.numOunces)
+    return dataForAWeek
   }
 }
 

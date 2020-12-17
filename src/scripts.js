@@ -79,7 +79,7 @@ function displayWaterData() {
   dailyWater.innerHTML = `${userHydration.returnDailyConsumption(currentUser.id, '2019/09/22')} OZs.`
   const weekDisplay = Array.from(waterGridDisplay)
   return weekDisplay.map(function(item, index) {
-    item.append(userHydration.returnWeeklyConsumption(currentUser.id)[index])
+    item.append(userHydration.returnWeeklyConsumption(currentUser.id, '2019/09/16')[index])
   })
 }
 
@@ -117,14 +117,10 @@ function createDailyActivityData(element, dataType, descriptor) {
   element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/09/22', dataType)} ${descriptor}`
 }
 
-function createComparisonData(element, dataType) {
-  element.innerText = `Today's Overall Average: ${userActivity.calculateAvgActivityData('2019/09/22', dataType)}`
-}
-
-function displayComparisons() {
-  createComparisonData(stepsComparison, 'numSteps')
-  createComparisonData(minutesComparison, 'minutesActive')
-  createComparisonData(flightsComparison, 'flightsOfStairs')
+function displayWeeklyActivityData() {
+  createWeeklyActivityData(stepsGridDisplay, 'numSteps')
+  createWeeklyActivityData(minutesGridDisplay, 'minutesActive')
+  createWeeklyActivityData(flightsGridDisplay, 'flightsOfStairs')
 }
 
 function createWeeklyActivityData(element, dataType) {
@@ -133,10 +129,14 @@ function createWeeklyActivityData(element, dataType) {
   })
 }
 
-function displayWeeklyActivityData() {
-  createWeeklyActivityData(stepsGridDisplay, 'numSteps')
-  createWeeklyActivityData(minutesGridDisplay, 'minutesActive')
-  createWeeklyActivityData(flightsGridDisplay, 'flightsOfStairs')
+function displayComparisons() {
+  createComparisonData(stepsComparison, 'numSteps')
+  createComparisonData(minutesComparison, 'minutesActive')
+  createComparisonData(flightsComparison, 'flightsOfStairs')
+}
+
+function createComparisonData(element, dataType) {
+  element.innerText = `Today's Overall Average: ${userActivity.calculateAvgActivityData('2019/09/22', dataType)}`
 }
 
 function displayMilesWalked() {
