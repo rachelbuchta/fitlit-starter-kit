@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+
 class UserSleep {
     constructor(data) {
         this.data = data
