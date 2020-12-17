@@ -14,11 +14,12 @@ class UserActivity {
         return parseFloat(((this.currentUser.strideLength * numberOfSteps) / 5280).toFixed(1))
     }
 
-    returnActivityData(id, date, type) {
-        return this.activityData
-            .filter(day => day.userID === id)
-            .find(userDay => userDay.date === date)[type]
-    }
+
+  returnActivityData(id, date, type) {
+    return this.activityData
+      .filter(day => day.userID === id)
+      .find(userDay => userDay.date === date)[type].toLocaleString()
+  }
 
     calculateAvgMinByWeek(id, date) {
         const userDataByID = this.activityData.filter(day => day.userID === id)
@@ -58,25 +59,26 @@ class UserActivity {
         return Math.max(...topDay)
     }
 
-    calculateAvgActivityData(date, dataType) {
-        const dayOfUsers = this.activityData.filter(day => day.date === date)
-        const avgSteps = dayOfUsers.reduce((acc, user) => {
-            acc += user[dataType]
-            return acc
-        }, 0)
-        return Math.round(avgSteps / dayOfUsers.length)
-    }
 
-    getDataByWeek(id, date, type) {
-        const userDataByID = this.activityData.filter(day => day.userID === id)
-        const startDay = userDataByID.find(item => item.date === date)
-        const index = userDataByID.indexOf(startDay)
-        const days = userDataByID.slice(index, index + 7)
-        const dataForAWeek = days.map(day => day[type])
-        return dataForAWeek
-    }
+  calculateAvgActivityData(date, dataType) {
+    const dayOfUsers = this.activityData.filter(day => day.date === date)
+    const avgSteps = dayOfUsers.reduce((acc, user) => {
+      acc += user[dataType]
+      return acc
+    }, 0)
+    return Math.round(avgSteps / dayOfUsers.length).toLocaleString()
+  }
+
+  getDataByWeek(id, date, type) {
+    const userDataByID = this.activityData.filter(day => day.userID === id)
+    const startDay = userDataByID.find(item => item.date === date)
+    const index = userDataByID.indexOf(startDay)
+    const days = userDataByID.slice(index, index + 7)
+    const dataForAWeek = days.map(day => day[type])
+    return dataForAWeek.map(num => num.toLocaleString())
+  }
 }
 
 if (typeof module !== 'undefined') {
-    module.exports = UserActivity
+  module.exports = UserActivity
 }

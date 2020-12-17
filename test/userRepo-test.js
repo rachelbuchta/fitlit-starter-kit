@@ -30,6 +30,6 @@ describe('UserRepo', () => {
 
   it('should calculate average step goal amongst all users', () => {
 
-    expect(userRepo.calculateAverageSteps()).to.equal(6667)
+    expect(userRepo.calculateAverageSteps()).to.equal('6,667')
   })
 })
