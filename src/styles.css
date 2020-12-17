@@ -62,6 +62,12 @@ main {
   background-color: #446063;
 }
 
+.user-step-goal,
+.user-stride-length,
+.all-users-step-goal {
+  font-size: 1.5em;
+}
+
 /* Activity Section */
 .activity-box {
   display: flex;
@@ -69,7 +75,7 @@ main {
   align-items: center;
   align-self: center;
   justify-content: space-evenly;
-  width: 75%;
+  width: 80%;
   height: 38vh;
   border-radius: .5em;
   background-color: #C8E0F3;
@@ -126,6 +132,7 @@ h4 {
 
 #step-card {
   width: 100%;
+  height: 100%;
 }
 
 .weekly-activities {
@@ -158,7 +165,10 @@ h4 {
   background-color: #E19181;
   width: 80%;
   text-align: center;
+  align-content: center;
   border-radius: .5em;
+  height: 8%;
+  margin-bottom: -1%;
 }
 
 .week-day-box {
@@ -229,7 +239,7 @@ h6 {
   align-content: center;
   text-align: center;
   width: 50%;
-  height: 80%;
+  height: 65%;
   grid-template-columns: repeat(7, 25%);
   grid-template-rows: repeat(2, 25%);
   grid-column: 1 / 8;
@@ -240,13 +250,8 @@ h6 {
   font-size: 2.4em;
 }
 
-.average-sleep-hours,
-.average-sleep-quality,
-  {
-  display: flex;
-  flex-direction: row;
-  border-radius: .5em;
-  height: 45%;
+.daily-water-header {
+  margin-top: -8%;
 }
 
 .sleep-box {
@@ -290,6 +295,10 @@ img {
   height: 2.5em;
 }
 
+.running {
+  margin-top: -1%;
+}
+
 .avg-header,
 .sleep-quality,
 .sleep-hours,
@@ -307,7 +316,7 @@ img {
   grid-auto-rows: repeat(3, 20%);
   grid-column: 1 / 9;
   grid-row: 1 / 4;
-  width: 45%;
+  width: 60%;
   margin-bottom: 1.5%;
 }
 
@@ -321,7 +330,7 @@ img {
   border-radius: .5em;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1150px) {
   main {
     display: flex;
     justify-content: space-around;
@@ -358,12 +367,13 @@ img {
 
   .daily-activities {
     width: 100%;
-    height: 45%;
+    height: 40%;
   }
 
   #minutes-card,
   #miles-card {
     width: 20%;
+    height: 85%;
   }
 
   .activity-card {
@@ -372,10 +382,16 @@ img {
 
   #step-card {
     width: 45%;
+    height: 85%;
   }
 
   .week-grid-label {
-    height: 9%;
+    height: 6%;
+    margin-bottom: -1.4%;
+  }
+
+  .running {
+    margin-top: -1%;
   }
 
   .activity-grid {
@@ -412,11 +428,12 @@ img {
     width: 47%;
     height: 96%;
     text-align: center;
+    justify-content: space-evenly;
   }
 
   .water-grid {
     width: 70%;
-    height: 100%;
+    height: 69%;
     grid-template-columns: repeat(7, 20%);
     grid-template-rows: repeat(2, 25%);
   }
@@ -448,9 +465,9 @@ img {
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
   body {
-    height: 150%;
+    height: 100%;
     padding: 1%;
   }
 
@@ -461,12 +478,24 @@ img {
   }
 
   .greeting {
-    height: 10%;
+    height: 8%;
     width: 95%;
   }
 
+  h3,
+  h2,
+  h4 {
+    font-size: 1em;
+  }
+
+  .user-step-goal,
+  .user-stride-length,
+  .all-users-step-goal {
+    font-size: 1em;
+  }
+
   .user-info-card {
-    height: 75%;
+    height: 20%;
     width: 95%;
     display: flex;
     flex-direction: column;
@@ -477,7 +506,7 @@ img {
 
   .user-step-goal-box,
   .all-users-step-goal-box {
-    height: 90%;
+    height: 50%;
     width: 80%;
     margin: .2%;
     border: .08em solid #AC9F57;
@@ -491,6 +520,10 @@ img {
   img {
     height: 2em;
     margin: .2%;
+  }
+
+  .running {
+    margin-top: .1%;
   }
 
   .daily-activities {
@@ -520,15 +553,19 @@ img {
     display: flex;
     flex-direction: column;
     border: .08em solid #AC9F57;
-    justify-content: flex-start;
     width: 90%;
     margin: .2%;
     height: 60%;
   }
 
+  .step-counter {
+    font-size: 1em;
+  }
+
   .week-grid-label {
     height: 9%;
     width: 95%;
+    margin-bottom: 0%;
     border: .08em solid #AC9F57;
   }
 
@@ -573,8 +610,13 @@ img {
   .water-wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     width: 100%;
     height: 100%;
+  }
+
+  .daily-water-header {
+    margin-top: 0%;
   }
 
   .daily-water {
@@ -583,13 +625,16 @@ img {
     border: .08em solid #AC9F57;
     align-self: center;
     text-align: center;
+    justify-content: space-evenly;
     margin: .2%;
+    margin-top: 0%;
   }
 
   .weekly-water {
     width: 95%;
     height: 60%;
     border: .08em solid #AC9F57;
+    margin-top: .5%;
     align-self: center;
     text-align: center;
   }

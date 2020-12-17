@@ -27,14 +27,14 @@ describe('UserHydration', () => {
 
   it('should return amount of ounces consumed in a day by date', () => {
 
-    expect(userHydration.returnDailyConsumption(1, "2019/06/15")).to.equal(37)
-    expect(userHydration.returnDailyConsumption(2, "2019/06/26")).to.equal(27)
+    expect(userHydration.returnDailyConsumption(1, '2019/06/15')).to.equal(37)
+    expect(userHydration.returnDailyConsumption(2, '2019/06/26')).to.equal(27)
   })
 
   it('should return amount of ounces consumed in a week for each day', () => {
 
-    expect(userHydration.returnWeeklyConsumption(1, "2019/06/15")).to.deep.equal([37, 69, 96, 61, 91, 50, 50])
-    expect(userHydration.returnWeeklyConsumption(2, "2019/06/22")).to.deep.equal([58, 44, 33, 67, 27, 70, 56])
+    expect(userHydration.returnWeeklyConsumption(1, '2019/06/15')).to.deep.equal([37, 69, 96, 61, 91, 50, 50])
+    expect(userHydration.returnWeeklyConsumption(2, '2019/06/22')).to.deep.equal([58, 44, 33, 67, 27, 70, 56])
   })
 
 })

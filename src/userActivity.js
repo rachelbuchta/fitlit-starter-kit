@@ -13,7 +13,6 @@ class UserActivity {
     return parseFloat(((this.currentUser.strideLength * numberOfSteps) / 5280).toFixed(1))
   }
 
-
   returnActivityData(id, date, type) {
     return this.activityData
       .filter(day => day.userID === id)
@@ -53,11 +52,9 @@ class UserActivity {
 
   findStairRecord(id) {
     const userDays = this.activityData.filter(day => day.userID === id)
-    const topDay = userDays
-      .map(day => day.flightsOfStairs)
+    const topDay = userDays.map(day => day.flightsOfStairs)
     return Math.max(...topDay)
   }
-
 
   calculateAvgActivityData(date, dataType) {
     const dayOfUsers = this.activityData.filter(day => day.date === date)
