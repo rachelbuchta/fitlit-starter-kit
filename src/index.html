@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+  <meta charset='UTF-8'>
+  <link href='https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap' rel='stylesheet'>
   <title>Activity Tracker</title>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='styles.css'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 
 <body>
@@ -15,19 +15,19 @@
       <h1></h1>
     </section>
     <article class='user-info-card'>
-      <section class='user-step-goal-box' draggable="true" ondragstart="event.dataTransfer.setData('text/plain', null)">
+      <section class='user-step-goal-box'>
         <h2>Your Daily Step Goal</h2>
         <p class='user-step-goal'></p>
         <h2>Your Stride Length</h2>
         <p class='user-stride-length'></p>
       </section>
-      <section class='all-users-step-goal-box' draggable="true" ondragstart="event.dataTransfer.setData('text/plain', null)">
+      <section class='all-users-step-goal-box'>
         <h2>The Daily Step Goal Average</h2>
         <p class='all-users-step-goal'></p>
       </section>
     </article>
     <article class='activity-box'>
-      <img src='../images/running.svg' alt='Running Legs'>
+      <img class='running' src='../images/running.svg' alt='Running Legs'>
       <section class='daily-activities'>
         <section class='activity-card' id='minutes-card'>
           <h3>You Were Active For:</h3>
@@ -49,38 +49,38 @@
       <h3 class='week-grid-label'>Your Week</h3>
       <article class='weekly-activities'>
         <section class='activity-grid'>
-          <div class="box" id="box0"></div>
-          <div class="week-day-box" id="box1">S</div>
-          <div class="week-day-box" id="box2">M</div>
-          <div class="week-day-box" id="box3">T</div>
-          <div class="week-day-box" id="box4">W</div>
-          <div class="week-day-box" id="box5">T</div>
-          <div class="week-day-box" id="box6">F</div>
-          <div class="week-day-box" id="box7">S</div>
-          <div class="box" id="box8">Steps</div>
-          <div class="steps-grid-box" id="box9"></div>
-          <div class="steps-grid-box" id="box10"></div>
-          <div class="steps-grid-box" id="box11"></div>
-          <div class="steps-grid-box" id="box12"></div>
-          <div class="steps-grid-box" id="box13"></div>
-          <div class="steps-grid-box" id="box14"></div>
-          <div class="steps-grid-box" id="box15"></div>
-          <div class="box" id="box16">Minutes</div>
-          <div class="minutes-grid-box" id="box17"></div>
-          <div class="minutes-grid-box" id="box18"></div>
-          <div class="minutes-grid-box" id="box19"></div>
-          <div class="minutes-grid-box" id="box20"></div>
-          <div class="minutes-grid-box" id="box21"></div>
-          <div class="minutes-grid-box" id="box22"></div>
-          <div class="minutes-grid-box" id="box23"></div>
-          <div class="box" id="box24">Flights</div>
-          <div class="flights-grid-box" id="box25"></div>
-          <div class="flights-grid-box" id="box26"></div>
-          <div class="flights-grid-box" id="box27"></div>
-          <div class="flights-grid-box" id="box28"></div>
-          <div class="flights-grid-box" id="box29"></div>
-          <div class="flights-grid-box" id="box30"></div>
-          <div class="flights-grid-box" id="box31"></div>
+          <div class='box' id='box0'></div>
+          <div class='week-day-box' id='box1'>S</div>
+          <div class='week-day-box' id='box2'>M</div>
+          <div class='week-day-box' id='box3'>T</div>
+          <div class='week-day-box' id='box4'>W</div>
+          <div class='week-day-box' id='box5'>T</div>
+          <div class='week-day-box' id='box6'>F</div>
+          <div class='week-day-box' id='box7'>S</div>
+          <div class='box' id='box8'>Steps</div>
+          <div class='steps-grid-box' id='box9'></div>
+          <div class='steps-grid-box' id='box10'></div>
+          <div class='steps-grid-box' id='box11'></div>
+          <div class='steps-grid-box' id='box12'></div>
+          <div class='steps-grid-box' id='box13'></div>
+          <div class='steps-grid-box' id='box14'></div>
+          <div class='steps-grid-box' id='box15'></div>
+          <div class='box' id='box16'>Minutes</div>
+          <div class='minutes-grid-box' id='box17'></div>
+          <div class='minutes-grid-box' id='box18'></div>
+          <div class='minutes-grid-box' id='box19'></div>
+          <div class='minutes-grid-box' id='box20'></div>
+          <div class='minutes-grid-box' id='box21'></div>
+          <div class='minutes-grid-box' id='box22'></div>
+          <div class='minutes-grid-box' id='box23'></div>
+          <div class='box' id='box24'>Flights</div>
+          <div class='flights-grid-box' id='box25'></div>
+          <div class='flights-grid-box' id='box26'></div>
+          <div class='flights-grid-box' id='box27'></div>
+          <div class='flights-grid-box' id='box28'></div>
+          <div class='flights-grid-box' id='box29'></div>
+          <div class='flights-grid-box' id='box30'></div>
+          <div class='flights-grid-box' id='box31'></div>
         </section>
       </article>
     </article>
@@ -89,26 +89,26 @@
         <img src='../images/glass-of-water-water.svg' alt='Water Glass'>
         <div class='water-wrapper'>
           <article class='daily-water'>
-            <h4>Today You've Drank:</h4>
+            <h4 class='daily-water-header'>Today You've Drank:</h4>
             <p class='water-ounces'></p>
           </article>
           <section class='weekly-water'>
-            <h4 class='water-intake'>Weekly Water In OZs</h4>
+            <h4 class='water-intake'>Your Week</h4>
             <section class='water-grid'>
-              <div class="week-day-box" id="water-box0">S</div>
-              <div class="week-day-box" id="water-box1">M</div>
-              <div class="week-day-box" id="water-box2">T</div>
-              <div class="week-day-box" id="water-box3">W</div>
-              <div class="week-day-box" id="water-box4">T</div>
-              <div class="week-day-box" id="water-box5">F</div>
-              <div class="week-day-box" id="water-box6">S</div>
-              <div class="water-grid-box" id="water-box7"></div>
-              <div class="water-grid-box" id="water-box8"></div>
-              <div class="water-grid-box" id="water-box9"></div>
-              <div class="water-grid-box" id="water-box10"></div>
-              <div class="water-grid-box" id="water-box11"></div>
-              <div class="water-grid-box" id="water-box12"></div>
-              <div class="water-grid-box" id="water-box13"></div>
+              <div class='week-day-box' id='water-box0'>S</div>
+              <div class='week-day-box' id='water-box1'>M</div>
+              <div class='week-day-box' id='water-box2'>T</div>
+              <div class='week-day-box' id='water-box3'>W</div>
+              <div class='week-day-box' id='water-box4'>T</div>
+              <div class='week-day-box' id='water-box5'>F</div>
+              <div class='week-day-box' id='water-box6'>S</div>
+              <div class='water-grid-box' id='water-box7'></div>
+              <div class='water-grid-box' id='water-box8'></div>
+              <div class='water-grid-box' id='water-box9'></div>
+              <div class='water-grid-box' id='water-box10'></div>
+              <div class='water-grid-box' id='water-box11'></div>
+              <div class='water-grid-box' id='water-box12'></div>
+              <div class='water-grid-box' id='water-box13'></div>
             </section>
           </section>
         </div>
@@ -138,47 +138,47 @@
           </section>
         </div>
         <section class='weekly-sleep'>
-          <h4 class='week-sleep-header'>Weekly Sleep</h4>
+          <h4 class='week-sleep-header'>Your Week</h4>
           <section class='sleep-grid'>
-            <div class="box" id="sleep-box0"></div>
-            <div class="week-day-box" id="sleep-box1">S</div>
-            <div class="week-day-box" id="sleep-box2">M</div>
-            <div class="week-day-box" id="sleep-box3">T</div>
-            <div class="week-day-box" id="sleep-box4">W</div>
-            <div class="week-day-box" id="sleep-box5">T</div>
-            <div class="week-day-box" id="sleep-box6">F</div>
-            <div class="week-day-box" id="sleep-box7">S</div>
-            <div class="box" id="sleep-box8">H</div>
-            <div class="hours-grid-box" id="sleep-box9"></div>
-            <div class="hours-grid-box" id="sleep-box10"></div>
-            <div class="hours-grid-box" id="sleep-box11"></div>
-            <div class="hours-grid-box" id="sleep-box12"></div>
-            <div class="hours-grid-box" id="sleep-box13"></div>
-            <div class="hours-grid-box" id="sleep-box14"></div>
-            <div class="hours-grid-box" id="sleep-box15"></div>
-            <div class="box" id="sleep-box16">Q</div>
-            <div class="quality-grid-box" id="sleep-box17"></div>
-            <div class="quality-grid-box" id="sleep-box18"></div>
-            <div class="quality-grid-box" id="sleep-box19"></div>
-            <div class="quality-grid-box" id="sleep-box20"></div>
-            <div class="quality-grid-box" id="sleep-box21"></div>
-            <div class="quality-grid-box" id="sleep-box22"></div>
-            <div class="quality-grid-box" id="sleep-box23"></div>
+            <div class='box' id='sleep-box0'></div>
+            <div class='week-day-box' id='sleep-box1'>S</div>
+            <div class='week-day-box' id='sleep-box2'>M</div>
+            <div class='week-day-box' id='sleep-box3'>T</div>
+            <div class='week-day-box' id='sleep-box4'>W</div>
+            <div class='week-day-box' id='sleep-box5'>T</div>
+            <div class='week-day-box' id='sleep-box6'>F</div>
+            <div class='week-day-box' id='sleep-box7'>S</div>
+            <div class='box' id='sleep-box8'>H</div>
+            <div class='hours-grid-box' id='sleep-box9'></div>
+            <div class='hours-grid-box' id='sleep-box10'></div>
+            <div class='hours-grid-box' id='sleep-box11'></div>
+            <div class='hours-grid-box' id='sleep-box12'></div>
+            <div class='hours-grid-box' id='sleep-box13'></div>
+            <div class='hours-grid-box' id='sleep-box14'></div>
+            <div class='hours-grid-box' id='sleep-box15'></div>
+            <div class='box' id='sleep-box16'>Q</div>
+            <div class='quality-grid-box' id='sleep-box17'></div>
+            <div class='quality-grid-box' id='sleep-box18'></div>
+            <div class='quality-grid-box' id='sleep-box19'></div>
+            <div class='quality-grid-box' id='sleep-box20'></div>
+            <div class='quality-grid-box' id='sleep-box21'></div>
+            <div class='quality-grid-box' id='sleep-box22'></div>
+            <div class='quality-grid-box' id='sleep-box23'></div>
           </section>
         </section>
       </section>
     </article>
   </main>
-  <script type="text/javascript" src="../data/users.js"></script>
-  <script type="text/javascript" src="../data/hydration.js"></script>
-  <script type="text/javascript" src="../data/sleep.js"></script>
-  <script type="text/javascript" src="../data/activity.js"></script>
-  <script type="text/javascript" src="../src/userSleep.js"></script>
-  <script type="text/javascript" src="../src/userHydration.js"></script>
-  <script type="text/javascript" src="../src/userActivity.js"></script>
-  <script type="text/javascript" src="../src/userRepo.js"></script>
-  <script type="text/javascript" src="../src/user.js"></script>
-  <script type="text/javascript" src="./scripts.js"></script>
+  <script type='text/javascript' src='../data/users.js'></script>
+  <script type='text/javascript' src='../data/hydration.js'></script>
+  <script type='text/javascript' src='../data/sleep.js'></script>
+  <script type='text/javascript' src='../data/activity.js'></script>
+  <script type='text/javascript' src='../src/userSleep.js'></script>
+  <script type='text/javascript' src='../src/userHydration.js'></script>
+  <script type='text/javascript' src='../src/userActivity.js'></script>
+  <script type='text/javascript' src='../src/userRepo.js'></script>
+  <script type='text/javascript' src='../src/user.js'></script>
+  <script type='text/javascript' src='./scripts.js'></script>
 </body>
 
 </html>
