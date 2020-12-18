@@ -26,7 +26,7 @@ I ensured best practices:
  
  Project created by Turing School staff.
  
- Special thanks to John Adams, [Steve Kinney](https://github.com/stevekinney) our 2010 FE Cohort instructors and peers.
+ Special thanks to John Adams, [Steve Kinney](https://github.com/stevekinney), and our 2010 FE Cohort instructors and peers.
  
  ## Future Iterations
  
