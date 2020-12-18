@@ -35,6 +35,10 @@ I ensured best practices:
 If we did, we would make it interactive so a user could access more in depth information by clicking on a widget. Also we would implement Charts.js to display our data instead of having tables of digits which would be more user friendly and aesthetically pleasing. Eventual use of a server to pull data from that instead of a static set of data in our repository.
  
  ## Features
+ 
+![Window sizing](https://media.giphy.com/media/25ULMFmPK0ERLYHtKx/giphy.gif)
+
+![User Change](https://media.giphy.com/media/GXXhxrWmPDRMGfVXC4/giphy.gif)
 
  ### User Functionality
 
@@ -42,11 +46,6 @@ On page load a user is shown:
 
 * A greeting welcoming the user to the page by using their first name
 * A display of their daily step goal, stride length, and how their step goal compares to the average of all other users' step goals
-
-![Window sizing](https://media.giphy.com/media/25ULMFmPK0ERLYHtKx/giphy.gif)
-
-![User Change](https://media.giphy.com/media/GXXhxrWmPDRMGfVXC4/giphy.gif)
-
 
 #### Activity
 
