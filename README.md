@@ -1,82 +1,62 @@
-# FitLit Starter Kit
+# Activity Tracker
+ Mod2 Pair Project
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+This application displays a user's data for various activities, sleep conditions, and how well they are staying hydrated. When the page is refreshed a new random user's data will be displayed along with stats that show how they compare to the entire user database. 
 
-## Setup
+Building this application allowed us to gain a deeper understanding of how to structure data in their respective classes, as well as how to have those classes interact when needed. We dove deeper into using ES6 syntax, iterator methods, wrtiting TDD tests to drive our code and how to make a page responsive over multiple screens.
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `open src/index.html` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
+## Technologies and Skills
 
-## Testing
+This application is made using:
+  * Clean, semantic HTML and CSS including media queries so that is can be viewed across a variety of screens.
+  * ES6 Javascript, arrow functions, classes, and iterator methods.
+  * Mocha and Chai for our TDD tests.
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
+I ensured best practices:
 
-## Linting Your Code
+  * Separating the data model (using classes) and DOM model
+  * Implementing helper functions to keep code clean and demonstrate DRYness and SRP.
+  * Using atomic commits and creating branches that reflect the current feature I am working on.
+  * Writing a robust testing suite that had happy and sad test paths.
+  * Refactored to ensure user's accessibility.
+  
+ ## Contributors
+ 
+ Project implementation by [Rachel Buchta](https://github.com/rachelbuchta) and [Max Bregman](https://github.com/Max9545) 
+ 
+ Project created by Turing School staff.
+ 
+ Special thanks to John Adams, [Steve Kinney](https://github.com/stevekinney) our 2010 FE Cohort instructors and peers.
+ 
+ ## Future Iterations
+ 
+ Currently, there are no planned additions to this Activity Tracker.
+ 
+If we did, we would make it interactive so a user could access more in depth information by clicking on a widget. Also we would implement Charts.js to display our data instead of having tables of digits which would be more user friendly and aesthetically pleasing. Eventual use of a server to pull data from that instead of a static set of data in our repository.
+ 
+ ## Features
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
+ ### User Functionality
 
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
+On page load a user is shown:
 
-## Data Model
+* A greeting welcoming the user to the page by using their first name
+* A display of their daily step goal, stride length, and how their step goal compares to the average of all other users' step goals
 
-**Users**
+#### Activity
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
+* Minutes a user was active for and how it compares to the average of all users for that day.
+* The amount of steps a user has taken, how many miles those steps equate to and how it compares to the average steps of all users for that day.
+* How many flights of stairs a user has climbed based on the amount of steps they have taken for the day and how that compares to the average number of stairs climbed for all users on that day.
+* An overview of steps taken, minutes active, and flights of stairs climbed for the last 7 day period. 
+ 
+#### Water
 
-**Activity**
+* The amount of water consumed in ounces during the lastest day.
+* The amount of water consumed each day over the last 7 day period.
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
+#### Sleep
 
-**Hydration**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
-
-**Sleep**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+* The hours and quality of sleep a user has gotten over the latest day.
+* The user's average hours and quality of sleep over all time.
+* The user's hours and quality of sleep for each day over the last 7 day period
