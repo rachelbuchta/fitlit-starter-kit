@@ -43,6 +43,9 @@ On page load a user is shown:
 * A greeting welcoming the user to the page by using their first name
 * A display of their daily step goal, stride length, and how their step goal compares to the average of all other users' step goals
 
+![Window sizing](https://media.giphy.com/media/25ULMFmPK0ERLYHtKx/giphy.gif)
+
+
 #### Activity
 
 * Minutes a user was active for and how it compares to the average of all users for that day.
