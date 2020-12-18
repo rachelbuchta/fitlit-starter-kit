@@ -45,6 +45,8 @@ On page load a user is shown:
 
 ![Window sizing](https://media.giphy.com/media/25ULMFmPK0ERLYHtKx/giphy.gif)
 
+![User Change](https://media.giphy.com/media/GXXhxrWmPDRMGfVXC4/giphy.gif)
+
 
 #### Activity
 
