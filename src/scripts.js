@@ -28,6 +28,8 @@ const stepsComparison = document.querySelector('.step-comparison')
 const minutesComparison = document.querySelector('.minute-comparison')
 const flightsComparison = document.querySelector('.flight-comparison')
 const milesWalked = document.querySelector('.miles-walked')
+const waterChart = document.querySelector('#water-chart')
+const activityChart = document.querySelector('#activity-chart')
 
 
 window.addEventListener('load', displayAllData)
@@ -40,7 +42,7 @@ function displayAllData() {
   displaySleepData()
   displayDailyActivityData()
   displayComparisons()
-  displayWeeklyActivityData()
+  displayWeeklyActivityChart()
   displayMilesWalked()
 }
 
@@ -59,13 +61,13 @@ function displayAllUsersAvgStepGoal() {
   othersStepGoal.innerText = userRepo.calculateAverageSteps()
 }
 
-function displayWaterData() {
-  dailyWater.innerHTML = `${userHydration.returnDailyConsumption(currentUser.id, '2019/09/22')} OZs.`
-  const weekDisplay = Array.from(waterGridDisplay)
-  return weekDisplay.map(function(item, index) {
-    item.append(userHydration.returnWeeklyConsumption(currentUser.id, '2019/09/16')[index])
-  })
-}
+// function displayWaterData() {
+//   dailyWater.innerHTML = `${userHydration.returnDailyConsumption(currentUser.id, '2019/09/22')} OZs.`
+//   const weekDisplay = Array.from(waterGridDisplay)
+//   return weekDisplay.map(function(item, index) {
+//     item.append(userHydration.returnWeeklyConsumption(currentUser.id, '2019/09/16')[index])
+//   })
+// }
 
 function displaySleepData() {
   createWeeklySleepData(hoursGridDisplay, 'hoursSlept')
@@ -101,17 +103,17 @@ function createDailyActivityData(element, dataType, descriptor) {
   element.innerText = `${userActivity.returnActivityData(currentUser.id, '2019/09/22', dataType)} ${descriptor}`
 }
 
-function displayWeeklyActivityData() {
-  createWeeklyActivityData(stepsGridDisplay, 'numSteps')
-  createWeeklyActivityData(minutesGridDisplay, 'minutesActive')
-  createWeeklyActivityData(flightsGridDisplay, 'flightsOfStairs')
-}
+// function displayWeeklyActivityData() {
+//   createWeeklyActivityData(stepsGridDisplay, 'numSteps')
+//   createWeeklyActivityData(minutesGridDisplay, 'minutesActive')
+//   createWeeklyActivityData(flightsGridDisplay, 'flightsOfStairs')
+// }
 
-function createWeeklyActivityData(element, dataType) {
-  Array.from(element).map(function(item, index) {
-    return item.append(userActivity.getDataByWeek(currentUser.id, '2019/09/16', dataType)[index])
-  })
-}
+// function createWeeklyActivityData(element, dataType) {
+//   Array.from(element).map(function(item, index) {
+//     return item.append(userActivity.getDataByWeek(currentUser.id, '2019/09/16', dataType)[index])
+//   })
+// }
 
 function displayComparisons() {
   createComparisonData(stepsComparison, 'numSteps')
@@ -126,5 +128,71 @@ function createComparisonData(element, dataType) {
 function displayMilesWalked() {
   userActivity.currentUser = userRepo.getUserData(currentUser.id)
   milesWalked.innerText = `That's the equivalent to ${userActivity.calculateMilesWalked(currentUser.id, '2019/09/22', userRepo)} miles!`
+}
+
+function displayWaterData() {
+  dailyWater.innerHTML = `${userHydration.returnDailyConsumption(currentUser.id, '2019/09/22')} OZs.`
+  new Chart(waterChart, {
+  type: 'line',
+  data: {
+    labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    datasets: [{
+      label: "Ounces Consumed",
+      borderColor: 'rgb(255,99,132)',
+      data: userHydration.returnWeeklyConsumption(currentUser.id, '2019/09/16')
+      
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Water Chart',
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontColor:'rgb(255,99,132)',
+      }
+    },
+  }
+})
+
+}
+
+function displayWeeklyActivityChart() {
+  new Chart(activityChart, {
+  type: 'line',
+  data: {
+    labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    datasets: [{
+      label: "Minutes",
+      borderColor: 'rgb(255,99,132)',
+      data: userActivity.getDataByWeek(currentUser.id, '2019/09/16', 'minutesActive')
+    },
+  {
+      label: "Steps",
+      borderColor: 'rgb(210,80,132)',
+      data: userActivity.getDataByWeek(currentUser.id, '2019/09/16', 'numSteps')
+    },
+    {
+      label: "Stairs",
+      borderColor: 'rgb(255,99,132)',
+      data: userActivity.getDataByWeek(currentUser.id, '2019/09/16', 'flightsOfStairs')
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Water Chart',
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontColor:'rgb(255,99,132)',
+      }
+    },
+  }
+})
+
 }
 /*eslint-disable no-undef*/

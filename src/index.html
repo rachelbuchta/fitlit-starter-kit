@@ -48,40 +48,7 @@
       </section>
       <h3 class='week-grid-label'>Your Week</h3>
       <article class='weekly-activities'>
-        <section class='activity-grid'>
-          <div class='box' id='box0'></div>
-          <div class='week-day-box' id='box1'>S</div>
-          <div class='week-day-box' id='box2'>M</div>
-          <div class='week-day-box' id='box3'>T</div>
-          <div class='week-day-box' id='box4'>W</div>
-          <div class='week-day-box' id='box5'>T</div>
-          <div class='week-day-box' id='box6'>F</div>
-          <div class='week-day-box' id='box7'>S</div>
-          <div class='box' id='box8'>Steps</div>
-          <div class='steps-grid-box' id='box9'></div>
-          <div class='steps-grid-box' id='box10'></div>
-          <div class='steps-grid-box' id='box11'></div>
-          <div class='steps-grid-box' id='box12'></div>
-          <div class='steps-grid-box' id='box13'></div>
-          <div class='steps-grid-box' id='box14'></div>
-          <div class='steps-grid-box' id='box15'></div>
-          <div class='box' id='box16'>Minutes</div>
-          <div class='minutes-grid-box' id='box17'></div>
-          <div class='minutes-grid-box' id='box18'></div>
-          <div class='minutes-grid-box' id='box19'></div>
-          <div class='minutes-grid-box' id='box20'></div>
-          <div class='minutes-grid-box' id='box21'></div>
-          <div class='minutes-grid-box' id='box22'></div>
-          <div class='minutes-grid-box' id='box23'></div>
-          <div class='box' id='box24'>Flights</div>
-          <div class='flights-grid-box' id='box25'></div>
-          <div class='flights-grid-box' id='box26'></div>
-          <div class='flights-grid-box' id='box27'></div>
-          <div class='flights-grid-box' id='box28'></div>
-          <div class='flights-grid-box' id='box29'></div>
-          <div class='flights-grid-box' id='box30'></div>
-          <div class='flights-grid-box' id='box31'></div>
-        </section>
+         <canvas id="activity-chart" width='300' height='55'></canvas>
       </article>
     </article>
     <article class='sleep-hydration-box'>
@@ -93,8 +60,9 @@
             <p class='water-ounces'></p>
           </article>
           <section class='weekly-water'>
-            <h4 class='water-intake'>Your Week</h4>
-            <section class='water-grid'>
+            <!-- <h4 class='water-intake'>Your Week</h4> -->
+              <canvas id="water-chart" width='300' height='200'></canvas>
+            <!-- <section class='water-grid'>
               <div class='week-day-box' id='water-box0'>S</div>
               <div class='week-day-box' id='water-box1'>M</div>
               <div class='week-day-box' id='water-box2'>T</div>
@@ -109,7 +77,7 @@
               <div class='water-grid-box' id='water-box11'></div>
               <div class='water-grid-box' id='water-box12'></div>
               <div class='water-grid-box' id='water-box13'></div>
-            </section>
+            </section> -->
           </section>
         </div>
       </section>
@@ -178,7 +146,12 @@
   <script type='text/javascript' src='../src/userActivity.js'></script>
   <script type='text/javascript' src='../src/userRepo.js'></script>
   <script type='text/javascript' src='../src/user.js'></script>
-  <script type='text/javascript' src='./scripts.js'></script>
+  <!-- <script type='text/javascript' src='./scripts.js'></script> -->
+  
+  <script type="text/javascript" src="../node_modules/chart.js/dist/Chart.js"></script>
+  <script type="text/javascript" src="./scripts.js"></script>
+  
+  <!-- <script type="text/javascript" src="./chart-style.js"></script> -->
 </body>
 
 </html>
